@@ -143,25 +143,18 @@ def apply_pa_result(
         if bits & 0b001: new_bits |= 0b010  # 1루→2루
 
     elif pa_result == "BB":
-        if bits == 0b111:                # 만루 → 밀어내기
+        # 볼넷: 타자 1루, 연결된 주자만 밀려남.
+        # 1루가 비어있으면 다른 주자(2루/3루)는 움직이지 않는다.
+        if bits == 0b111:                 # 만루 → 밀어내기 1점, 상태 유지
             runs = 1
             new_bits = 0b111
-        else:
-            # 타자 1루, 연결된 주자만 밀려남
-            if (bits & 0b011) == 0b011:  # 1·2루 → 타자+1루→2루, 2루→3루
-                new_bits = (bits & 0b100) | 0b011
-                new_bits = (bits & ~0b011) | 0b111  # 1·2루→2·3루 + 타자1루
-                new_bits = 0b111 & ~(0 if bits & 0b100 else 0b100)
-                # 명확하게 재계산
-                new_bits = bits | 0b001  # 타자 1루 추가
-                if bits & 0b001:         # 기존 1루 주자 2루로
-                    new_bits = (new_bits & ~0b001) | 0b010 | 0b001
-                    if bits & 0b010:     # 기존 2루 주자 3루로
-                        new_bits |= 0b100
-            elif bits & 0b001:           # 1루만 → 1루→2루, 타자→1루
-                new_bits = (bits & ~0b001) | 0b010 | 0b001
-            else:
-                new_bits = bits | 0b001  # 타자 1루만 추가
+        elif bits & 0b001:                # 1루 주자 있음 → 강제 진루 체인
+            if bits & 0b010:              # 1·2루 → 1루 주자:2루로, 2루 주자:3루로, 타자:1루
+                new_bits = bits | 0b111
+            else:                         # 1루만 / 1·3루 → 1루:2루, 타자:1루 (3루는 유지)
+                new_bits = bits | 0b011
+        else:                             # 1루 비어있음 → 타자만 1루 추가
+            new_bits = bits | 0b001
 
     elif pa_result in ("SO", "OUT"):
         new_out += 1
@@ -230,6 +223,18 @@ def next_half_inning(state: GameState, abs_score_diff: int) -> GameState:
     )
 
 
+def to_home_perspective(we_attacker: float, half: str) -> float:
+    """
+    공격팀 관점 WE → 홈팀 관점 WE.
+
+    half="bot"(홈팀 공격)이면 그대로, half="top"(원정팀 공격)이면 1-x.
+    시뮬레이션 도중 공수가 여러 번 교대되므로, WPA를 하나의 기준 관점으로
+    통일해 계산하지 않으면 시작/종료 시점의 관점이 서로 달라 오염된다.
+    (HANDOFF_FULL.md §8-2 telescoping 검증 경고와 동일한 함정)
+    """
+    return we_attacker if half == "bot" else 1.0 - we_attacker
+
+
 # ──────────────────────────────────────────────
 # 4. 몬테카를로 시뮬레이터
 # ──────────────────────────────────────────────
@@ -272,92 +277,121 @@ class MonteCarloSimulator:
         # active_indices: 아직 경기가 끝나지 않은 평행우주의 인덱스 추적
         active_indices = list(range(n))
         states = [GameState(**initial_state.__dict__) for _ in range(n)]
-        
-        we_start = get_we_with_boundary(
+
+        # WE는 "그 시점 공격팀"의 승률이라 반이닝마다 관점이 뒤집힌다.
+        # 시뮬레이션 내내 홈팀 관점(to_home_perspective)으로 통일해서 계산하고,
+        # 반환 직전에만 초기 공격팀 관점으로 되돌린다. (관점 불일치 시 telescoping
+        # 이 깨짐 — HANDOFF_FULL.md §8-2 참고)
+        we_start_raw  = get_we_with_boundary(
             inning=initial_state.inning, half=initial_state.half,
             score_diff=initial_state.score_diff_attacker,
             out_count=initial_state.out_count, base_state=initial_state.base_state,
         )
-        
+        we_start_home = to_home_perspective(we_start_raw, initial_state.half)
+
         # 홈팀 - 원정팀 점수차 절대값 추적
         init_abs_diff = initial_state.score_diff_attacker if initial_state.half == "bot" else -initial_state.score_diff_attacker
         abs_diffs = [init_abs_diff] * n
-        
-        # 각 평행우주별 최종 WE 결과 저장용
-        we_ends = [0.0] * n
-        
+
+        # 각 평행우주별 최종 WE(홈팀 관점) 결과 저장용. None = 아직 미종료.
+        we_ends_home = [None] * n
+        end_path = [None] * n  # 진단용: 종료 경로 기록
+
         loop_count = 0
         # 2. 살아있는 시뮬레이션이 있는 동안 타석을 동시 진행
         while active_indices and loop_count < 300:
             loop_count += 1
-            
+
             # --- [핵심] 살아있는 상태들만 모아서 Batch(2차원 배열) 구성 ---
             batch_features = []
             for idx in active_indices:
                 feat = states[idx].to_feature_row()
                 row = [str(feat.get(c, 0)) if c in self.cat_features else float(feat.get(c, 0)) for c in self.all_features]
                 batch_features.append(row)
-                
+
             # CatBoost 모델로 200명의 타석 결과를 단 1번의 연산으로 예측!
             probas_batch = self.model.predict_proba(batch_features)
-            
+
             next_active = []
-            
+
             # --- 예측된 결과를 바탕으로 각각의 평행우주 업데이트 ---
             for i, proba in enumerate(probas_batch):
                 idx = active_indices[i]
                 state = states[idx]
-                
+
                 proba = proba / proba.sum() # 수치 안정성
                 pa_result = self._sample(proba)
-                
+
                 next_state, runs, inning_ended = apply_pa_result(state, pa_result)
-                
+
                 if state.half == "bot":
                     abs_diffs[idx] += runs
                 else:
                     abs_diffs[idx] -= runs
-                    
+
                 is_done = False
-                
+
                 if inning_ended:
                     if state.inning >= 9 and state.half == "bot" and abs_diffs[idx] > 0:
-                        we_ends[idx] = 1.0
+                        # 끝내기: 홈팀이 말 공격 도중 역전 → 홈팀 승 확정
+                        we_ends_home[idx] = 1.0
+                        end_path[idx] = "walkoff_home_win"
+                        is_done = True
+                    elif state.inning >= 9 and state.half == "bot" and abs_diffs[idx] < 0:
+                        # 9회(이후) 말 종료 시점에 홈팀이 뒤짐 → 연장 없이 원정팀 승 확정
+                        we_ends_home[idx] = 0.0
+                        end_path[idx] = "regulation_away_win"
                         is_done = True
                     else:
+                        # 동점이거나 9회 미만 → 다음 반이닝으로 (연장 포함)
                         next_state = next_half_inning(state, abs_diffs[idx])
                         if next_state.inning > self.max_innings:
                             is_done = True
-                            
+                            end_path[idx] = "max_innings_cap"
+
                 if is_done:
                     # 경기가 종료된 평행우주는 최종 WE 계산 후 active 목록에서 제외됨
-                    if we_ends[idx] == 0.0: 
-                        we_ends[idx] = get_we_with_boundary(
+                    if we_ends_home[idx] is None:
+                        we_raw = get_we_with_boundary(
                             inning=min(next_state.inning, self.max_innings),
                             half=next_state.half,
                             score_diff=np.clip(next_state.score_diff_attacker, -10, 10),
                             out_count=min(next_state.out_count, 2),
                             base_state=next_state.base_state,
                         )
+                        we_ends_home[idx] = to_home_perspective(we_raw, next_state.half)
                 else:
                     states[idx] = next_state
                     next_active.append(idx) # 경기가 안 끝났으면 다음 타석 진행을 위해 추가
-                    
+
             active_indices = next_active
-            
+
         # (무한루프 방지) 300타석 넘게 끝나지 않은 잔여 게임 강제 WE 계산
         for idx in active_indices:
             s = states[idx]
-            we_ends[idx] = get_we_with_boundary(
+            we_raw = get_we_with_boundary(
                 inning=min(s.inning, self.max_innings),
                 half=s.half,
                 score_diff=np.clip(s.score_diff_attacker, -10, 10),
                 out_count=min(s.out_count, 2),
                 base_state=s.base_state,
             )
-            
-        wpa_samples = np.array(we_ends) - we_start
-        
+            we_ends_home[idx] = to_home_perspective(we_raw, s.half)
+            end_path[idx] = "pa_cap"
+
+        we_ends_home = np.array(we_ends_home, dtype=float)
+        delta_home = we_ends_home - we_start_home
+
+        # 반환은 초기 공격팀 관점으로 되돌린다 (기존 인터페이스 유지).
+        if initial_state.half == "bot":
+            wpa_samples = delta_home
+        else:
+            wpa_samples = -delta_home
+
+        path_counts = {}
+        for p in end_path:
+            path_counts[p] = path_counts.get(p, 0) + 1
+
         return {
             "e_wpa":   float(np.mean(wpa_samples)),
             "var_wpa": float(np.var(wpa_samples)),
@@ -366,6 +400,7 @@ class MonteCarloSimulator:
                         float(np.percentile(wpa_samples, 97.5))),
             "wpa_dist": wpa_samples.tolist(),
             "n_sim":   self.n_simulations,
+            "end_path_counts": path_counts,
         }
 
     def compare_pitchers(

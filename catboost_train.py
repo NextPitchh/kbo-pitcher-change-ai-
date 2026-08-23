@@ -1,9 +1,13 @@
 """
-KBO WPA Pipeline — CatBoost 다중 분류 (v4)
+KBO WPA Pipeline — CatBoost 다중 분류 (v5, 전 구단 10년 확장 데이터)
+
+데이터: data_analysis/results/all_pa_enriched.parquet
+        (558,064행 · 7,197경기 · 2016~2025 · 전 구단). 컨벤션은 HANDOFF_FULL.md 참조.
 
 클래스 9개: 1B / 2B / 3B / HR / BB / SO / OUT / GDP / SF
   - UNK 제거 (모호한 이벤트, 학습 노이즈)
-  - IBB → BB, HBP → BB (출루 이벤트 동일)
+  - IBB→BB, HBP→BB, ROE→1B 는 데이터에 이미 병합되어 제공됨
+    (미병합 라벨이 남아있으면 안전장치가 감지해 하위 호환 병합)
   - 3B / GDP / SF 유지 (WPA 계산 시 상태 전이 달라서 합치면 안 됨)
 
 가중치: sqrt 역빈도
@@ -33,7 +37,7 @@ from sklearn.metrics import (
 # ──────────────────────────────────────────────
 # 0. 경로
 # ──────────────────────────────────────────────
-DATA_PATH  = Path("data_analysis/results/hsk_pa_with_wpa.parquet")
+DATA_PATH  = Path("data_analysis/results/all_pa_enriched.parquet")
 OUTPUT_DIR = Path("catboost_output")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
@@ -52,12 +56,27 @@ print(f"품질 플래그 제외 후: {len(df):,}행")
 
 # ──────────────────────────────────────────────
 # 2. 클래스 정리
-#    UNK 제거, IBB/HBP → BB 병합
+#    all_pa_enriched.parquet은 이미 9클래스로 병합되어 제공됨
+#    (IBB→BB, HBP→BB, ROE→1B). 원본 세분 라벨은 pa_result_raw 컬럼.
+#    안전장치: 혹시 미병합 라벨이 남아있으면 경고 후 하위 호환 병합.
 #    3B / GDP / SF 는 WPA 계산상 유지
 # ──────────────────────────────────────────────
 TARGET = "pa_result"
+EXPECTED_CLASSES = {"1B", "2B", "3B", "HR", "BB", "SO", "OUT", "GDP", "SF"}
+LEGACY_MERGE_MAP = {"IBB": "BB", "HBP": "BB", "ROE": "1B"}
 
-df[TARGET] = df[TARGET].replace({"IBB": "BB", "HBP": "BB"})
+merge_applied = False
+unexpected = set(df[TARGET].unique()) - EXPECTED_CLASSES - {"UNK"}
+if unexpected:
+    print(f"⚠️  예상 외 라벨 발견: {sorted(unexpected)} — 하위 호환 병합 수행")
+    df[TARGET] = df[TARGET].replace(LEGACY_MERGE_MAP)
+    merge_applied = True
+    still_unexpected = set(df[TARGET].unique()) - EXPECTED_CLASSES - {"UNK"}
+    if still_unexpected:
+        raise ValueError(f"병합 후에도 미확인 라벨 존재: {sorted(still_unexpected)}")
+else:
+    print("✅ pa_result 9클래스 + UNK 검증 통과 (이미 병합된 데이터)")
+
 unk_cnt = (df[TARGET] == "UNK").sum()
 df = df[df[TARGET] != "UNK"].copy()
 print(f"UNK 제거: {unk_cnt}건")
@@ -213,7 +232,8 @@ print("=" * 60)
 model.save_model(str(OUTPUT_DIR / "catboost_pa_classifier.cbm"))
 
 meta = {
-    "version": "v4",
+    "version": "v5",
+    "data_path": str(DATA_PATH),
     "classes": list(classes),
     "cat_features": CAT_FEATURES,
     "num_features": NUM_FEATURES,
@@ -222,11 +242,13 @@ meta = {
     "test_accuracy":  float(acc),
     "test_log_loss":  float(ll),
     "test_macro_f1":  float(macro_f1),
-    "merge_map": {"IBB": "BB", "HBP": "BB"},
+    "merge_map": LEGACY_MERGE_MAP if merge_applied else {},
+    "merge_applied": merge_applied,
     "removed": ["UNK"],
     "note": (
         "3B/GDP/SF 유지 (WPA 상태 전이 다름). "
-        "IBB→BB, HBP→BB 병합. UNK 제거. sqrt 역빈도 가중치."
+        "all_pa_enriched.parquet은 IBB→BB, HBP→BB, ROE→1B 병합 완료 상태로 제공됨. "
+        "UNK 제거. sqrt 역빈도 가중치."
     ),
     # Monte Carlo / DQN 연동용 WPA 처리 정보
     "wpa_class_mapping": {

@@ -19,7 +19,7 @@ E(기대값)는 시뮬레이션, Std(변동성)는 prior_wpa_std(과거 기록)�
 여기서 재구성하는 "전반부/후반부 std"는 prior_wpa_std 자체가 아니라 그 예측력을
 독립적으로 검증하기 위한 것(같은 방식이 아니라 out-of-sample 검증).
 
-실행: python validate_wpa_std_predictive.py
+실행: python investigations/validate_wpa_std_predictive.py (레포 루트 기준)
 """
 
 import json

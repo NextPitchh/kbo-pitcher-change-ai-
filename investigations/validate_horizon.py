@@ -8,7 +8,7 @@ monte_carlo_simulate.py의 simulate()에 추가된 horizon_pa / horizon_innings
 모델이 비정상 확률을 출력하므로, 전부 all_pa_enriched.parquet의 실제
 pitcher_id/batter_id를 사용한다.
 
-실행: python validate_horizon.py
+실행: python investigations/validate_horizon.py (레포 루트 기준)
 요구사항: pip install catboost pandas numpy pyarrow matplotlib
 """
 
@@ -22,6 +22,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from monte_carlo_simulate import MonteCarloSimulator, GameState
 
 OUTPUT_DIR = Path("validation_output")

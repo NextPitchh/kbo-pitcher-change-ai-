@@ -16,7 +16,7 @@ Task2에서 확인된 값: skill_adj_relative std=0.00084 (R² CV=-0.0008, 사�
 prior_wpa_std 범위 0.03~0.35 수준. E 항이 거의 기여하지 못하므로 λ>0인 순간
 사실상 prior_wpa_std만으로 순위가 결정될 것으로 예상됨 — 아래에서 직접 검증한다.
 
-실행: python task3_utility_prototype.py
+실행: python investigations/task3_utility_prototype.py (레포 루트 기준)
 사전 조건: task2_skill_regression.py 실행 완료 (동일 회귀 로직을 재사용)
 """
 
@@ -30,6 +30,8 @@ from sklearn.linear_model import Ridge
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from monte_carlo_simulate import MonteCarloSimulator, GameState
 
 DATA_PATH = "data_analysis/results/all_pa_enriched.parquet"

@@ -12,7 +12,7 @@ prior_bb_rate/prior_so_rate 추가로 이 값이 커지는지가 핵심 검증 �
 실제 pitcher_throws를 붙인다(가짜 값 사용 금지 — 모델이 실제로 그 투수를
 어떻게 보는지 측정해야 하므로).
 
-실행: python validate_v6_differentiation.py
+실행: python investigations/validate_v6_differentiation.py (레포 루트 기준)
 사전 조건: catboost_feature_compare.py 실행 완료 (catboost_output/compare_v6/*)
 """
 
@@ -22,6 +22,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from monte_carlo_simulate import MonteCarloSimulator, GameState
 
 COMPARE_DIR = Path("catboost_output/compare_v6")

@@ -9,7 +9,7 @@ validate_horizon.py에서 horizon을 좁혀도 투수 간 격차(between/within)
 절대 placeholder ID를 쓰지 않는다 — all_pa_enriched.parquet의 실제
 pitcher_id/batter_id만 사용한다 (CLAUDE.md, HANDOFF_FULL.md 컨벤션).
 
-실행: python validate_pitcher_signal.py
+실행: python investigations/validate_pitcher_signal.py (레포 루트 기준)
 요구사항: pip install catboost pandas numpy pyarrow
 """
 
@@ -19,6 +19,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from monte_carlo_simulate import MonteCarloSimulator, GameState
 
 OUTPUT_DIR = Path("validation_output")

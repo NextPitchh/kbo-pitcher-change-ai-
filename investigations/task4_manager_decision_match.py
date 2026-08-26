@@ -14,7 +14,7 @@ U(p) = skill_adj(p) - λ * prior_wpa_std(p)  (Task3에서 확인했듯 E_sit은 
 투수" 프록시다 — 부상/콜업 등으로 실제 그 순간의 가용 로스터와는 다를 수 있음을
 전제로 해석해야 한다.
 
-실행: python task4_manager_decision_match.py
+실행: python investigations/task4_manager_decision_match.py (레포 루트 기준)
 """
 
 import json

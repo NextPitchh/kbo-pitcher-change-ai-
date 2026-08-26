@@ -10,7 +10,7 @@ E(기대값)는 시뮬레이션(상황 가치)으로, 투수별 편차는 별도
 
 prior_*는 이미 leakage-free로 검증된 값 그대로 사용 — 재계산 금지.
 
-실행: python task2_skill_regression.py
+실행: python investigations/task2_skill_regression.py (레포 루트 기준)
 """
 
 import json
@@ -23,6 +23,8 @@ from sklearn.model_selection import KFold, cross_val_score
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from monte_carlo_simulate import MonteCarloSimulator, GameState
 
 DATA_PATH = "data_analysis/results/all_pa_enriched.parquet"

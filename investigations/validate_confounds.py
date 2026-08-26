@@ -16,7 +16,7 @@ Task 5: Task1 조건과 동일한 상황·동일 투수 풀로 시뮬레이션 �
 절대 placeholder ID 사용 안 함. horizon 기본값(5PA/1이닝) 변경 안 함.
 모델 변경·데이터 증강 시도 안 함 — 순수 측정/비교.
 
-실행: python validate_confounds.py
+실행: python investigations/validate_confounds.py (레포 루트 기준)
 요구사항: pip install catboost pandas numpy pyarrow
 """
 
@@ -27,6 +27,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from monte_carlo_simulate import MonteCarloSimulator, GameState
 
 OUTPUT_DIR = Path("validation_output")

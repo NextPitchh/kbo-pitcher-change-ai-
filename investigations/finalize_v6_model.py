@@ -12,7 +12,7 @@ Task 2(성능 비교) + Task 3(투수 분화도)를 검토한 뒤 결정한 MODE
    v6 모델은 prior_*/pitcher_throws 피처가 필요하므로, 각 후보 투수에게
    실제 데이터에서 뽑은 그 투수의 최신 prior_* 스냅샷을 붙인다.
 
-실행: python finalize_v6_model.py
+실행: python investigations/finalize_v6_model.py (레포 루트 기준)
 """
 
 import json
@@ -23,6 +23,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from monte_carlo_simulate import MonteCarloSimulator, GameState
 
 # ──────────────────────────────────────────────

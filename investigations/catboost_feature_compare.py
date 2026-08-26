@@ -24,7 +24,7 @@ prior_*는 NaN을 유지한다 (CatBoost가 자체 결측 처리; 0이나 리그
 
 분할 방식(시간순 70/15/15)과 클래스 정의는 v5와 동일하게 유지 — 변경 금지.
 
-실행: python catboost_feature_compare.py
+실행: python investigations/catboost_feature_compare.py (레포 루트 기준)
 요구사항: pip install catboost scikit-learn pandas numpy pyarrow
 """
 

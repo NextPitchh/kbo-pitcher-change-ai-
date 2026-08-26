@@ -1,11 +1,15 @@
 """
 apply_pa_result() 상태 전이 단위 테스트
 
-실행: python test_state_transition.py
+실행: python tests/test_state_transition.py (레포 루트 기준)
 요구사항: (monte_carlo_simulate.py와 동일) pip install catboost pandas numpy pyarrow
 
 Task 2 요구사항: BB 8케이스 전수 검증 + 다른 클래스 주요 케이스.
 """
+
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from monte_carlo_simulate import apply_pa_result, GameState
 

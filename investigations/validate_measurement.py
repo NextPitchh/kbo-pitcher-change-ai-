@@ -21,7 +21,7 @@ Task 4: CatBoost 확률 std로부터 5타석 horizon에서 이론적으로 가�
 절대 placeholder ID를 쓰지 않는다. horizon 기본값(horizon_pa=5,
 horizon_innings=1.0)은 바꾸지 않는다 — Task1의 n_simulations 스윕만 변수다.
 
-실행: python validate_measurement.py
+실행: python investigations/validate_measurement.py (레포 루트 기준)
 요구사항: pip install catboost pandas numpy scipy pyarrow
 """
 
@@ -33,6 +33,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from monte_carlo_simulate import MonteCarloSimulator, GameState
 
 OUTPUT_DIR = Path("validation_output")

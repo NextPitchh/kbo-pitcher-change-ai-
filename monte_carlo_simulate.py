@@ -12,7 +12,7 @@ SF : 아웃 +1, 3루 주자 홈 득점 (희생플라이)
 import json
 import numpy as np
 import pandas as pd
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Optional
 from pathlib import Path
 
@@ -61,7 +61,21 @@ class GameState:
     pitcher_vs_batter_avg: float = 0.250
     batter_recent_avg: float = 0.250
 
+    # v6 피처(선택) — v5 모델은 model_meta.json의 all_features에 이 키들이
+    # 없으므로 무시된다(하위 호환). NaN 기본값은 CatBoost의 네이티브 결측
+    # 처리에 맡긴다(신인/첫등판 신호를 보존하기 위해 0으로 채우지 않음).
+    pitcher_throws: str = "UNK"
+    prior_bb_rate: float = float("nan")
+    prior_so_rate: float = float("nan")
+    prior_hr_rate: float = float("nan")
+    prior_wpa_std: float = float("nan")
+    prior_n_apps: float = float("nan")
+    prior_avg_pa_per_app: float = float("nan")
+
     def to_feature_row(self) -> dict:
+        pt = str(self.pitcher_throws)
+        bh = str(self.batter_hit_type)
+        handedness_matchup = "UNK" if pt == "UNK" or bh in ("UNK", "") else f"{pt}_{bh}"
         return {
             "inning":                self.inning,
             "score_diff_attacker":   self.score_diff_attacker,
@@ -70,11 +84,19 @@ class GameState:
             "inning_pitch_count":    self.inning_pitch_count,
             "pitcher_vs_batter_avg": self.pitcher_vs_batter_avg,
             "batter_recent_avg":     self.batter_recent_avg,
+            "prior_bb_rate":         self.prior_bb_rate,
+            "prior_so_rate":         self.prior_so_rate,
+            "prior_hr_rate":         self.prior_hr_rate,
+            "prior_wpa_std":         self.prior_wpa_std,
+            "prior_n_apps":          self.prior_n_apps,
+            "prior_avg_pa_per_app":  self.prior_avg_pa_per_app,
             "half":                  str(self.half),
             "base_state":            str(self.base_state),
-            "batter_hit_type":       str(self.batter_hit_type),
+            "batter_hit_type":       bh,
             "pitcher_id":            str(self.pitcher_id),
             "batter_id":             str(self.batter_id),
+            "pitcher_throws":        pt,
+            "handedness_matchup":    handedness_matchup,
         }
 
 
@@ -176,19 +198,15 @@ def apply_pa_result(
 
     inning_ended = new_out >= 3
 
-    next_state = GameState(
-        inning=state.inning,
-        half=state.half,
+    # dataclasses.replace: 명시하지 않은 필드(투수 관련 v6 피처 포함)는 state에서
+    # 그대로 이어받는다. 필드를 여기서 하나하나 나열하면 새 피처 추가 때마다
+    # 누락되어 다음 타석에서 기본값(NaN/UNK)으로 리셋되는 버그가 생기기 쉽다.
+    next_state = replace(
+        state,
         out_count=0 if inning_ended else new_out,
         base_state="0" if inning_ended else _s(new_bits),
-        score_diff_attacker=state.score_diff_attacker,
         total_pitch_count=state.total_pitch_count + 1,
         inning_pitch_count=0 if inning_ended else state.inning_pitch_count + 1,
-        pitcher_id=state.pitcher_id,
-        batter_id=state.batter_id,
-        batter_hit_type=state.batter_hit_type,
-        pitcher_vs_batter_avg=state.pitcher_vs_batter_avg,
-        batter_recent_avg=state.batter_recent_avg,
     )
     return next_state, runs, inning_ended
 
@@ -207,7 +225,8 @@ def next_half_inning(state: GameState, abs_score_diff: int) -> GameState:
         new_inning = state.inning + 1
         new_sda    = -abs_score_diff         # 원정팀 공격: 부호 반전
 
-    return GameState(
+    return replace(
+        state,
         inning=new_inning,
         half=new_half,
         out_count=0,
@@ -215,11 +234,6 @@ def next_half_inning(state: GameState, abs_score_diff: int) -> GameState:
         score_diff_attacker=new_sda,
         total_pitch_count=0,
         inning_pitch_count=0,
-        pitcher_id=state.pitcher_id,
-        batter_id=state.batter_id,
-        batter_hit_type=state.batter_hit_type,
-        pitcher_vs_batter_avg=state.pitcher_vs_batter_avg,
-        batter_recent_avg=state.batter_recent_avg,
     )
 
 
@@ -233,6 +247,14 @@ def to_home_perspective(we_attacker: float, half: str) -> float:
     (HANDOFF_FULL.md §8-2 telescoping 검증 경고와 동일한 함정)
     """
     return we_attacker if half == "bot" else 1.0 - we_attacker
+
+
+# PA 결과별 아웃 증가량. horizon_innings 추적용 (apply_pa_result의 out_count
+# 리셋 로직과 무관하게, 이번 등판 구간에서 "새로 기록한" 아웃 수만 센다)
+PA_OUTS_ADDED = {
+    "1B": 0, "2B": 0, "3B": 0, "HR": 0, "BB": 0,
+    "SO": 1, "OUT": 1, "SF": 1, "GDP": 2,
+}
 
 
 # ──────────────────────────────────────────────
@@ -269,19 +291,34 @@ class MonteCarloSimulator:
         idx = self.rng.choice(len(self.classes), p=proba)
         return self.classes[idx]
 
-    def simulate(self, initial_state: GameState) -> dict:
-        """Batch(배치) 예측을 적용하여 n회 시뮬레이션을 동시에 진행"""
+    def simulate(
+        self,
+        initial_state: GameState,
+        horizon_pa: Optional[int] = 5,
+        horizon_innings: Optional[float] = 1.0,
+    ) -> dict:
+        """
+        Batch(배치) 예측을 적용하여 n회 시뮬레이션을 동시에 진행.
+
+        horizon_pa / horizon_innings: 측정 구간을 "이번 등판"으로 제한한다.
+        먼저 도달하는 조건에서 종료 (자연 종료가 항상 최우선):
+          1) 경기 자연 종료 (끝내기 / 9회+ 말 정규 패배 / 연장 한도 초과)
+          2) horizon_pa 타석 소화
+          3) horizon_innings 이닝(아웃 3개=1이닝) 소화
+        horizon_pa=None and horizon_innings=None → 기존(경기 끝까지) 동작.
+
+        WE는 "그 시점 공격팀"의 승률이라 반이닝마다 관점이 뒤집힌다. horizon
+        종료를 포함한 모든 종료 경로에서 홈팀 관점(to_home_perspective)으로
+        통일해서 계산하고, 반환 직전에만 초기 공격팀 관점으로 되돌린다.
+        (관점 불일치 시 telescoping이 깨짐 — HANDOFF_FULL.md §8-2 참고)
+        """
         n = self.n_simulations
-        
+
         # 1. 200개의 평행우주(초기 상태) 리스트 생성
         # active_indices: 아직 경기가 끝나지 않은 평행우주의 인덱스 추적
         active_indices = list(range(n))
         states = [GameState(**initial_state.__dict__) for _ in range(n)]
 
-        # WE는 "그 시점 공격팀"의 승률이라 반이닝마다 관점이 뒤집힌다.
-        # 시뮬레이션 내내 홈팀 관점(to_home_perspective)으로 통일해서 계산하고,
-        # 반환 직전에만 초기 공격팀 관점으로 되돌린다. (관점 불일치 시 telescoping
-        # 이 깨짐 — HANDOFF_FULL.md §8-2 참고)
         we_start_raw  = get_we_with_boundary(
             inning=initial_state.inning, half=initial_state.half,
             score_diff=initial_state.score_diff_attacker,
@@ -296,6 +333,11 @@ class MonteCarloSimulator:
         # 각 평행우주별 최종 WE(홈팀 관점) 결과 저장용. None = 아직 미종료.
         we_ends_home = [None] * n
         end_path = [None] * n  # 진단용: 종료 경로 기록
+
+        # horizon 추적용 — 평행우주마다 진행 속도가 다르므로 개별 카운터 필수
+        pa_count = [0] * n
+        outs_recorded = [0] * n
+        horizon_outs_needed = None if horizon_innings is None else horizon_innings * 3
 
         loop_count = 0
         # 2. 살아있는 시뮬레이션이 있는 동안 타석을 동시 진행
@@ -329,8 +371,12 @@ class MonteCarloSimulator:
                 else:
                     abs_diffs[idx] -= runs
 
+                pa_count[idx] += 1
+                outs_recorded[idx] += PA_OUTS_ADDED[pa_result]
+
                 is_done = False
 
+                # 1) 자연 종료 조건 — 항상 최우선 (경기가 실제로 끝났으면 horizon 무의미)
                 if inning_ended:
                     if state.inning >= 9 and state.half == "bot" and abs_diffs[idx] > 0:
                         # 끝내기: 홈팀이 말 공격 도중 역전 → 홈팀 승 확정
@@ -342,16 +388,32 @@ class MonteCarloSimulator:
                         we_ends_home[idx] = 0.0
                         end_path[idx] = "regulation_away_win"
                         is_done = True
-                    else:
-                        # 동점이거나 9회 미만 → 다음 반이닝으로 (연장 포함)
-                        next_state = next_half_inning(state, abs_diffs[idx])
-                        if next_state.inning > self.max_innings:
-                            is_done = True
-                            end_path[idx] = "max_innings_cap"
 
-                if is_done:
-                    # 경기가 종료된 평행우주는 최종 WE 계산 후 active 목록에서 제외됨
-                    if we_ends_home[idx] is None:
+                # 2) horizon 종료 조건 — 자연 종료가 아직 아닐 때만 확인
+                if not is_done:
+                    hit_pa = horizon_pa is not None and pa_count[idx] >= horizon_pa
+                    hit_innings = (horizon_outs_needed is not None
+                                    and outs_recorded[idx] >= horizon_outs_needed)
+                    if hit_pa or hit_innings:
+                        # apply_pa_result는 half/score_diff_attacker를 바꾸지 않으므로
+                        # next_state.half == state.half — 관점은 항상 일관되게 유지된다.
+                        we_raw = get_we_with_boundary(
+                            inning=next_state.inning,
+                            half=next_state.half,
+                            score_diff=np.clip(next_state.score_diff_attacker, -10, 10),
+                            out_count=min(next_state.out_count, 2),
+                            base_state=next_state.base_state,
+                        )
+                        we_ends_home[idx] = to_home_perspective(we_raw, next_state.half)
+                        end_path[idx] = "horizon_pa" if hit_pa else "horizon_innings"
+                        is_done = True
+
+                # 3) 둘 다 아니면 정상 진행 — 이닝이 끝났으면 반이닝 전환(연장 한도 포함)
+                if not is_done and inning_ended:
+                    next_state = next_half_inning(state, abs_diffs[idx])
+                    if next_state.inning > self.max_innings:
+                        is_done = True
+                        end_path[idx] = "max_innings_cap"
                         we_raw = get_we_with_boundary(
                             inning=min(next_state.inning, self.max_innings),
                             half=next_state.half,
@@ -360,6 +422,9 @@ class MonteCarloSimulator:
                             base_state=next_state.base_state,
                         )
                         we_ends_home[idx] = to_home_perspective(we_raw, next_state.half)
+
+                if is_done:
+                    pass  # 종료된 평행우주는 active 목록에서 제외됨
                 else:
                     states[idx] = next_state
                     next_active.append(idx) # 경기가 안 끝났으면 다음 타석 진행을 위해 추가
@@ -400,7 +465,9 @@ class MonteCarloSimulator:
                         float(np.percentile(wpa_samples, 97.5))),
             "wpa_dist": wpa_samples.tolist(),
             "n_sim":   self.n_simulations,
-            "end_path_counts": path_counts,
+            "termination_reason": path_counts,
+            "avg_pa_simulated": float(np.mean(pa_count)),
+            "avg_outs_recorded": float(np.mean(outs_recorded)),
         }
 
     def compare_pitchers(
@@ -408,10 +475,21 @@ class MonteCarloSimulator:
         base_state: GameState,
         pitcher_candidates: list[dict],
         lambda_risk: float = 0.5,
+        horizon_pa: Optional[int] = 5,
+        horizon_innings: Optional[float] = 1.0,
+        risk_measure: str = "std",   # "std" | "var"
     ) -> pd.DataFrame:
         """
-        투수 후보별 시뮬레이션 → 마코위츠 효용 U 비교.
+        투수 후보별 시뮬레이션(기본: 이번 등판 구간, horizon_pa=5/horizon_innings=1.0)
+        → 마코위츠 효용 U 비교.
+
+        risk_measure="std"(기본): U = -E - λ·Std. E와 Std가 같은 WPA 단위라
+        λ을 "위험 1단위당 감내 가능한 기대값"으로 직접 해석할 수 있다.
+        risk_measure="var": U = -E - λ·Var (기존 방식, 단위 불일치 주의).
         """
+        if risk_measure not in ("std", "var"):
+            raise ValueError(f"risk_measure는 'std' 또는 'var'만 허용: {risk_measure!r}")
+
         rows = []
         for c in pitcher_candidates:
             state = GameState(
@@ -425,17 +503,19 @@ class MonteCarloSimulator:
                 pitcher_vs_batter_avg=c.get("pitcher_vs_batter_avg", 0.250),
                 batter_recent_avg=base_state.batter_recent_avg,
             )
-            r = self.simulate(state)
+            r = self.simulate(state, horizon_pa=horizon_pa, horizon_innings=horizon_innings)
 
             e_wpa_p  = -r["e_wpa"]          # 투수 관점 부호 반전
             var_wpa  =  r["var_wpa"]         # 분산은 부호 무관
-            utility  = e_wpa_p - lambda_risk * var_wpa
+            std_wpa  =  r["std_wpa"]
+            risk     = std_wpa if risk_measure == "std" else var_wpa
+            utility  = e_wpa_p - lambda_risk * risk
 
             rows.append({
                 "pitcher_id": c["pitcher_id"],
                 "E[WPA]":     round(e_wpa_p, 5),
+                "Std[WPA]":   round(std_wpa, 5),
                 "Var[WPA]":   round(var_wpa, 6),
-                "Std[WPA]":   round(r["std_wpa"], 5),
                 f"U(λ={lambda_risk})": round(utility, 5),
                 "CI_95":      f"[{r['ci_95'][0]:+.3f}, {r['ci_95'][1]:+.3f}]",
             })

@@ -1,0 +1,15 @@
+{
+  "model_variant": "C_hand",
+  "model_path": "catboost_output/catboost_pa_classifier_v6.cbm",
+  "n_pitchers_pool": 218,
+  "n_situations": 15,
+  "sim_between": 0.0032878066429662886,
+  "sim_within": 0.08502712530839973,
+  "sim_ratio": 0.038667738454536346,
+  "actual_ratio_condition_controlled": 0.19975808054421468,
+  "v5_sim_ratio_reference": 0.0488,
+  "improvement_factor_vs_v5": 0.7923716896421382,
+  "goal_0.10_met": false,
+  "pct_of_actual": 19.35728374501355,
+  "elapsed_sec": 526.2370700836182
+}

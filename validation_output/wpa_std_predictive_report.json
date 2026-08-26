@@ -1,0 +1,5206 @@
+{
+  "1-1_full_population": {
+    "label": "전체 모집단",
+    "min_appearances": 30,
+    "n_pitchers": 424,
+    "pearson_r": 0.5905846778254009,
+    "pearson_p": 3.243093972833836e-41,
+    "spearman_r": 0.5910221109720484,
+    "spearman_p": 2.7408199902653095e-41,
+    "std_first_half_stats": {
+      "count": 424.0,
+      "mean": 0.16594973573512803,
+      "std": 0.06587086213468323,
+      "min": 0.026959439970236237,
+      "25%": 0.11405841056117377,
+      "50%": 0.1690407232990675,
+      "75%": 0.2197484730236654,
+      "max": 0.32460394549138094
+    },
+    "std_second_half_stats": {
+      "count": 424.0,
+      "mean": 0.15654742457101828,
+      "std": 0.05939028396293243,
+      "min": 0.03967153743369345,
+      "25%": 0.11219558206812746,
+      "50%": 0.14773297684657466,
+      "75%": 0.20500747781258677,
+      "max": 0.31139763081488614
+    },
+    "predictive": true,
+    "per_pitcher": [
+      {
+        "pitcher_id": "50030",
+        "n_total": 101,
+        "n_first": 50,
+        "n_second": 51,
+        "std_first_half": 0.22974302969595733,
+        "std_second_half": 0.23992831415106583
+      },
+      {
+        "pitcher_id": "50036",
+        "n_total": 59,
+        "n_first": 29,
+        "n_second": 30,
+        "std_first_half": 0.06812572139989534,
+        "std_second_half": 0.07946879538318904
+      },
+      {
+        "pitcher_id": "50040",
+        "n_total": 79,
+        "n_first": 39,
+        "n_second": 40,
+        "std_first_half": 0.21777324441212095,
+        "std_second_half": 0.2672427324453778
+      },
+      {
+        "pitcher_id": "50106",
+        "n_total": 163,
+        "n_first": 81,
+        "n_second": 82,
+        "std_first_half": 0.13788297108518432,
+        "std_second_half": 0.22722949180332477
+      },
+      {
+        "pitcher_id": "50109",
+        "n_total": 34,
+        "n_first": 17,
+        "n_second": 17,
+        "std_first_half": 0.12261598463291806,
+        "std_second_half": 0.06001887341029632
+      },
+      {
+        "pitcher_id": "50126",
+        "n_total": 65,
+        "n_first": 32,
+        "n_second": 33,
+        "std_first_half": 0.2264933634780427,
+        "std_second_half": 0.14682530389101672
+      },
+      {
+        "pitcher_id": "50157",
+        "n_total": 92,
+        "n_first": 46,
+        "n_second": 46,
+        "std_first_half": 0.2314675499736869,
+        "std_second_half": 0.22469856492310403
+      },
+      {
+        "pitcher_id": "50203",
+        "n_total": 55,
+        "n_first": 27,
+        "n_second": 28,
+        "std_first_half": 0.049538802455428285,
+        "std_second_half": 0.0717147402439273
+      },
+      {
+        "pitcher_id": "50360",
+        "n_total": 117,
+        "n_first": 58,
+        "n_second": 59,
+        "std_first_half": 0.186770286491352,
+        "std_second_half": 0.1391190520538435
+      },
+      {
+        "pitcher_id": "50393",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.026959439970236237,
+        "std_second_half": 0.10351977944741819
+      },
+      {
+        "pitcher_id": "50404",
+        "n_total": 97,
+        "n_first": 48,
+        "n_second": 49,
+        "std_first_half": 0.2592792279713176,
+        "std_second_half": 0.2418055862446433
+      },
+      {
+        "pitcher_id": "50441",
+        "n_total": 52,
+        "n_first": 26,
+        "n_second": 26,
+        "std_first_half": 0.21804267842645988,
+        "std_second_half": 0.21897613937455515
+      },
+      {
+        "pitcher_id": "50464",
+        "n_total": 102,
+        "n_first": 51,
+        "n_second": 51,
+        "std_first_half": 0.24943077824770318,
+        "std_second_half": 0.11839440132331379
+      },
+      {
+        "pitcher_id": "50556",
+        "n_total": 259,
+        "n_first": 129,
+        "n_second": 130,
+        "std_first_half": 0.15630113322725006,
+        "std_second_half": 0.16280674433753936
+      },
+      {
+        "pitcher_id": "50558",
+        "n_total": 78,
+        "n_first": 39,
+        "n_second": 39,
+        "std_first_half": 0.20805293890735888,
+        "std_second_half": 0.22349908370808494
+      },
+      {
+        "pitcher_id": "50636",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.17822594174116124,
+        "std_second_half": 0.24362030684294358
+      },
+      {
+        "pitcher_id": "50662",
+        "n_total": 314,
+        "n_first": 157,
+        "n_second": 157,
+        "std_first_half": 0.21168353257400144,
+        "std_second_half": 0.2048705900940619
+      },
+      {
+        "pitcher_id": "50705",
+        "n_total": 204,
+        "n_first": 102,
+        "n_second": 102,
+        "std_first_half": 0.12840446519949497,
+        "std_second_half": 0.1844446613890712
+      },
+      {
+        "pitcher_id": "50720",
+        "n_total": 41,
+        "n_first": 20,
+        "n_second": 21,
+        "std_first_half": 0.21793816836493593,
+        "std_second_half": 0.21889003952843972
+      },
+      {
+        "pitcher_id": "50726",
+        "n_total": 69,
+        "n_first": 34,
+        "n_second": 35,
+        "std_first_half": 0.16893962195635395,
+        "std_second_half": 0.18104212362102381
+      },
+      {
+        "pitcher_id": "50812",
+        "n_total": 64,
+        "n_first": 32,
+        "n_second": 32,
+        "std_first_half": 0.103143456315198,
+        "std_second_half": 0.15566190272892563
+      },
+      {
+        "pitcher_id": "50859",
+        "n_total": 135,
+        "n_first": 67,
+        "n_second": 68,
+        "std_first_half": 0.2603431961850824,
+        "std_second_half": 0.23241107775281633
+      },
+      {
+        "pitcher_id": "51097",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.1003317359405393,
+        "std_second_half": 0.05300917869874794
+      },
+      {
+        "pitcher_id": "51111",
+        "n_total": 32,
+        "n_first": 16,
+        "n_second": 16,
+        "std_first_half": 0.2612385399200955,
+        "std_second_half": 0.23336800281868833
+      },
+      {
+        "pitcher_id": "51230",
+        "n_total": 38,
+        "n_first": 19,
+        "n_second": 19,
+        "std_first_half": 0.19002324130706252,
+        "std_second_half": 0.2444956595902666
+      },
+      {
+        "pitcher_id": "51264",
+        "n_total": 125,
+        "n_first": 62,
+        "n_second": 63,
+        "std_first_half": 0.18315098791256199,
+        "std_second_half": 0.23077965619174834
+      },
+      {
+        "pitcher_id": "51301",
+        "n_total": 119,
+        "n_first": 59,
+        "n_second": 60,
+        "std_first_half": 0.11419984252497635,
+        "std_second_half": 0.1284383150653891
+      },
+      {
+        "pitcher_id": "51359",
+        "n_total": 52,
+        "n_first": 26,
+        "n_second": 26,
+        "std_first_half": 0.1504424529001551,
+        "std_second_half": 0.22929220629010616
+      },
+      {
+        "pitcher_id": "51393",
+        "n_total": 34,
+        "n_first": 17,
+        "n_second": 17,
+        "std_first_half": 0.07016272774037924,
+        "std_second_half": 0.12594219721936398
+      },
+      {
+        "pitcher_id": "51454",
+        "n_total": 180,
+        "n_first": 90,
+        "n_second": 90,
+        "std_first_half": 0.1621987720152604,
+        "std_second_half": 0.2444757582017379
+      },
+      {
+        "pitcher_id": "51516",
+        "n_total": 128,
+        "n_first": 64,
+        "n_second": 64,
+        "std_first_half": 0.23227171959519805,
+        "std_second_half": 0.19797576150184923
+      },
+      {
+        "pitcher_id": "51567",
+        "n_total": 36,
+        "n_first": 18,
+        "n_second": 18,
+        "std_first_half": 0.2523431682266306,
+        "std_second_half": 0.31139763081488614
+      },
+      {
+        "pitcher_id": "51594",
+        "n_total": 81,
+        "n_first": 40,
+        "n_second": 41,
+        "std_first_half": 0.11272166125757137,
+        "std_second_half": 0.07994466741166027
+      },
+      {
+        "pitcher_id": "51648",
+        "n_total": 78,
+        "n_first": 39,
+        "n_second": 39,
+        "std_first_half": 0.21332246250558493,
+        "std_second_half": 0.20817438659971435
+      },
+      {
+        "pitcher_id": "51713",
+        "n_total": 92,
+        "n_first": 46,
+        "n_second": 46,
+        "std_first_half": 0.04652904299238745,
+        "std_second_half": 0.10034198226962183
+      },
+      {
+        "pitcher_id": "51715",
+        "n_total": 82,
+        "n_first": 41,
+        "n_second": 41,
+        "std_first_half": 0.21692259493912094,
+        "std_second_half": 0.1912418689487853
+      },
+      {
+        "pitcher_id": "51722",
+        "n_total": 30,
+        "n_first": 15,
+        "n_second": 15,
+        "std_first_half": 0.23360461228527227,
+        "std_second_half": 0.26986682893075775
+      },
+      {
+        "pitcher_id": "51863",
+        "n_total": 48,
+        "n_first": 24,
+        "n_second": 24,
+        "std_first_half": 0.16559949147291173,
+        "std_second_half": 0.2686734873811667
+      },
+      {
+        "pitcher_id": "51867",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.13960242626222744,
+        "std_second_half": 0.17297192416605536
+      },
+      {
+        "pitcher_id": "51895",
+        "n_total": 117,
+        "n_first": 58,
+        "n_second": 59,
+        "std_first_half": 0.1600764083756607,
+        "std_second_half": 0.12762757824550913
+      },
+      {
+        "pitcher_id": "51897",
+        "n_total": 142,
+        "n_first": 71,
+        "n_second": 71,
+        "std_first_half": 0.1966295985966141,
+        "std_second_half": 0.16687305504183103
+      },
+      {
+        "pitcher_id": "51948",
+        "n_total": 40,
+        "n_first": 20,
+        "n_second": 20,
+        "std_first_half": 0.21128812175495534,
+        "std_second_half": 0.2174453542211661
+      },
+      {
+        "pitcher_id": "51967",
+        "n_total": 30,
+        "n_first": 15,
+        "n_second": 15,
+        "std_first_half": 0.20797893952444868,
+        "std_second_half": 0.2606153512545334
+      },
+      {
+        "pitcher_id": "51994",
+        "n_total": 105,
+        "n_first": 52,
+        "n_second": 53,
+        "std_first_half": 0.11145272923986688,
+        "std_second_half": 0.08963090665902912
+      },
+      {
+        "pitcher_id": "52043",
+        "n_total": 62,
+        "n_first": 31,
+        "n_second": 31,
+        "std_first_half": 0.21900213487691203,
+        "std_second_half": 0.20325768148004927
+      },
+      {
+        "pitcher_id": "52060",
+        "n_total": 246,
+        "n_first": 123,
+        "n_second": 123,
+        "std_first_half": 0.14698562239458562,
+        "std_second_half": 0.1933025426220247
+      },
+      {
+        "pitcher_id": "52145",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.205472904297829,
+        "std_second_half": 0.20378951788226055
+      },
+      {
+        "pitcher_id": "52204",
+        "n_total": 141,
+        "n_first": 70,
+        "n_second": 71,
+        "std_first_half": 0.09723220782545687,
+        "std_second_half": 0.09321028345440163
+      },
+      {
+        "pitcher_id": "52206",
+        "n_total": 117,
+        "n_first": 58,
+        "n_second": 59,
+        "std_first_half": 0.11333902093304718,
+        "std_second_half": 0.14540022143597117
+      },
+      {
+        "pitcher_id": "52257",
+        "n_total": 34,
+        "n_first": 17,
+        "n_second": 17,
+        "std_first_half": 0.1919713101362835,
+        "std_second_half": 0.2080763622288278
+      },
+      {
+        "pitcher_id": "52330",
+        "n_total": 107,
+        "n_first": 53,
+        "n_second": 54,
+        "std_first_half": 0.1938775348080989,
+        "std_second_half": 0.20333222668702527
+      },
+      {
+        "pitcher_id": "52395",
+        "n_total": 68,
+        "n_first": 34,
+        "n_second": 34,
+        "std_first_half": 0.09568550900342333,
+        "std_second_half": 0.07635911146512453
+      },
+      {
+        "pitcher_id": "52397",
+        "n_total": 76,
+        "n_first": 38,
+        "n_second": 38,
+        "std_first_half": 0.11804194294142013,
+        "std_second_half": 0.16758860207307644
+      },
+      {
+        "pitcher_id": "52457",
+        "n_total": 43,
+        "n_first": 21,
+        "n_second": 22,
+        "std_first_half": 0.17305159222448246,
+        "std_second_half": 0.24025828341374153
+      },
+      {
+        "pitcher_id": "52528",
+        "n_total": 85,
+        "n_first": 42,
+        "n_second": 43,
+        "std_first_half": 0.24522438948386674,
+        "std_second_half": 0.216488657282557
+      },
+      {
+        "pitcher_id": "52530",
+        "n_total": 63,
+        "n_first": 31,
+        "n_second": 32,
+        "std_first_half": 0.15464974387165953,
+        "std_second_half": 0.2512847862243204
+      },
+      {
+        "pitcher_id": "52558",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.04200247035996656,
+        "std_second_half": 0.06755338748588934
+      },
+      {
+        "pitcher_id": "52639",
+        "n_total": 182,
+        "n_first": 91,
+        "n_second": 91,
+        "std_first_half": 0.14558554217907455,
+        "std_second_half": 0.09319512832999609
+      },
+      {
+        "pitcher_id": "52641",
+        "n_total": 50,
+        "n_first": 25,
+        "n_second": 25,
+        "std_first_half": 0.2267156869480657,
+        "std_second_half": 0.19545699654911305
+      },
+      {
+        "pitcher_id": "52701",
+        "n_total": 68,
+        "n_first": 34,
+        "n_second": 34,
+        "std_first_half": 0.26219447205551566,
+        "std_second_half": 0.24684039576742767
+      },
+      {
+        "pitcher_id": "52720",
+        "n_total": 46,
+        "n_first": 23,
+        "n_second": 23,
+        "std_first_half": 0.17147952795568666,
+        "std_second_half": 0.22464698206604822
+      },
+      {
+        "pitcher_id": "52809",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.12877417359838775,
+        "std_second_half": 0.1485589539287271
+      },
+      {
+        "pitcher_id": "52903",
+        "n_total": 57,
+        "n_first": 28,
+        "n_second": 29,
+        "std_first_half": 0.05917382026953307,
+        "std_second_half": 0.12348869137112001
+      },
+      {
+        "pitcher_id": "53139",
+        "n_total": 127,
+        "n_first": 63,
+        "n_second": 64,
+        "std_first_half": 0.15774457801940847,
+        "std_second_half": 0.11499177198125045
+      },
+      {
+        "pitcher_id": "53301",
+        "n_total": 67,
+        "n_first": 33,
+        "n_second": 34,
+        "std_first_half": 0.15961112521567422,
+        "std_second_half": 0.12455067549591375
+      },
+      {
+        "pitcher_id": "53375",
+        "n_total": 81,
+        "n_first": 40,
+        "n_second": 41,
+        "std_first_half": 0.21570132326291325,
+        "std_second_half": 0.23407332292050878
+      },
+      {
+        "pitcher_id": "53455",
+        "n_total": 76,
+        "n_first": 38,
+        "n_second": 38,
+        "std_first_half": 0.19067506134387935,
+        "std_second_half": 0.20479089620007424
+      },
+      {
+        "pitcher_id": "53546",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.2142758894468661,
+        "std_second_half": 0.180564258134852
+      },
+      {
+        "pitcher_id": "53609",
+        "n_total": 94,
+        "n_first": 47,
+        "n_second": 47,
+        "std_first_half": 0.11261467970315348,
+        "std_second_half": 0.1524195498734538
+      },
+      {
+        "pitcher_id": "53613",
+        "n_total": 47,
+        "n_first": 23,
+        "n_second": 24,
+        "std_first_half": 0.18480502424492146,
+        "std_second_half": 0.1642629367409927
+      },
+      {
+        "pitcher_id": "53714",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.1822978299638364,
+        "std_second_half": 0.2122588478475828
+      },
+      {
+        "pitcher_id": "53754",
+        "n_total": 121,
+        "n_first": 60,
+        "n_second": 61,
+        "std_first_half": 0.12191554511727755,
+        "std_second_half": 0.206454840323244
+      },
+      {
+        "pitcher_id": "53825",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.18141060202131318,
+        "std_second_half": 0.17406114168806205
+      },
+      {
+        "pitcher_id": "53892",
+        "n_total": 176,
+        "n_first": 88,
+        "n_second": 88,
+        "std_first_half": 0.10009071838587753,
+        "std_second_half": 0.15649467801701406
+      },
+      {
+        "pitcher_id": "53898",
+        "n_total": 58,
+        "n_first": 29,
+        "n_second": 29,
+        "std_first_half": 0.19042097274094022,
+        "std_second_half": 0.23083528050135213
+      },
+      {
+        "pitcher_id": "53996",
+        "n_total": 49,
+        "n_first": 24,
+        "n_second": 25,
+        "std_first_half": 0.12736799032425347,
+        "std_second_half": 0.1367067024691913
+      },
+      {
+        "pitcher_id": "54063",
+        "n_total": 71,
+        "n_first": 35,
+        "n_second": 36,
+        "std_first_half": 0.2252122637879745,
+        "std_second_half": 0.1080011647497451
+      },
+      {
+        "pitcher_id": "54263",
+        "n_total": 123,
+        "n_first": 61,
+        "n_second": 62,
+        "std_first_half": 0.19234790599299675,
+        "std_second_half": 0.20541814096816138
+      },
+      {
+        "pitcher_id": "54319",
+        "n_total": 36,
+        "n_first": 18,
+        "n_second": 18,
+        "std_first_half": 0.24700207720541711,
+        "std_second_half": 0.17856258686093957
+      },
+      {
+        "pitcher_id": "54354",
+        "n_total": 54,
+        "n_first": 27,
+        "n_second": 27,
+        "std_first_half": 0.23255345784353706,
+        "std_second_half": 0.19438143637258112
+      },
+      {
+        "pitcher_id": "54362",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.2044104619351206,
+        "std_second_half": 0.14936662848803392
+      },
+      {
+        "pitcher_id": "54368",
+        "n_total": 51,
+        "n_first": 25,
+        "n_second": 26,
+        "std_first_half": 0.08378121308901339,
+        "std_second_half": 0.22332567048181867
+      },
+      {
+        "pitcher_id": "54404",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.07631094478590636,
+        "std_second_half": 0.08192075135717428
+      },
+      {
+        "pitcher_id": "54537",
+        "n_total": 96,
+        "n_first": 48,
+        "n_second": 48,
+        "std_first_half": 0.10917354433460418,
+        "std_second_half": 0.06554604165872764
+      },
+      {
+        "pitcher_id": "54561",
+        "n_total": 36,
+        "n_first": 18,
+        "n_second": 18,
+        "std_first_half": 0.20823435295751272,
+        "std_second_half": 0.19105441053780386
+      },
+      {
+        "pitcher_id": "54610",
+        "n_total": 45,
+        "n_first": 22,
+        "n_second": 23,
+        "std_first_half": 0.1299567173201269,
+        "std_second_half": 0.10730997314307918
+      },
+      {
+        "pitcher_id": "54640",
+        "n_total": 46,
+        "n_first": 23,
+        "n_second": 23,
+        "std_first_half": 0.2267603088025357,
+        "std_second_half": 0.2730373504904518
+      },
+      {
+        "pitcher_id": "54729",
+        "n_total": 56,
+        "n_first": 28,
+        "n_second": 28,
+        "std_first_half": 0.19786549693578587,
+        "std_second_half": 0.20819129979782522
+      },
+      {
+        "pitcher_id": "54755",
+        "n_total": 38,
+        "n_first": 19,
+        "n_second": 19,
+        "std_first_half": 0.24663497084766633,
+        "std_second_half": 0.2615913687894655
+      },
+      {
+        "pitcher_id": "54768",
+        "n_total": 81,
+        "n_first": 40,
+        "n_second": 41,
+        "std_first_half": 0.18735581250863084,
+        "std_second_half": 0.12652089688095391
+      },
+      {
+        "pitcher_id": "54833",
+        "n_total": 49,
+        "n_first": 24,
+        "n_second": 25,
+        "std_first_half": 0.20647082271850903,
+        "std_second_half": 0.1978376665139039
+      },
+      {
+        "pitcher_id": "54904",
+        "n_total": 54,
+        "n_first": 27,
+        "n_second": 27,
+        "std_first_half": 0.13201018222944289,
+        "std_second_half": 0.12730519165910642
+      },
+      {
+        "pitcher_id": "55167",
+        "n_total": 65,
+        "n_first": 32,
+        "n_second": 33,
+        "std_first_half": 0.11776892590693945,
+        "std_second_half": 0.10467219076210925
+      },
+      {
+        "pitcher_id": "55455",
+        "n_total": 65,
+        "n_first": 32,
+        "n_second": 33,
+        "std_first_half": 0.13747408273889009,
+        "std_second_half": 0.14915699945925903
+      },
+      {
+        "pitcher_id": "55743",
+        "n_total": 45,
+        "n_first": 22,
+        "n_second": 23,
+        "std_first_half": 0.05515230780554023,
+        "std_second_half": 0.10654424497063948
+      },
+      {
+        "pitcher_id": "55912",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.1809030636898694,
+        "std_second_half": 0.14216378465230398
+      },
+      {
+        "pitcher_id": "60140",
+        "n_total": 260,
+        "n_first": 130,
+        "n_second": 130,
+        "std_first_half": 0.16108272545333735,
+        "std_second_half": 0.09990444907655116
+      },
+      {
+        "pitcher_id": "60146",
+        "n_total": 410,
+        "n_first": 205,
+        "n_second": 205,
+        "std_first_half": 0.1011771662539826,
+        "std_second_half": 0.11112590678978392
+      },
+      {
+        "pitcher_id": "60181",
+        "n_total": 172,
+        "n_first": 86,
+        "n_second": 86,
+        "std_first_half": 0.14104896080820742,
+        "std_second_half": 0.19056184891696948
+      },
+      {
+        "pitcher_id": "60263",
+        "n_total": 169,
+        "n_first": 84,
+        "n_second": 85,
+        "std_first_half": 0.2273755321878184,
+        "std_second_half": 0.22332864030982016
+      },
+      {
+        "pitcher_id": "60264",
+        "n_total": 32,
+        "n_first": 16,
+        "n_second": 16,
+        "std_first_half": 0.17150327681514813,
+        "std_second_half": 0.27126771015533097
+      },
+      {
+        "pitcher_id": "60336",
+        "n_total": 128,
+        "n_first": 64,
+        "n_second": 64,
+        "std_first_half": 0.17733190659530562,
+        "std_second_half": 0.13119028822885648
+      },
+      {
+        "pitcher_id": "60337",
+        "n_total": 242,
+        "n_first": 121,
+        "n_second": 121,
+        "std_first_half": 0.08286305867374553,
+        "std_second_half": 0.07303589771729996
+      },
+      {
+        "pitcher_id": "60339",
+        "n_total": 151,
+        "n_first": 75,
+        "n_second": 76,
+        "std_first_half": 0.16883398357264748,
+        "std_second_half": 0.13068226651195544
+      },
+      {
+        "pitcher_id": "60559",
+        "n_total": 276,
+        "n_first": 138,
+        "n_second": 138,
+        "std_first_half": 0.13827496612693513,
+        "std_second_half": 0.1004229002074124
+      },
+      {
+        "pitcher_id": "60634",
+        "n_total": 134,
+        "n_first": 67,
+        "n_second": 67,
+        "std_first_half": 0.17967103849143742,
+        "std_second_half": 0.07823102904521093
+      },
+      {
+        "pitcher_id": "60636",
+        "n_total": 111,
+        "n_first": 55,
+        "n_second": 56,
+        "std_first_half": 0.09082227251718152,
+        "std_second_half": 0.13313413403820934
+      },
+      {
+        "pitcher_id": "60757",
+        "n_total": 48,
+        "n_first": 24,
+        "n_second": 24,
+        "std_first_half": 0.053024344115138095,
+        "std_second_half": 0.08845393052932671
+      },
+      {
+        "pitcher_id": "60768",
+        "n_total": 342,
+        "n_first": 171,
+        "n_second": 171,
+        "std_first_half": 0.2032903914183699,
+        "std_second_half": 0.20388059628228397
+      },
+      {
+        "pitcher_id": "60841",
+        "n_total": 164,
+        "n_first": 82,
+        "n_second": 82,
+        "std_first_half": 0.24540071352838586,
+        "std_second_half": 0.2170261613765627
+      },
+      {
+        "pitcher_id": "60845",
+        "n_total": 102,
+        "n_first": 51,
+        "n_second": 51,
+        "std_first_half": 0.17058652381663428,
+        "std_second_half": 0.08495787912542423
+      },
+      {
+        "pitcher_id": "61101",
+        "n_total": 211,
+        "n_first": 105,
+        "n_second": 106,
+        "std_first_half": 0.23657542447915175,
+        "std_second_half": 0.21933342490446694
+      },
+      {
+        "pitcher_id": "61145",
+        "n_total": 188,
+        "n_first": 94,
+        "n_second": 94,
+        "std_first_half": 0.17617835786424357,
+        "std_second_half": 0.10836981954258114
+      },
+      {
+        "pitcher_id": "61156",
+        "n_total": 49,
+        "n_first": 24,
+        "n_second": 25,
+        "std_first_half": 0.08848117008290027,
+        "std_second_half": 0.044780257461668665
+      },
+      {
+        "pitcher_id": "61214",
+        "n_total": 109,
+        "n_first": 54,
+        "n_second": 55,
+        "std_first_half": 0.15316227184402195,
+        "std_second_half": 0.16403387889678744
+      },
+      {
+        "pitcher_id": "61240",
+        "n_total": 75,
+        "n_first": 37,
+        "n_second": 38,
+        "std_first_half": 0.24540258586228855,
+        "std_second_half": 0.2563805512599717
+      },
+      {
+        "pitcher_id": "61268",
+        "n_total": 254,
+        "n_first": 127,
+        "n_second": 127,
+        "std_first_half": 0.1299124302465258,
+        "std_second_half": 0.12097532604599999
+      },
+      {
+        "pitcher_id": "61295",
+        "n_total": 57,
+        "n_first": 28,
+        "n_second": 29,
+        "std_first_half": 0.12821528371522095,
+        "std_second_half": 0.20922326885776135
+      },
+      {
+        "pitcher_id": "61329",
+        "n_total": 108,
+        "n_first": 54,
+        "n_second": 54,
+        "std_first_half": 0.10821986760726338,
+        "std_second_half": 0.12236993953093069
+      },
+      {
+        "pitcher_id": "61365",
+        "n_total": 273,
+        "n_first": 136,
+        "n_second": 137,
+        "std_first_half": 0.18848444310902063,
+        "std_second_half": 0.1955760040470354
+      },
+      {
+        "pitcher_id": "61411",
+        "n_total": 275,
+        "n_first": 137,
+        "n_second": 138,
+        "std_first_half": 0.18968621522703075,
+        "std_second_half": 0.17215364108030104
+      },
+      {
+        "pitcher_id": "61456",
+        "n_total": 98,
+        "n_first": 49,
+        "n_second": 49,
+        "std_first_half": 0.13227435542099916,
+        "std_second_half": 0.12640584840021807
+      },
+      {
+        "pitcher_id": "61457",
+        "n_total": 194,
+        "n_first": 97,
+        "n_second": 97,
+        "std_first_half": 0.057426265195277576,
+        "std_second_half": 0.07836856277378398
+      },
+      {
+        "pitcher_id": "61643",
+        "n_total": 429,
+        "n_first": 214,
+        "n_second": 215,
+        "std_first_half": 0.2055870362540524,
+        "std_second_half": 0.15985730630350725
+      },
+      {
+        "pitcher_id": "61666",
+        "n_total": 275,
+        "n_first": 137,
+        "n_second": 138,
+        "std_first_half": 0.23845401570421015,
+        "std_second_half": 0.12505412359673107
+      },
+      {
+        "pitcher_id": "61891",
+        "n_total": 84,
+        "n_first": 42,
+        "n_second": 42,
+        "std_first_half": 0.20497330496708327,
+        "std_second_half": 0.1779167419086628
+      },
+      {
+        "pitcher_id": "61895",
+        "n_total": 490,
+        "n_first": 245,
+        "n_second": 245,
+        "std_first_half": 0.14919644130763474,
+        "std_second_half": 0.1696061465764351
+      },
+      {
+        "pitcher_id": "62056",
+        "n_total": 152,
+        "n_first": 76,
+        "n_second": 76,
+        "std_first_half": 0.09408848112655316,
+        "std_second_half": 0.11621667886912111
+      },
+      {
+        "pitcher_id": "62146",
+        "n_total": 249,
+        "n_first": 124,
+        "n_second": 125,
+        "std_first_half": 0.07126034761822182,
+        "std_second_half": 0.0681732819436452
+      },
+      {
+        "pitcher_id": "62242",
+        "n_total": 244,
+        "n_first": 122,
+        "n_second": 122,
+        "std_first_half": 0.10486054861839414,
+        "std_second_half": 0.09264433298072784
+      },
+      {
+        "pitcher_id": "62360",
+        "n_total": 419,
+        "n_first": 209,
+        "n_second": 210,
+        "std_first_half": 0.16742221151434714,
+        "std_second_half": 0.1604930045910734
+      },
+      {
+        "pitcher_id": "62363",
+        "n_total": 271,
+        "n_first": 135,
+        "n_second": 136,
+        "std_first_half": 0.27116820928465146,
+        "std_second_half": 0.21922350693602155
+      },
+      {
+        "pitcher_id": "62528",
+        "n_total": 405,
+        "n_first": 202,
+        "n_second": 203,
+        "std_first_half": 0.3004272785609264,
+        "std_second_half": 0.21170033110674108
+      },
+      {
+        "pitcher_id": "62611",
+        "n_total": 133,
+        "n_first": 66,
+        "n_second": 67,
+        "std_first_half": 0.12280679056492685,
+        "std_second_half": 0.049734248248987374
+      },
+      {
+        "pitcher_id": "62648",
+        "n_total": 164,
+        "n_first": 82,
+        "n_second": 82,
+        "std_first_half": 0.23332320825883376,
+        "std_second_half": 0.17574068842552548
+      },
+      {
+        "pitcher_id": "62655",
+        "n_total": 152,
+        "n_first": 76,
+        "n_second": 76,
+        "std_first_half": 0.10128979372866985,
+        "std_second_half": 0.09609970790615922
+      },
+      {
+        "pitcher_id": "62698",
+        "n_total": 98,
+        "n_first": 49,
+        "n_second": 49,
+        "std_first_half": 0.2531640059809445,
+        "std_second_half": 0.25324011176980565
+      },
+      {
+        "pitcher_id": "62754",
+        "n_total": 236,
+        "n_first": 118,
+        "n_second": 118,
+        "std_first_half": 0.23071094951912618,
+        "std_second_half": 0.19905910907317217
+      },
+      {
+        "pitcher_id": "62869",
+        "n_total": 266,
+        "n_first": 133,
+        "n_second": 133,
+        "std_first_half": 0.26379627163681213,
+        "std_second_half": 0.2699691274843423
+      },
+      {
+        "pitcher_id": "62920",
+        "n_total": 102,
+        "n_first": 51,
+        "n_second": 51,
+        "std_first_half": 0.14350755274924876,
+        "std_second_half": 0.12212037756921265
+      },
+      {
+        "pitcher_id": "62929",
+        "n_total": 155,
+        "n_first": 77,
+        "n_second": 78,
+        "std_first_half": 0.24183431327615854,
+        "std_second_half": 0.19489247253609385
+      },
+      {
+        "pitcher_id": "62937",
+        "n_total": 119,
+        "n_first": 59,
+        "n_second": 60,
+        "std_first_half": 0.264555429237065,
+        "std_second_half": 0.23046565472641375
+      },
+      {
+        "pitcher_id": "62951",
+        "n_total": 209,
+        "n_first": 104,
+        "n_second": 105,
+        "std_first_half": 0.19610078700712844,
+        "std_second_half": 0.11718049298953755
+      },
+      {
+        "pitcher_id": "62966",
+        "n_total": 123,
+        "n_first": 61,
+        "n_second": 62,
+        "std_first_half": 0.20292958826577223,
+        "std_second_half": 0.14618025830154815
+      },
+      {
+        "pitcher_id": "63111",
+        "n_total": 50,
+        "n_first": 25,
+        "n_second": 25,
+        "std_first_half": 0.18337548682053081,
+        "std_second_half": 0.17642592756357175
+      },
+      {
+        "pitcher_id": "63145",
+        "n_total": 74,
+        "n_first": 37,
+        "n_second": 37,
+        "std_first_half": 0.19961602381375398,
+        "std_second_half": 0.1261911798428088
+      },
+      {
+        "pitcher_id": "63248",
+        "n_total": 326,
+        "n_first": 163,
+        "n_second": 163,
+        "std_first_half": 0.22253630301074792,
+        "std_second_half": 0.1534833739667697
+      },
+      {
+        "pitcher_id": "63342",
+        "n_total": 285,
+        "n_first": 142,
+        "n_second": 143,
+        "std_first_half": 0.2265025083472226,
+        "std_second_half": 0.15015885911034157
+      },
+      {
+        "pitcher_id": "63348",
+        "n_total": 70,
+        "n_first": 35,
+        "n_second": 35,
+        "std_first_half": 0.04129854286602789,
+        "std_second_half": 0.06262930573601139
+      },
+      {
+        "pitcher_id": "63464",
+        "n_total": 167,
+        "n_first": 83,
+        "n_second": 84,
+        "std_first_half": 0.13027651625534267,
+        "std_second_half": 0.18604085564606757
+      },
+      {
+        "pitcher_id": "63492",
+        "n_total": 122,
+        "n_first": 61,
+        "n_second": 61,
+        "std_first_half": 0.07244988823072682,
+        "std_second_half": 0.1122468463173764
+      },
+      {
+        "pitcher_id": "63512",
+        "n_total": 216,
+        "n_first": 108,
+        "n_second": 108,
+        "std_first_half": 0.2285351262090535,
+        "std_second_half": 0.13101659063687213
+      },
+      {
+        "pitcher_id": "63543",
+        "n_total": 432,
+        "n_first": 216,
+        "n_second": 216,
+        "std_first_half": 0.16157928288830656,
+        "std_second_half": 0.14437253771330438
+      },
+      {
+        "pitcher_id": "63628",
+        "n_total": 151,
+        "n_first": 75,
+        "n_second": 76,
+        "std_first_half": 0.11983845996376322,
+        "std_second_half": 0.0883985467650653
+      },
+      {
+        "pitcher_id": "63638",
+        "n_total": 251,
+        "n_first": 125,
+        "n_second": 126,
+        "std_first_half": 0.11249633424135178,
+        "std_second_half": 0.14576697870013317
+      },
+      {
+        "pitcher_id": "63749",
+        "n_total": 57,
+        "n_first": 28,
+        "n_second": 29,
+        "std_first_half": 0.049314815808244254,
+        "std_second_half": 0.07493295648765165
+      },
+      {
+        "pitcher_id": "63765",
+        "n_total": 243,
+        "n_first": 121,
+        "n_second": 122,
+        "std_first_half": 0.09447578877287131,
+        "std_second_half": 0.1234407091624668
+      },
+      {
+        "pitcher_id": "63894",
+        "n_total": 114,
+        "n_first": 57,
+        "n_second": 57,
+        "std_first_half": 0.10096542921368311,
+        "std_second_half": 0.1592222035256119
+      },
+      {
+        "pitcher_id": "63914",
+        "n_total": 30,
+        "n_first": 15,
+        "n_second": 15,
+        "std_first_half": 0.028814348277666567,
+        "std_second_half": 0.12280443948466545
+      },
+      {
+        "pitcher_id": "63935",
+        "n_total": 33,
+        "n_first": 16,
+        "n_second": 17,
+        "std_first_half": 0.21298559223571906,
+        "std_second_half": 0.0944298365228665
+      },
+      {
+        "pitcher_id": "63938",
+        "n_total": 49,
+        "n_first": 24,
+        "n_second": 25,
+        "std_first_half": 0.29197872229900984,
+        "std_second_half": 0.2698747201635109
+      },
+      {
+        "pitcher_id": "63950",
+        "n_total": 482,
+        "n_first": 241,
+        "n_second": 241,
+        "std_first_half": 0.19939864245196706,
+        "std_second_half": 0.15072537627704055
+      },
+      {
+        "pitcher_id": "63959",
+        "n_total": 422,
+        "n_first": 211,
+        "n_second": 211,
+        "std_first_half": 0.0952054666002482,
+        "std_second_half": 0.1312485648866743
+      },
+      {
+        "pitcher_id": "63960",
+        "n_total": 149,
+        "n_first": 74,
+        "n_second": 75,
+        "std_first_half": 0.0925075577653309,
+        "std_second_half": 0.09762200301659954
+      },
+      {
+        "pitcher_id": "63961",
+        "n_total": 122,
+        "n_first": 61,
+        "n_second": 61,
+        "std_first_half": 0.0680648128624475,
+        "std_second_half": 0.11112292106521308
+      },
+      {
+        "pitcher_id": "63991",
+        "n_total": 100,
+        "n_first": 50,
+        "n_second": 50,
+        "std_first_half": 0.21671638241758107,
+        "std_second_half": 0.14823556000501364
+      },
+      {
+        "pitcher_id": "64001",
+        "n_total": 202,
+        "n_first": 101,
+        "n_second": 101,
+        "std_first_half": 0.29443696351286,
+        "std_second_half": 0.26070842071400013
+      },
+      {
+        "pitcher_id": "64017",
+        "n_total": 269,
+        "n_first": 134,
+        "n_second": 135,
+        "std_first_half": 0.1623185595332996,
+        "std_second_half": 0.12196510731869778
+      },
+      {
+        "pitcher_id": "64021",
+        "n_total": 208,
+        "n_first": 104,
+        "n_second": 104,
+        "std_first_half": 0.21624067093578145,
+        "std_second_half": 0.22765222687672618
+      },
+      {
+        "pitcher_id": "64029",
+        "n_total": 81,
+        "n_first": 40,
+        "n_second": 41,
+        "std_first_half": 0.2823910726433359,
+        "std_second_half": 0.07877469947539643
+      },
+      {
+        "pitcher_id": "64047",
+        "n_total": 130,
+        "n_first": 65,
+        "n_second": 65,
+        "std_first_half": 0.11927875764460485,
+        "std_second_half": 0.056978533459895085
+      },
+      {
+        "pitcher_id": "64051",
+        "n_total": 119,
+        "n_first": 59,
+        "n_second": 60,
+        "std_first_half": 0.07946622524142188,
+        "std_second_half": 0.15993436876685735
+      },
+      {
+        "pitcher_id": "64350",
+        "n_total": 184,
+        "n_first": 92,
+        "n_second": 92,
+        "std_first_half": 0.15725575833438957,
+        "std_second_half": 0.24523606412705862
+      },
+      {
+        "pitcher_id": "64554",
+        "n_total": 30,
+        "n_first": 15,
+        "n_second": 15,
+        "std_first_half": 0.20761675860195136,
+        "std_second_half": 0.07081999314156583
+      },
+      {
+        "pitcher_id": "64565",
+        "n_total": 120,
+        "n_first": 60,
+        "n_second": 60,
+        "std_first_half": 0.1207348032921274,
+        "std_second_half": 0.26269037231889475
+      },
+      {
+        "pitcher_id": "64580",
+        "n_total": 178,
+        "n_first": 89,
+        "n_second": 89,
+        "std_first_half": 0.0913354589713136,
+        "std_second_half": 0.14565474982936516
+      },
+      {
+        "pitcher_id": "64596",
+        "n_total": 247,
+        "n_first": 123,
+        "n_second": 124,
+        "std_first_half": 0.09034886320904505,
+        "std_second_half": 0.10689874987830394
+      },
+      {
+        "pitcher_id": "64718",
+        "n_total": 50,
+        "n_first": 25,
+        "n_second": 25,
+        "std_first_half": 0.12392024316739646,
+        "std_second_half": 0.21074509335925232
+      },
+      {
+        "pitcher_id": "64759",
+        "n_total": 86,
+        "n_first": 43,
+        "n_second": 43,
+        "std_first_half": 0.10422797741634067,
+        "std_second_half": 0.10030074653943342
+      },
+      {
+        "pitcher_id": "64760",
+        "n_total": 45,
+        "n_first": 22,
+        "n_second": 23,
+        "std_first_half": 0.09745288849588028,
+        "std_second_half": 0.09087563168849286
+      },
+      {
+        "pitcher_id": "64768",
+        "n_total": 103,
+        "n_first": 51,
+        "n_second": 52,
+        "std_first_half": 0.16828765741210758,
+        "std_second_half": 0.20232925575355093
+      },
+      {
+        "pitcher_id": "64805",
+        "n_total": 163,
+        "n_first": 81,
+        "n_second": 82,
+        "std_first_half": 0.16575639599273384,
+        "std_second_half": 0.12265578756719063
+      },
+      {
+        "pitcher_id": "64861",
+        "n_total": 68,
+        "n_first": 34,
+        "n_second": 34,
+        "std_first_half": 0.26483886274009866,
+        "std_second_half": 0.14930669246067724
+      },
+      {
+        "pitcher_id": "64893",
+        "n_total": 226,
+        "n_first": 113,
+        "n_second": 113,
+        "std_first_half": 0.13036646254438644,
+        "std_second_half": 0.12875646440266245
+      },
+      {
+        "pitcher_id": "64896",
+        "n_total": 49,
+        "n_first": 24,
+        "n_second": 25,
+        "std_first_half": 0.06239445345187317,
+        "std_second_half": 0.08559335424941977
+      },
+      {
+        "pitcher_id": "64995",
+        "n_total": 239,
+        "n_first": 119,
+        "n_second": 120,
+        "std_first_half": 0.16412937450027,
+        "std_second_half": 0.1413176992364084
+      },
+      {
+        "pitcher_id": "65042",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.06749009024072906,
+        "std_second_half": 0.06254623947423554
+      },
+      {
+        "pitcher_id": "65048",
+        "n_total": 343,
+        "n_first": 171,
+        "n_second": 172,
+        "std_first_half": 0.22024889312457535,
+        "std_second_half": 0.12242284697380758
+      },
+      {
+        "pitcher_id": "65056",
+        "n_total": 287,
+        "n_first": 143,
+        "n_second": 144,
+        "std_first_half": 0.16575470214110707,
+        "std_second_half": 0.25450437731201037
+      },
+      {
+        "pitcher_id": "65057",
+        "n_total": 91,
+        "n_first": 45,
+        "n_second": 46,
+        "std_first_half": 0.1228951837929174,
+        "std_second_half": 0.05913324556183542
+      },
+      {
+        "pitcher_id": "65058",
+        "n_total": 130,
+        "n_first": 65,
+        "n_second": 65,
+        "std_first_half": 0.2651781127664661,
+        "std_second_half": 0.1737697897902567
+      },
+      {
+        "pitcher_id": "65060",
+        "n_total": 488,
+        "n_first": 244,
+        "n_second": 244,
+        "std_first_half": 0.21185308634622046,
+        "std_second_half": 0.1243591750343522
+      },
+      {
+        "pitcher_id": "65062",
+        "n_total": 540,
+        "n_first": 270,
+        "n_second": 270,
+        "std_first_half": 0.1955626805571828,
+        "std_second_half": 0.20183275319375693
+      },
+      {
+        "pitcher_id": "65064",
+        "n_total": 55,
+        "n_first": 27,
+        "n_second": 28,
+        "std_first_half": 0.060769596923596673,
+        "std_second_half": 0.11573912285906258
+      },
+      {
+        "pitcher_id": "65067",
+        "n_total": 65,
+        "n_first": 32,
+        "n_second": 33,
+        "std_first_half": 0.06416536096981841,
+        "std_second_half": 0.07172197890830069
+      },
+      {
+        "pitcher_id": "65109",
+        "n_total": 135,
+        "n_first": 67,
+        "n_second": 68,
+        "std_first_half": 0.13192283710657818,
+        "std_second_half": 0.09862679854225011
+      },
+      {
+        "pitcher_id": "65117",
+        "n_total": 65,
+        "n_first": 32,
+        "n_second": 33,
+        "std_first_half": 0.1540013253291185,
+        "std_second_half": 0.14313691188686295
+      },
+      {
+        "pitcher_id": "65241",
+        "n_total": 60,
+        "n_first": 30,
+        "n_second": 30,
+        "std_first_half": 0.08354721331946549,
+        "std_second_half": 0.08180727808163792
+      },
+      {
+        "pitcher_id": "65320",
+        "n_total": 217,
+        "n_first": 108,
+        "n_second": 109,
+        "std_first_half": 0.22417681015626484,
+        "std_second_half": 0.20063050150813574
+      },
+      {
+        "pitcher_id": "65331",
+        "n_total": 79,
+        "n_first": 39,
+        "n_second": 40,
+        "std_first_half": 0.27241670733000867,
+        "std_second_half": 0.16592408095579628
+      },
+      {
+        "pitcher_id": "65343",
+        "n_total": 247,
+        "n_first": 123,
+        "n_second": 124,
+        "std_first_half": 0.11776141625282105,
+        "std_second_half": 0.14444971643319057
+      },
+      {
+        "pitcher_id": "65398",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.07325982417556905,
+        "std_second_half": 0.06709604373558337
+      },
+      {
+        "pitcher_id": "65411",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.1452443960227843,
+        "std_second_half": 0.06278447888987919
+      },
+      {
+        "pitcher_id": "65496",
+        "n_total": 111,
+        "n_first": 55,
+        "n_second": 56,
+        "std_first_half": 0.06693475358417134,
+        "std_second_half": 0.13779050119644506
+      },
+      {
+        "pitcher_id": "65516",
+        "n_total": 144,
+        "n_first": 72,
+        "n_second": 72,
+        "std_first_half": 0.24052305092894738,
+        "std_second_half": 0.23691755094611036
+      },
+      {
+        "pitcher_id": "65522",
+        "n_total": 91,
+        "n_first": 45,
+        "n_second": 46,
+        "std_first_half": 0.07961283484603611,
+        "std_second_half": 0.0661838266727112
+      },
+      {
+        "pitcher_id": "65543",
+        "n_total": 85,
+        "n_first": 42,
+        "n_second": 43,
+        "std_first_half": 0.2496579501646797,
+        "std_second_half": 0.2880422843232214
+      },
+      {
+        "pitcher_id": "65546",
+        "n_total": 101,
+        "n_first": 50,
+        "n_second": 51,
+        "std_first_half": 0.23726277604790683,
+        "std_second_half": 0.22591061675960666
+      },
+      {
+        "pitcher_id": "65616",
+        "n_total": 201,
+        "n_first": 100,
+        "n_second": 101,
+        "std_first_half": 0.26052135549061356,
+        "std_second_half": 0.11620050159866856
+      },
+      {
+        "pitcher_id": "65618",
+        "n_total": 43,
+        "n_first": 21,
+        "n_second": 22,
+        "std_first_half": 0.11068133150110342,
+        "std_second_half": 0.1830314106768898
+      },
+      {
+        "pitcher_id": "65639",
+        "n_total": 138,
+        "n_first": 69,
+        "n_second": 69,
+        "std_first_half": 0.16468196004608587,
+        "std_second_half": 0.09479919634615704
+      },
+      {
+        "pitcher_id": "65643",
+        "n_total": 209,
+        "n_first": 104,
+        "n_second": 105,
+        "std_first_half": 0.21550209609242701,
+        "std_second_half": 0.11627959246610839
+      },
+      {
+        "pitcher_id": "65665",
+        "n_total": 392,
+        "n_first": 196,
+        "n_second": 196,
+        "std_first_half": 0.1078126122505274,
+        "std_second_half": 0.08580633606558738
+      },
+      {
+        "pitcher_id": "65696",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.02752563050989603,
+        "std_second_half": 0.11160045660840584
+      },
+      {
+        "pitcher_id": "65707",
+        "n_total": 251,
+        "n_first": 125,
+        "n_second": 126,
+        "std_first_half": 0.1369667391929927,
+        "std_second_half": 0.15968687317461544
+      },
+      {
+        "pitcher_id": "65764",
+        "n_total": 123,
+        "n_first": 61,
+        "n_second": 62,
+        "std_first_half": 0.21973095578531457,
+        "std_second_half": 0.1931348205630834
+      },
+      {
+        "pitcher_id": "65769",
+        "n_total": 451,
+        "n_first": 225,
+        "n_second": 226,
+        "std_first_half": 0.19465283222128021,
+        "std_second_half": 0.13126183393295807
+      },
+      {
+        "pitcher_id": "65856",
+        "n_total": 72,
+        "n_first": 36,
+        "n_second": 36,
+        "std_first_half": 0.20232609620696285,
+        "std_second_half": 0.21866737214970403
+      },
+      {
+        "pitcher_id": "65933",
+        "n_total": 162,
+        "n_first": 81,
+        "n_second": 81,
+        "std_first_half": 0.25223699865704147,
+        "std_second_half": 0.2396835482837761
+      },
+      {
+        "pitcher_id": "65949",
+        "n_total": 276,
+        "n_first": 138,
+        "n_second": 138,
+        "std_first_half": 0.10294830202881801,
+        "std_second_half": 0.15660621993529328
+      },
+      {
+        "pitcher_id": "66018",
+        "n_total": 197,
+        "n_first": 98,
+        "n_second": 99,
+        "std_first_half": 0.19371048968339588,
+        "std_second_half": 0.2020832015823707
+      },
+      {
+        "pitcher_id": "66047",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.21092932337412054,
+        "std_second_half": 0.1139903446973055
+      },
+      {
+        "pitcher_id": "66138",
+        "n_total": 30,
+        "n_first": 15,
+        "n_second": 15,
+        "std_first_half": 0.32460394549138094,
+        "std_second_half": 0.2426269157329731
+      },
+      {
+        "pitcher_id": "66145",
+        "n_total": 162,
+        "n_first": 81,
+        "n_second": 81,
+        "std_first_half": 0.26134751595024613,
+        "std_second_half": 0.11466432423856349
+      },
+      {
+        "pitcher_id": "66201",
+        "n_total": 36,
+        "n_first": 18,
+        "n_second": 18,
+        "std_first_half": 0.09844710205788068,
+        "std_second_half": 0.07408838813563125
+      },
+      {
+        "pitcher_id": "66226",
+        "n_total": 41,
+        "n_first": 20,
+        "n_second": 21,
+        "std_first_half": 0.25454951307213924,
+        "std_second_half": 0.2104115015867716
+      },
+      {
+        "pitcher_id": "66291",
+        "n_total": 329,
+        "n_first": 164,
+        "n_second": 165,
+        "std_first_half": 0.2785034531780935,
+        "std_second_half": 0.16255385518115897
+      },
+      {
+        "pitcher_id": "66305",
+        "n_total": 66,
+        "n_first": 33,
+        "n_second": 33,
+        "std_first_half": 0.048954460275558234,
+        "std_second_half": 0.09860480731469526
+      },
+      {
+        "pitcher_id": "66451",
+        "n_total": 191,
+        "n_first": 95,
+        "n_second": 96,
+        "std_first_half": 0.21474828239134666,
+        "std_second_half": 0.11648436403876423
+      },
+      {
+        "pitcher_id": "66492",
+        "n_total": 112,
+        "n_first": 56,
+        "n_second": 56,
+        "std_first_half": 0.11658814935754355,
+        "std_second_half": 0.10105306525164512
+      },
+      {
+        "pitcher_id": "66493",
+        "n_total": 48,
+        "n_first": 24,
+        "n_second": 24,
+        "std_first_half": 0.0469859484082857,
+        "std_second_half": 0.09717928485946528
+      },
+      {
+        "pitcher_id": "66609",
+        "n_total": 381,
+        "n_first": 190,
+        "n_second": 191,
+        "std_first_half": 0.15693515000276698,
+        "std_second_half": 0.16415783173739218
+      },
+      {
+        "pitcher_id": "66630",
+        "n_total": 45,
+        "n_first": 22,
+        "n_second": 23,
+        "std_first_half": 0.04479200518345855,
+        "std_second_half": 0.1477100768343818
+      },
+      {
+        "pitcher_id": "66643",
+        "n_total": 77,
+        "n_first": 38,
+        "n_second": 39,
+        "std_first_half": 0.2697162805194384,
+        "std_second_half": 0.254309177431814
+      },
+      {
+        "pitcher_id": "66660",
+        "n_total": 32,
+        "n_first": 16,
+        "n_second": 16,
+        "std_first_half": 0.044160098764797456,
+        "std_second_half": 0.13826975069889053
+      },
+      {
+        "pitcher_id": "66663",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.04776746004311501,
+        "std_second_half": 0.10184100389101339
+      },
+      {
+        "pitcher_id": "66741",
+        "n_total": 93,
+        "n_first": 46,
+        "n_second": 47,
+        "std_first_half": 0.2533819520947437,
+        "std_second_half": 0.13413150695734913
+      },
+      {
+        "pitcher_id": "66859",
+        "n_total": 134,
+        "n_first": 67,
+        "n_second": 67,
+        "std_first_half": 0.19543640449271535,
+        "std_second_half": 0.2074382996249463
+      },
+      {
+        "pitcher_id": "66920",
+        "n_total": 144,
+        "n_first": 72,
+        "n_second": 72,
+        "std_first_half": 0.22480306106279827,
+        "std_second_half": 0.18456841043201674
+      },
+      {
+        "pitcher_id": "66928",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.10683188562275912,
+        "std_second_half": 0.12082814823645194
+      },
+      {
+        "pitcher_id": "66960",
+        "n_total": 67,
+        "n_first": 33,
+        "n_second": 34,
+        "std_first_half": 0.24849813677773838,
+        "std_second_half": 0.22220487158850694
+      },
+      {
+        "pitcher_id": "67008",
+        "n_total": 90,
+        "n_first": 45,
+        "n_second": 45,
+        "std_first_half": 0.2729926041705492,
+        "std_second_half": 0.14514210926300172
+      },
+      {
+        "pitcher_id": "67066",
+        "n_total": 62,
+        "n_first": 31,
+        "n_second": 31,
+        "std_first_half": 0.1451483431950157,
+        "std_second_half": 0.12335713461851455
+      },
+      {
+        "pitcher_id": "67116",
+        "n_total": 91,
+        "n_first": 45,
+        "n_second": 46,
+        "std_first_half": 0.0899106704547139,
+        "std_second_half": 0.11135704858935241
+      },
+      {
+        "pitcher_id": "67119",
+        "n_total": 343,
+        "n_first": 171,
+        "n_second": 172,
+        "std_first_half": 0.17858336063801247,
+        "std_second_half": 0.22380006241790126
+      },
+      {
+        "pitcher_id": "67143",
+        "n_total": 71,
+        "n_first": 35,
+        "n_second": 36,
+        "std_first_half": 0.214841548754957,
+        "std_second_half": 0.21404537653097228
+      },
+      {
+        "pitcher_id": "67246",
+        "n_total": 285,
+        "n_first": 142,
+        "n_second": 143,
+        "std_first_half": 0.11363411466976604,
+        "std_second_half": 0.10985480277417972
+      },
+      {
+        "pitcher_id": "67263",
+        "n_total": 215,
+        "n_first": 107,
+        "n_second": 108,
+        "std_first_half": 0.22991709688542558,
+        "std_second_half": 0.24839459165031835
+      },
+      {
+        "pitcher_id": "67266",
+        "n_total": 419,
+        "n_first": 209,
+        "n_second": 210,
+        "std_first_half": 0.13729328792171452,
+        "std_second_half": 0.1413946789072541
+      },
+      {
+        "pitcher_id": "67313",
+        "n_total": 97,
+        "n_first": 48,
+        "n_second": 49,
+        "std_first_half": 0.28004517884468016,
+        "std_second_half": 0.2137695165285587
+      },
+      {
+        "pitcher_id": "67365",
+        "n_total": 66,
+        "n_first": 33,
+        "n_second": 33,
+        "std_first_half": 0.05051944780980465,
+        "std_second_half": 0.15581010273897616
+      },
+      {
+        "pitcher_id": "67391",
+        "n_total": 245,
+        "n_first": 122,
+        "n_second": 123,
+        "std_first_half": 0.13760354043051481,
+        "std_second_half": 0.14100273047119763
+      },
+      {
+        "pitcher_id": "67419",
+        "n_total": 104,
+        "n_first": 52,
+        "n_second": 52,
+        "std_first_half": 0.07931675916421273,
+        "std_second_half": 0.07217527446539675
+      },
+      {
+        "pitcher_id": "67421",
+        "n_total": 237,
+        "n_first": 118,
+        "n_second": 119,
+        "std_first_half": 0.17179594815268612,
+        "std_second_half": 0.12197911706225723
+      },
+      {
+        "pitcher_id": "67443",
+        "n_total": 46,
+        "n_first": 23,
+        "n_second": 23,
+        "std_first_half": 0.08040278420247575,
+        "std_second_half": 0.16931824906489898
+      },
+      {
+        "pitcher_id": "67467",
+        "n_total": 36,
+        "n_first": 18,
+        "n_second": 18,
+        "std_first_half": 0.038732396380959516,
+        "std_second_half": 0.03967153743369345
+      },
+      {
+        "pitcher_id": "67539",
+        "n_total": 127,
+        "n_first": 63,
+        "n_second": 64,
+        "std_first_half": 0.2204580808067265,
+        "std_second_half": 0.22794889375621574
+      },
+      {
+        "pitcher_id": "67588",
+        "n_total": 46,
+        "n_first": 23,
+        "n_second": 23,
+        "std_first_half": 0.23168674013279153,
+        "std_second_half": 0.08951783170785521
+      },
+      {
+        "pitcher_id": "67591",
+        "n_total": 30,
+        "n_first": 15,
+        "n_second": 15,
+        "std_first_half": 0.10496751198074843,
+        "std_second_half": 0.07064139822269336
+      },
+      {
+        "pitcher_id": "67603",
+        "n_total": 158,
+        "n_first": 79,
+        "n_second": 79,
+        "std_first_half": 0.23306469087762977,
+        "std_second_half": 0.16569662565755688
+      },
+      {
+        "pitcher_id": "67640",
+        "n_total": 68,
+        "n_first": 34,
+        "n_second": 34,
+        "std_first_half": 0.09258402745094553,
+        "std_second_half": 0.06631705104204086
+      },
+      {
+        "pitcher_id": "67645",
+        "n_total": 60,
+        "n_first": 30,
+        "n_second": 30,
+        "std_first_half": 0.2580767039647522,
+        "std_second_half": 0.30038290889133984
+      },
+      {
+        "pitcher_id": "67646",
+        "n_total": 109,
+        "n_first": 54,
+        "n_second": 55,
+        "std_first_half": 0.11557619916571014,
+        "std_second_half": 0.10973608491892414
+      },
+      {
+        "pitcher_id": "67703",
+        "n_total": 407,
+        "n_first": 203,
+        "n_second": 204,
+        "std_first_half": 0.09804463256911786,
+        "std_second_half": 0.15870218661768837
+      },
+      {
+        "pitcher_id": "67737",
+        "n_total": 89,
+        "n_first": 44,
+        "n_second": 45,
+        "std_first_half": 0.1790394963482714,
+        "std_second_half": 0.06493410996051023
+      },
+      {
+        "pitcher_id": "67828",
+        "n_total": 264,
+        "n_first": 132,
+        "n_second": 132,
+        "std_first_half": 0.13563190870867503,
+        "std_second_half": 0.13822835264304548
+      },
+      {
+        "pitcher_id": "67954",
+        "n_total": 133,
+        "n_first": 66,
+        "n_second": 67,
+        "std_first_half": 0.14423158501711789,
+        "std_second_half": 0.1603835559113972
+      },
+      {
+        "pitcher_id": "67956",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.055052052056871734,
+        "std_second_half": 0.054189802582657265
+      },
+      {
+        "pitcher_id": "67962",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.052390366094911205,
+        "std_second_half": 0.051155416467730246
+      },
+      {
+        "pitcher_id": "68036",
+        "n_total": 56,
+        "n_first": 28,
+        "n_second": 28,
+        "std_first_half": 0.05411196490029142,
+        "std_second_half": 0.1108776447254708
+      },
+      {
+        "pitcher_id": "68043",
+        "n_total": 213,
+        "n_first": 106,
+        "n_second": 107,
+        "std_first_half": 0.24037846833967827,
+        "std_second_half": 0.16392170810005544
+      },
+      {
+        "pitcher_id": "68092",
+        "n_total": 117,
+        "n_first": 58,
+        "n_second": 59,
+        "std_first_half": 0.058154856979884983,
+        "std_second_half": 0.11131533585360577
+      },
+      {
+        "pitcher_id": "68130",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.156122143879476,
+        "std_second_half": 0.18696249623921907
+      },
+      {
+        "pitcher_id": "68135",
+        "n_total": 66,
+        "n_first": 33,
+        "n_second": 33,
+        "std_first_half": 0.22892560737523707,
+        "std_second_half": 0.21892570459752483
+      },
+      {
+        "pitcher_id": "68200",
+        "n_total": 81,
+        "n_first": 40,
+        "n_second": 41,
+        "std_first_half": 0.14916362431541494,
+        "std_second_half": 0.17091362905737204
+      },
+      {
+        "pitcher_id": "68220",
+        "n_total": 131,
+        "n_first": 65,
+        "n_second": 66,
+        "std_first_half": 0.24757135146965126,
+        "std_second_half": 0.20808878159487845
+      },
+      {
+        "pitcher_id": "68240",
+        "n_total": 41,
+        "n_first": 20,
+        "n_second": 21,
+        "std_first_half": 0.20043960896515756,
+        "std_second_half": 0.1481846308543115
+      },
+      {
+        "pitcher_id": "68242",
+        "n_total": 232,
+        "n_first": 116,
+        "n_second": 116,
+        "std_first_half": 0.16451316831119814,
+        "std_second_half": 0.18153208322619524
+      },
+      {
+        "pitcher_id": "68249",
+        "n_total": 122,
+        "n_first": 61,
+        "n_second": 61,
+        "std_first_half": 0.19315547043300818,
+        "std_second_half": 0.10520027413270189
+      },
+      {
+        "pitcher_id": "68269",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.09593032176526319,
+        "std_second_half": 0.09903050323095118
+      },
+      {
+        "pitcher_id": "68341",
+        "n_total": 145,
+        "n_first": 72,
+        "n_second": 73,
+        "std_first_half": 0.26128628193374515,
+        "std_second_half": 0.22520945872599918
+      },
+      {
+        "pitcher_id": "68403",
+        "n_total": 123,
+        "n_first": 61,
+        "n_second": 62,
+        "std_first_half": 0.18129156175073857,
+        "std_second_half": 0.13060533211285374
+      },
+      {
+        "pitcher_id": "68415",
+        "n_total": 81,
+        "n_first": 40,
+        "n_second": 41,
+        "std_first_half": 0.2468618974939123,
+        "std_second_half": 0.11645753668444889
+      },
+      {
+        "pitcher_id": "68419",
+        "n_total": 116,
+        "n_first": 58,
+        "n_second": 58,
+        "std_first_half": 0.23677285001725473,
+        "std_second_half": 0.25764481553432833
+      },
+      {
+        "pitcher_id": "68501",
+        "n_total": 41,
+        "n_first": 20,
+        "n_second": 21,
+        "std_first_half": 0.2296985621217282,
+        "std_second_half": 0.13378823218590105
+      },
+      {
+        "pitcher_id": "68556",
+        "n_total": 70,
+        "n_first": 35,
+        "n_second": 35,
+        "std_first_half": 0.14164305133537836,
+        "std_second_half": 0.12364926296218848
+      },
+      {
+        "pitcher_id": "68585",
+        "n_total": 131,
+        "n_first": 65,
+        "n_second": 66,
+        "std_first_half": 0.09139558295746358,
+        "std_second_half": 0.1360244750361412
+      },
+      {
+        "pitcher_id": "68619",
+        "n_total": 124,
+        "n_first": 62,
+        "n_second": 62,
+        "std_first_half": 0.1938106837210092,
+        "std_second_half": 0.10540997191633453
+      },
+      {
+        "pitcher_id": "68639",
+        "n_total": 181,
+        "n_first": 90,
+        "n_second": 91,
+        "std_first_half": 0.12982355018359404,
+        "std_second_half": 0.11589648376075715
+      },
+      {
+        "pitcher_id": "68659",
+        "n_total": 55,
+        "n_first": 27,
+        "n_second": 28,
+        "std_first_half": 0.2421649993913229,
+        "std_second_half": 0.11816694791423309
+      },
+      {
+        "pitcher_id": "68703",
+        "n_total": 61,
+        "n_first": 30,
+        "n_second": 31,
+        "std_first_half": 0.1482237901081435,
+        "std_second_half": 0.21131512516536982
+      },
+      {
+        "pitcher_id": "68815",
+        "n_total": 49,
+        "n_first": 24,
+        "n_second": 25,
+        "std_first_half": 0.26276033652740044,
+        "std_second_half": 0.21992027106431095
+      },
+      {
+        "pitcher_id": "68856",
+        "n_total": 207,
+        "n_first": 103,
+        "n_second": 104,
+        "std_first_half": 0.18921295164911017,
+        "std_second_half": 0.1263181949856341
+      },
+      {
+        "pitcher_id": "68896",
+        "n_total": 83,
+        "n_first": 41,
+        "n_second": 42,
+        "std_first_half": 0.08140093438592971,
+        "std_second_half": 0.08681723079053516
+      },
+      {
+        "pitcher_id": "68900",
+        "n_total": 296,
+        "n_first": 148,
+        "n_second": 148,
+        "std_first_half": 0.20782980610305982,
+        "std_second_half": 0.14836755153898593
+      },
+      {
+        "pitcher_id": "68902",
+        "n_total": 135,
+        "n_first": 67,
+        "n_second": 68,
+        "std_first_half": 0.24354773554927675,
+        "std_second_half": 0.22100332560792593
+      },
+      {
+        "pitcher_id": "68928",
+        "n_total": 176,
+        "n_first": 88,
+        "n_second": 88,
+        "std_first_half": 0.17205449601793885,
+        "std_second_half": 0.19067969935697193
+      },
+      {
+        "pitcher_id": "69032",
+        "n_total": 129,
+        "n_first": 64,
+        "n_second": 65,
+        "std_first_half": 0.24475245554116015,
+        "std_second_half": 0.24502618016519406
+      },
+      {
+        "pitcher_id": "69041",
+        "n_total": 208,
+        "n_first": 104,
+        "n_second": 104,
+        "std_first_half": 0.14060542827043085,
+        "std_second_half": 0.1456824050602454
+      },
+      {
+        "pitcher_id": "69045",
+        "n_total": 98,
+        "n_first": 49,
+        "n_second": 49,
+        "std_first_half": 0.2330513022746746,
+        "std_second_half": 0.2523180411047172
+      },
+      {
+        "pitcher_id": "69047",
+        "n_total": 44,
+        "n_first": 22,
+        "n_second": 22,
+        "std_first_half": 0.0692626098119712,
+        "std_second_half": 0.06621459275999735
+      },
+      {
+        "pitcher_id": "69054",
+        "n_total": 121,
+        "n_first": 60,
+        "n_second": 61,
+        "std_first_half": 0.12299022880151786,
+        "std_second_half": 0.10556902815828205
+      },
+      {
+        "pitcher_id": "69068",
+        "n_total": 32,
+        "n_first": 16,
+        "n_second": 16,
+        "std_first_half": 0.0845028090632692,
+        "std_second_half": 0.2611433494430469
+      },
+      {
+        "pitcher_id": "69103",
+        "n_total": 139,
+        "n_first": 69,
+        "n_second": 70,
+        "std_first_half": 0.2190642179370002,
+        "std_second_half": 0.2376460846352051
+      },
+      {
+        "pitcher_id": "69108",
+        "n_total": 110,
+        "n_first": 55,
+        "n_second": 55,
+        "std_first_half": 0.20048679971576522,
+        "std_second_half": 0.12803182474739686
+      },
+      {
+        "pitcher_id": "69113",
+        "n_total": 40,
+        "n_first": 20,
+        "n_second": 20,
+        "std_first_half": 0.19702343026241426,
+        "std_second_half": 0.07904489376463958
+      },
+      {
+        "pitcher_id": "69134",
+        "n_total": 236,
+        "n_first": 118,
+        "n_second": 118,
+        "std_first_half": 0.11571617111976805,
+        "std_second_half": 0.18049327209998553
+      },
+      {
+        "pitcher_id": "69159",
+        "n_total": 339,
+        "n_first": 169,
+        "n_second": 170,
+        "std_first_half": 0.15827408596883957,
+        "std_second_half": 0.14170944414309739
+      },
+      {
+        "pitcher_id": "69168",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.21254568929236062,
+        "std_second_half": 0.16712071057650144
+      },
+      {
+        "pitcher_id": "69205",
+        "n_total": 57,
+        "n_first": 28,
+        "n_second": 29,
+        "std_first_half": 0.04405911864582132,
+        "std_second_half": 0.11971015256893969
+      },
+      {
+        "pitcher_id": "69213",
+        "n_total": 54,
+        "n_first": 27,
+        "n_second": 27,
+        "std_first_half": 0.12857585794556747,
+        "std_second_half": 0.1457169279010612
+      },
+      {
+        "pitcher_id": "69328",
+        "n_total": 43,
+        "n_first": 21,
+        "n_second": 22,
+        "std_first_half": 0.09836919039540588,
+        "std_second_half": 0.11204178932038066
+      },
+      {
+        "pitcher_id": "69343",
+        "n_total": 121,
+        "n_first": 60,
+        "n_second": 61,
+        "std_first_half": 0.23604020802028597,
+        "std_second_half": 0.22925486457287636
+      },
+      {
+        "pitcher_id": "69360",
+        "n_total": 97,
+        "n_first": 48,
+        "n_second": 49,
+        "std_first_half": 0.2126673224621453,
+        "std_second_half": 0.20234214683983934
+      },
+      {
+        "pitcher_id": "69399",
+        "n_total": 50,
+        "n_first": 25,
+        "n_second": 25,
+        "std_first_half": 0.2012052470944367,
+        "std_second_half": 0.11549833422319705
+      },
+      {
+        "pitcher_id": "69439",
+        "n_total": 30,
+        "n_first": 15,
+        "n_second": 15,
+        "std_first_half": 0.26275594438475375,
+        "std_second_half": 0.20116535191111767
+      },
+      {
+        "pitcher_id": "69446",
+        "n_total": 161,
+        "n_first": 80,
+        "n_second": 81,
+        "std_first_half": 0.23002377678335856,
+        "std_second_half": 0.24011664426886
+      },
+      {
+        "pitcher_id": "69516",
+        "n_total": 59,
+        "n_first": 29,
+        "n_second": 30,
+        "std_first_half": 0.18149797840139456,
+        "std_second_half": 0.22083931525188066
+      },
+      {
+        "pitcher_id": "69539",
+        "n_total": 109,
+        "n_first": 54,
+        "n_second": 55,
+        "std_first_half": 0.24932708808981408,
+        "std_second_half": 0.19711354884016374
+      },
+      {
+        "pitcher_id": "69594",
+        "n_total": 85,
+        "n_first": 42,
+        "n_second": 43,
+        "std_first_half": 0.10312673484269123,
+        "std_second_half": 0.15302723408445737
+      },
+      {
+        "pitcher_id": "69620",
+        "n_total": 112,
+        "n_first": 56,
+        "n_second": 56,
+        "std_first_half": 0.23961960909259555,
+        "std_second_half": 0.08275409794361267
+      },
+      {
+        "pitcher_id": "69645",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.04493807467566401,
+        "std_second_half": 0.049023676998290806
+      },
+      {
+        "pitcher_id": "69703",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.13162095337615154,
+        "std_second_half": 0.08928255094646863
+      },
+      {
+        "pitcher_id": "69744",
+        "n_total": 51,
+        "n_first": 25,
+        "n_second": 26,
+        "std_first_half": 0.20657993156403168,
+        "std_second_half": 0.2170611144444029
+      },
+      {
+        "pitcher_id": "69745",
+        "n_total": 97,
+        "n_first": 48,
+        "n_second": 49,
+        "std_first_half": 0.23019670121201097,
+        "std_second_half": 0.26355749071903767
+      },
+      {
+        "pitcher_id": "69748",
+        "n_total": 40,
+        "n_first": 20,
+        "n_second": 20,
+        "std_first_half": 0.18276766420498833,
+        "std_second_half": 0.18809949774688817
+      },
+      {
+        "pitcher_id": "69813",
+        "n_total": 90,
+        "n_first": 45,
+        "n_second": 45,
+        "std_first_half": 0.14042302116724797,
+        "std_second_half": 0.19084254840791737
+      },
+      {
+        "pitcher_id": "69839",
+        "n_total": 58,
+        "n_first": 29,
+        "n_second": 29,
+        "std_first_half": 0.22370874107034974,
+        "std_second_half": 0.1601957661660786
+      },
+      {
+        "pitcher_id": "69940",
+        "n_total": 104,
+        "n_first": 52,
+        "n_second": 52,
+        "std_first_half": 0.20706020625855923,
+        "std_second_half": 0.22469864958637972
+      },
+      {
+        "pitcher_id": "69962",
+        "n_total": 144,
+        "n_first": 72,
+        "n_second": 72,
+        "std_first_half": 0.23932590249520577,
+        "std_second_half": 0.19265221860957557
+      },
+      {
+        "pitcher_id": "69969",
+        "n_total": 102,
+        "n_first": 51,
+        "n_second": 51,
+        "std_first_half": 0.14046363931846645,
+        "std_second_half": 0.15656839011854765
+      },
+      {
+        "pitcher_id": "69974",
+        "n_total": 53,
+        "n_first": 26,
+        "n_second": 27,
+        "std_first_half": 0.03825722154051443,
+        "std_second_half": 0.06429689720374139
+      },
+      {
+        "pitcher_id": "70142",
+        "n_total": 72,
+        "n_first": 36,
+        "n_second": 36,
+        "std_first_half": 0.16978218699800457,
+        "std_second_half": 0.09735950474752085
+      },
+      {
+        "pitcher_id": "70425",
+        "n_total": 67,
+        "n_first": 33,
+        "n_second": 34,
+        "std_first_half": 0.2310938600635917,
+        "std_second_half": 0.14298450485087877
+      },
+      {
+        "pitcher_id": "70839",
+        "n_total": 52,
+        "n_first": 26,
+        "n_second": 26,
+        "std_first_half": 0.13285441605526183,
+        "std_second_half": 0.17123108205445195
+      },
+      {
+        "pitcher_id": "71118",
+        "n_total": 128,
+        "n_first": 64,
+        "n_second": 64,
+        "std_first_half": 0.16027869835138195,
+        "std_second_half": 0.16639686639837126
+      },
+      {
+        "pitcher_id": "71845",
+        "n_total": 140,
+        "n_first": 70,
+        "n_second": 70,
+        "std_first_half": 0.14979411254003377,
+        "std_second_half": 0.16861850616441248
+      },
+      {
+        "pitcher_id": "72447",
+        "n_total": 185,
+        "n_first": 92,
+        "n_second": 93,
+        "std_first_half": 0.1334322666830042,
+        "std_second_half": 0.11702724834594332
+      },
+      {
+        "pitcher_id": "72523",
+        "n_total": 385,
+        "n_first": 192,
+        "n_second": 193,
+        "std_first_half": 0.1387208088345286,
+        "std_second_half": 0.12582034987891605
+      },
+      {
+        "pitcher_id": "72535",
+        "n_total": 133,
+        "n_first": 66,
+        "n_second": 67,
+        "std_first_half": 0.10064174385442953,
+        "std_second_half": 0.07773896552254603
+      },
+      {
+        "pitcher_id": "72551",
+        "n_total": 87,
+        "n_first": 43,
+        "n_second": 44,
+        "std_first_half": 0.10221553861542163,
+        "std_second_half": 0.12777764871279648
+      },
+      {
+        "pitcher_id": "72749",
+        "n_total": 66,
+        "n_first": 33,
+        "n_second": 33,
+        "std_first_half": 0.07870900884216916,
+        "std_second_half": 0.1286932442387299
+      },
+      {
+        "pitcher_id": "72862",
+        "n_total": 133,
+        "n_first": 66,
+        "n_second": 67,
+        "std_first_half": 0.17721557417996514,
+        "std_second_half": 0.12824604091071126
+      },
+      {
+        "pitcher_id": "73117",
+        "n_total": 458,
+        "n_first": 229,
+        "n_second": 229,
+        "std_first_half": 0.2499024480437658,
+        "std_second_half": 0.1281284730961912
+      },
+      {
+        "pitcher_id": "73211",
+        "n_total": 347,
+        "n_first": 173,
+        "n_second": 174,
+        "std_first_half": 0.2616577717340697,
+        "std_second_half": 0.16447816473109958
+      },
+      {
+        "pitcher_id": "73226",
+        "n_total": 82,
+        "n_first": 41,
+        "n_second": 41,
+        "std_first_half": 0.11614154067133858,
+        "std_second_half": 0.07807566881542294
+      },
+      {
+        "pitcher_id": "73241",
+        "n_total": 45,
+        "n_first": 22,
+        "n_second": 23,
+        "std_first_half": 0.07227792997350857,
+        "std_second_half": 0.19208520836526502
+      },
+      {
+        "pitcher_id": "73248",
+        "n_total": 197,
+        "n_first": 98,
+        "n_second": 99,
+        "std_first_half": 0.11879528638624047,
+        "std_second_half": 0.1411336782945104
+      },
+      {
+        "pitcher_id": "73632",
+        "n_total": 58,
+        "n_first": 29,
+        "n_second": 29,
+        "std_first_half": 0.2748866041957231,
+        "std_second_half": 0.06612314046106323
+      },
+      {
+        "pitcher_id": "73738",
+        "n_total": 216,
+        "n_first": 108,
+        "n_second": 108,
+        "std_first_half": 0.210818236828635,
+        "std_second_half": 0.1357363920865817
+      },
+      {
+        "pitcher_id": "73750",
+        "n_total": 88,
+        "n_first": 44,
+        "n_second": 44,
+        "std_first_half": 0.23697257727094811,
+        "std_second_half": 0.2604995366383497
+      },
+      {
+        "pitcher_id": "73801",
+        "n_total": 295,
+        "n_first": 147,
+        "n_second": 148,
+        "std_first_half": 0.2210033199147361,
+        "std_second_half": 0.11482335994530658
+      },
+      {
+        "pitcher_id": "74167",
+        "n_total": 114,
+        "n_first": 57,
+        "n_second": 57,
+        "std_first_half": 0.1619327934589874,
+        "std_second_half": 0.14775587685876748
+      },
+      {
+        "pitcher_id": "74359",
+        "n_total": 265,
+        "n_first": 132,
+        "n_second": 133,
+        "std_first_half": 0.13430183847730534,
+        "std_second_half": 0.14554199534745108
+      },
+      {
+        "pitcher_id": "74454",
+        "n_total": 98,
+        "n_first": 49,
+        "n_second": 49,
+        "std_first_half": 0.24029888516009323,
+        "std_second_half": 0.23606870304510497
+      },
+      {
+        "pitcher_id": "74513",
+        "n_total": 144,
+        "n_first": 72,
+        "n_second": 72,
+        "std_first_half": 0.24892683726850343,
+        "std_second_half": 0.16753728067122994
+      },
+      {
+        "pitcher_id": "74630",
+        "n_total": 127,
+        "n_first": 63,
+        "n_second": 64,
+        "std_first_half": 0.11307936977365754,
+        "std_second_half": 0.07302393979874104
+      },
+      {
+        "pitcher_id": "74731",
+        "n_total": 140,
+        "n_first": 70,
+        "n_second": 70,
+        "std_first_half": 0.14715134605731722,
+        "std_second_half": 0.1760343805014521
+      },
+      {
+        "pitcher_id": "74748",
+        "n_total": 33,
+        "n_first": 16,
+        "n_second": 17,
+        "std_first_half": 0.03379647648670889,
+        "std_second_half": 0.13003256980294908
+      },
+      {
+        "pitcher_id": "74838",
+        "n_total": 90,
+        "n_first": 45,
+        "n_second": 45,
+        "std_first_half": 0.25564172384847944,
+        "std_second_half": 0.1140397782474487
+      },
+      {
+        "pitcher_id": "74857",
+        "n_total": 391,
+        "n_first": 195,
+        "n_second": 196,
+        "std_first_half": 0.21057898424958404,
+        "std_second_half": 0.17941622522235184
+      },
+      {
+        "pitcher_id": "75138",
+        "n_total": 171,
+        "n_first": 85,
+        "n_second": 86,
+        "std_first_half": 0.11618863399432747,
+        "std_second_half": 0.14311731866973604
+      },
+      {
+        "pitcher_id": "75149",
+        "n_total": 154,
+        "n_first": 77,
+        "n_second": 77,
+        "std_first_half": 0.1424132156350864,
+        "std_second_half": 0.08717063045590902
+      },
+      {
+        "pitcher_id": "75250",
+        "n_total": 175,
+        "n_first": 87,
+        "n_second": 88,
+        "std_first_half": 0.17633427705763008,
+        "std_second_half": 0.1987408779731057
+      },
+      {
+        "pitcher_id": "75258",
+        "n_total": 87,
+        "n_first": 43,
+        "n_second": 44,
+        "std_first_half": 0.15521320135141256,
+        "std_second_half": 0.26021087129918935
+      },
+      {
+        "pitcher_id": "75321",
+        "n_total": 205,
+        "n_first": 102,
+        "n_second": 103,
+        "std_first_half": 0.22236018884195247,
+        "std_second_half": 0.2202077946780048
+      },
+      {
+        "pitcher_id": "75340",
+        "n_total": 197,
+        "n_first": 98,
+        "n_second": 99,
+        "std_first_half": 0.11912019861961849,
+        "std_second_half": 0.1073326614256809
+      },
+      {
+        "pitcher_id": "75342",
+        "n_total": 265,
+        "n_first": 132,
+        "n_second": 133,
+        "std_first_half": 0.18448161185854137,
+        "std_second_half": 0.16111651741124977
+      },
+      {
+        "pitcher_id": "75421",
+        "n_total": 278,
+        "n_first": 139,
+        "n_second": 139,
+        "std_first_half": 0.19363628816591194,
+        "std_second_half": 0.21989857156695433
+      },
+      {
+        "pitcher_id": "75537",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.17616545253444746,
+        "std_second_half": 0.04530378651853139
+      },
+      {
+        "pitcher_id": "75620",
+        "n_total": 40,
+        "n_first": 20,
+        "n_second": 20,
+        "std_first_half": 0.2631571508048695,
+        "std_second_half": 0.2673771779025987
+      },
+      {
+        "pitcher_id": "75730",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.08947214583853666,
+        "std_second_half": 0.11604341747631934
+      },
+      {
+        "pitcher_id": "75867",
+        "n_total": 605,
+        "n_first": 302,
+        "n_second": 303,
+        "std_first_half": 0.13766295083392632,
+        "std_second_half": 0.153763017672071
+      },
+      {
+        "pitcher_id": "76118",
+        "n_total": 498,
+        "n_first": 249,
+        "n_second": 249,
+        "std_first_half": 0.17434838328928337,
+        "std_second_half": 0.17179007526912876
+      },
+      {
+        "pitcher_id": "76225",
+        "n_total": 134,
+        "n_first": 67,
+        "n_second": 67,
+        "std_first_half": 0.15364777216118355,
+        "std_second_half": 0.16121573680836196
+      },
+      {
+        "pitcher_id": "76329",
+        "n_total": 278,
+        "n_first": 139,
+        "n_second": 139,
+        "std_first_half": 0.17189576556768985,
+        "std_second_half": 0.10904900145092314
+      },
+      {
+        "pitcher_id": "76350",
+        "n_total": 202,
+        "n_first": 101,
+        "n_second": 101,
+        "std_first_half": 0.22504044529223347,
+        "std_second_half": 0.18679159808155554
+      },
+      {
+        "pitcher_id": "76355",
+        "n_total": 97,
+        "n_first": 48,
+        "n_second": 49,
+        "std_first_half": 0.288320746792191,
+        "std_second_half": 0.24078863825812186
+      },
+      {
+        "pitcher_id": "76430",
+        "n_total": 543,
+        "n_first": 271,
+        "n_second": 272,
+        "std_first_half": 0.18575111754291912,
+        "std_second_half": 0.1413511365342247
+      },
+      {
+        "pitcher_id": "76455",
+        "n_total": 113,
+        "n_first": 56,
+        "n_second": 57,
+        "std_first_half": 0.2063379894956111,
+        "std_second_half": 0.28962313935948486
+      },
+      {
+        "pitcher_id": "76540",
+        "n_total": 110,
+        "n_first": 55,
+        "n_second": 55,
+        "std_first_half": 0.1095565946561864,
+        "std_second_half": 0.10426657431084288
+      },
+      {
+        "pitcher_id": "76610",
+        "n_total": 58,
+        "n_first": 29,
+        "n_second": 29,
+        "std_first_half": 0.23033689050622966,
+        "std_second_half": 0.1187621681606011
+      },
+      {
+        "pitcher_id": "76650",
+        "n_total": 533,
+        "n_first": 266,
+        "n_second": 267,
+        "std_first_half": 0.11448888055194838,
+        "std_second_half": 0.10015811650904094
+      },
+      {
+        "pitcher_id": "76715",
+        "n_total": 43,
+        "n_first": 21,
+        "n_second": 22,
+        "std_first_half": 0.21980102473871788,
+        "std_second_half": 0.21128435963815592
+      },
+      {
+        "pitcher_id": "76757",
+        "n_total": 148,
+        "n_first": 74,
+        "n_second": 74,
+        "std_first_half": 0.16569729585641432,
+        "std_second_half": 0.12357447255974473
+      },
+      {
+        "pitcher_id": "76858",
+        "n_total": 186,
+        "n_first": 93,
+        "n_second": 93,
+        "std_first_half": 0.16914182464178104,
+        "std_second_half": 0.09471224651244586
+      },
+      {
+        "pitcher_id": "77211",
+        "n_total": 331,
+        "n_first": 165,
+        "n_second": 166,
+        "std_first_half": 0.2679897342743929,
+        "std_second_half": 0.22047732519275343
+      },
+      {
+        "pitcher_id": "77263",
+        "n_total": 361,
+        "n_first": 180,
+        "n_second": 181,
+        "std_first_half": 0.13133461101046684,
+        "std_second_half": 0.13726691708581165
+      },
+      {
+        "pitcher_id": "77318",
+        "n_total": 319,
+        "n_first": 159,
+        "n_second": 160,
+        "std_first_half": 0.2518850228656897,
+        "std_second_half": 0.22120076860500854
+      },
+      {
+        "pitcher_id": "77446",
+        "n_total": 258,
+        "n_first": 129,
+        "n_second": 129,
+        "std_first_half": 0.256946410961947,
+        "std_second_half": 0.2625915782052873
+      },
+      {
+        "pitcher_id": "77563",
+        "n_total": 110,
+        "n_first": 55,
+        "n_second": 55,
+        "std_first_half": 0.07840910584101746,
+        "std_second_half": 0.16791567561178325
+      },
+      {
+        "pitcher_id": "77591",
+        "n_total": 87,
+        "n_first": 43,
+        "n_second": 44,
+        "std_first_half": 0.25443988328914724,
+        "std_second_half": 0.21436702943472455
+      },
+      {
+        "pitcher_id": "77637",
+        "n_total": 235,
+        "n_first": 117,
+        "n_second": 118,
+        "std_first_half": 0.2739211011485526,
+        "std_second_half": 0.2328673322146224
+      },
+      {
+        "pitcher_id": "77829",
+        "n_total": 172,
+        "n_first": 86,
+        "n_second": 86,
+        "std_first_half": 0.25138823827026846,
+        "std_second_half": 0.21019368730604288
+      },
+      {
+        "pitcher_id": "77927",
+        "n_total": 327,
+        "n_first": 163,
+        "n_second": 164,
+        "std_first_half": 0.21157427413046156,
+        "std_second_half": 0.15546166341364104
+      },
+      {
+        "pitcher_id": "78148",
+        "n_total": 208,
+        "n_first": 104,
+        "n_second": 104,
+        "std_first_half": 0.22849556189851675,
+        "std_second_half": 0.2706140711753743
+      },
+      {
+        "pitcher_id": "78247",
+        "n_total": 170,
+        "n_first": 85,
+        "n_second": 85,
+        "std_first_half": 0.15105965445870076,
+        "std_second_half": 0.11481832280346443
+      },
+      {
+        "pitcher_id": "78248",
+        "n_total": 38,
+        "n_first": 19,
+        "n_second": 19,
+        "std_first_half": 0.1297492478766694,
+        "std_second_half": 0.0803030421707132
+      },
+      {
+        "pitcher_id": "78257",
+        "n_total": 54,
+        "n_first": 27,
+        "n_second": 27,
+        "std_first_half": 0.18345837664587156,
+        "std_second_half": 0.09222109720248817
+      },
+      {
+        "pitcher_id": "78352",
+        "n_total": 382,
+        "n_first": 191,
+        "n_second": 191,
+        "std_first_half": 0.18217280262200417,
+        "std_second_half": 0.15831247135020554
+      },
+      {
+        "pitcher_id": "78366",
+        "n_total": 44,
+        "n_first": 22,
+        "n_second": 22,
+        "std_first_half": 0.059576296393711314,
+        "std_second_half": 0.05430687440041876
+      },
+      {
+        "pitcher_id": "78517",
+        "n_total": 93,
+        "n_first": 46,
+        "n_second": 47,
+        "std_first_half": 0.11239766736022291,
+        "std_second_half": 0.0793406720476993
+      },
+      {
+        "pitcher_id": "78536",
+        "n_total": 96,
+        "n_first": 48,
+        "n_second": 48,
+        "std_first_half": 0.07634996481041376,
+        "std_second_half": 0.13063153170068886
+      },
+      {
+        "pitcher_id": "78552",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.17753486090972467,
+        "std_second_half": 0.13149973317296657
+      },
+      {
+        "pitcher_id": "78760",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.052751620410015396,
+        "std_second_half": 0.12892168418693098
+      },
+      {
+        "pitcher_id": "78819",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.20197199795902107,
+        "std_second_half": 0.17549749139316526
+      },
+      {
+        "pitcher_id": "79130",
+        "n_total": 34,
+        "n_first": 17,
+        "n_second": 17,
+        "std_first_half": 0.09677902978754047,
+        "std_second_half": 0.11676158385031993
+      },
+      {
+        "pitcher_id": "79140",
+        "n_total": 295,
+        "n_first": 147,
+        "n_second": 148,
+        "std_first_half": 0.11013150713173267,
+        "std_second_half": 0.08293530865097974
+      },
+      {
+        "pitcher_id": "79191",
+        "n_total": 66,
+        "n_first": 33,
+        "n_second": 33,
+        "std_first_half": 0.12808387690017936,
+        "std_second_half": 0.13410987896279922
+      },
+      {
+        "pitcher_id": "79229",
+        "n_total": 128,
+        "n_first": 64,
+        "n_second": 64,
+        "std_first_half": 0.267468160023514,
+        "std_second_half": 0.2025172636184186
+      },
+      {
+        "pitcher_id": "79293",
+        "n_total": 170,
+        "n_first": 85,
+        "n_second": 85,
+        "std_first_half": 0.11467638541499613,
+        "std_second_half": 0.07543469556389769
+      },
+      {
+        "pitcher_id": "79358",
+        "n_total": 245,
+        "n_first": 122,
+        "n_second": 123,
+        "std_first_half": 0.13101675126258053,
+        "std_second_half": 0.10754649843332832
+      },
+      {
+        "pitcher_id": "79440",
+        "n_total": 77,
+        "n_first": 38,
+        "n_second": 39,
+        "std_first_half": 0.2686105399180192,
+        "std_second_half": 0.12150905517369386
+      },
+      {
+        "pitcher_id": "79545",
+        "n_total": 201,
+        "n_first": 100,
+        "n_second": 101,
+        "std_first_half": 0.11652478046915099,
+        "std_second_half": 0.12073020705705596
+      },
+      {
+        "pitcher_id": "79617",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.18673077787668735,
+        "std_second_half": 0.2793201977334294
+      },
+      {
+        "pitcher_id": "79764",
+        "n_total": 244,
+        "n_first": 122,
+        "n_second": 122,
+        "std_first_half": 0.2164257497819433,
+        "std_second_half": 0.23317055246547447
+      },
+      {
+        "pitcher_id": "79791",
+        "n_total": 52,
+        "n_first": 26,
+        "n_second": 26,
+        "std_first_half": 0.042908041204417595,
+        "std_second_half": 0.13421830989674421
+      },
+      {
+        "pitcher_id": "79825",
+        "n_total": 68,
+        "n_first": 34,
+        "n_second": 34,
+        "std_first_half": 0.09161075703413435,
+        "std_second_half": 0.14001071069291235
+      },
+      {
+        "pitcher_id": "79847",
+        "n_total": 270,
+        "n_first": 135,
+        "n_second": 135,
+        "std_first_half": 0.16611119109023734,
+        "std_second_half": 0.16607517310510486
+      },
+      {
+        "pitcher_id": "95657",
+        "n_total": 118,
+        "n_first": 59,
+        "n_second": 59,
+        "std_first_half": 0.21728265876260808,
+        "std_second_half": 0.2654699332674492
+      },
+      {
+        "pitcher_id": "97336",
+        "n_total": 54,
+        "n_first": 27,
+        "n_second": 27,
+        "std_first_half": 0.19165591292760564,
+        "std_second_half": 0.09481083656072616
+      },
+      {
+        "pitcher_id": "99445",
+        "n_total": 184,
+        "n_first": 92,
+        "n_second": 92,
+        "std_first_half": 0.1103821645861302,
+        "std_second_half": 0.11280728472320425
+      },
+      {
+        "pitcher_id": "99563",
+        "n_total": 64,
+        "n_first": 32,
+        "n_second": 32,
+        "std_first_half": 0.15004258720040226,
+        "std_second_half": 0.146882300779427
+      },
+      {
+        "pitcher_id": "99737",
+        "n_total": 128,
+        "n_first": 64,
+        "n_second": 64,
+        "std_first_half": 0.12567018530148794,
+        "std_second_half": 0.12307357109936236
+      }
+    ]
+  },
+  "1-2_condition_controlled": {
+    "label": "조건 통제 모집단",
+    "min_appearances": 20,
+    "n_pitchers": 218,
+    "pearson_r": 0.3676683149886827,
+    "pearson_p": 2.212091720706126e-08,
+    "spearman_r": 0.31859319881227954,
+    "spearman_p": 1.5656805561427567e-06,
+    "std_first_half_stats": {
+      "count": 218.0,
+      "mean": 0.13912448614992773,
+      "std": 0.04461261418859598,
+      "min": 0.03277126112244622,
+      "25%": 0.11183134345505791,
+      "50%": 0.1353356186865598,
+      "75%": 0.16457812366204483,
+      "max": 0.26998042257065336
+    },
+    "std_second_half_stats": {
+      "count": 218.0,
+      "mean": 0.14517327440790534,
+      "std": 0.050193852109468515,
+      "min": 0.027538722737265743,
+      "25%": 0.11776910977394234,
+      "50%": 0.1433466110224556,
+      "75%": 0.16561123213113402,
+      "max": 0.34929920254766245
+    },
+    "predictive": true,
+    "per_pitcher": [
+      {
+        "pitcher_id": "50106",
+        "n_total": 56,
+        "n_first": 28,
+        "n_second": 28,
+        "std_first_half": 0.09722964611678223,
+        "std_second_half": 0.3019828891575073
+      },
+      {
+        "pitcher_id": "50360",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.13726753745236084,
+        "std_second_half": 0.147381399934943
+      },
+      {
+        "pitcher_id": "50464",
+        "n_total": 29,
+        "n_first": 14,
+        "n_second": 15,
+        "std_first_half": 0.10475019342215088,
+        "std_second_half": 0.1456718732043257
+      },
+      {
+        "pitcher_id": "50556",
+        "n_total": 163,
+        "n_first": 81,
+        "n_second": 82,
+        "std_first_half": 0.13472574250841762,
+        "std_second_half": 0.1831390713418966
+      },
+      {
+        "pitcher_id": "50662",
+        "n_total": 52,
+        "n_first": 26,
+        "n_second": 26,
+        "std_first_half": 0.2427476887317681,
+        "std_second_half": 0.23193816338544931
+      },
+      {
+        "pitcher_id": "50705",
+        "n_total": 117,
+        "n_first": 58,
+        "n_second": 59,
+        "std_first_half": 0.1333461162013694,
+        "std_second_half": 0.15677706464354613
+      },
+      {
+        "pitcher_id": "51301",
+        "n_total": 47,
+        "n_first": 23,
+        "n_second": 24,
+        "std_first_half": 0.1272238678448628,
+        "std_second_half": 0.17225587114791624
+      },
+      {
+        "pitcher_id": "51454",
+        "n_total": 71,
+        "n_first": 35,
+        "n_second": 36,
+        "std_first_half": 0.1829884415691307,
+        "std_second_half": 0.19077005553100201
+      },
+      {
+        "pitcher_id": "51516",
+        "n_total": 41,
+        "n_first": 20,
+        "n_second": 21,
+        "std_first_half": 0.11867523338817094,
+        "std_second_half": 0.10832181852723677
+      },
+      {
+        "pitcher_id": "51713",
+        "n_total": 25,
+        "n_first": 12,
+        "n_second": 13,
+        "std_first_half": 0.05922600524237384,
+        "std_second_half": 0.10712762353547743
+      },
+      {
+        "pitcher_id": "51895",
+        "n_total": 40,
+        "n_first": 20,
+        "n_second": 20,
+        "std_first_half": 0.14613640437690575,
+        "std_second_half": 0.11516658700837623
+      },
+      {
+        "pitcher_id": "51897",
+        "n_total": 42,
+        "n_first": 21,
+        "n_second": 21,
+        "std_first_half": 0.17956820729580325,
+        "std_second_half": 0.29560930719447925
+      },
+      {
+        "pitcher_id": "51994",
+        "n_total": 36,
+        "n_first": 18,
+        "n_second": 18,
+        "std_first_half": 0.11203517990322376,
+        "std_second_half": 0.09041537678667894
+      },
+      {
+        "pitcher_id": "52060",
+        "n_total": 94,
+        "n_first": 47,
+        "n_second": 47,
+        "std_first_half": 0.16448738068391544,
+        "std_second_half": 0.206627366489367
+      },
+      {
+        "pitcher_id": "52204",
+        "n_total": 50,
+        "n_first": 25,
+        "n_second": 25,
+        "std_first_half": 0.1229622655532989,
+        "std_second_half": 0.10524292038739076
+      },
+      {
+        "pitcher_id": "52206",
+        "n_total": 53,
+        "n_first": 26,
+        "n_second": 27,
+        "std_first_half": 0.08056565884181288,
+        "std_second_half": 0.15030044756100042
+      },
+      {
+        "pitcher_id": "52330",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.1642621887917809,
+        "std_second_half": 0.18053249938261345
+      },
+      {
+        "pitcher_id": "52395",
+        "n_total": 20,
+        "n_first": 10,
+        "n_second": 10,
+        "std_first_half": 0.03277126112244622,
+        "std_second_half": 0.1192694894392992
+      },
+      {
+        "pitcher_id": "52397",
+        "n_total": 26,
+        "n_first": 13,
+        "n_second": 13,
+        "std_first_half": 0.17054666535614982,
+        "std_second_half": 0.20088557744238128
+      },
+      {
+        "pitcher_id": "52639",
+        "n_total": 88,
+        "n_first": 44,
+        "n_second": 44,
+        "std_first_half": 0.16162536646301015,
+        "std_second_half": 0.10457265469362581
+      },
+      {
+        "pitcher_id": "53139",
+        "n_total": 65,
+        "n_first": 32,
+        "n_second": 33,
+        "std_first_half": 0.1518981179720393,
+        "std_second_half": 0.1261876397705861
+      },
+      {
+        "pitcher_id": "53301",
+        "n_total": 27,
+        "n_first": 13,
+        "n_second": 14,
+        "std_first_half": 0.18905377363840972,
+        "std_second_half": 0.15993382581589763
+      },
+      {
+        "pitcher_id": "53609",
+        "n_total": 36,
+        "n_first": 18,
+        "n_second": 18,
+        "std_first_half": 0.13687365064843585,
+        "std_second_half": 0.17978067156755492
+      },
+      {
+        "pitcher_id": "53754",
+        "n_total": 40,
+        "n_first": 20,
+        "n_second": 20,
+        "std_first_half": 0.09409139593753342,
+        "std_second_half": 0.24734856179031411
+      },
+      {
+        "pitcher_id": "53892",
+        "n_total": 90,
+        "n_first": 45,
+        "n_second": 45,
+        "std_first_half": 0.12154743846737288,
+        "std_second_half": 0.1179527924102424
+      },
+      {
+        "pitcher_id": "54063",
+        "n_total": 26,
+        "n_first": 13,
+        "n_second": 13,
+        "std_first_half": 0.08876698104068267,
+        "std_second_half": 0.1446771051120036
+      },
+      {
+        "pitcher_id": "54263",
+        "n_total": 42,
+        "n_first": 21,
+        "n_second": 21,
+        "std_first_half": 0.23659353518821502,
+        "std_second_half": 0.21594944293691037
+      },
+      {
+        "pitcher_id": "54561",
+        "n_total": 21,
+        "n_first": 10,
+        "n_second": 11,
+        "std_first_half": 0.22071688124533353,
+        "std_second_half": 0.24174865798254935
+      },
+      {
+        "pitcher_id": "54610",
+        "n_total": 24,
+        "n_first": 12,
+        "n_second": 12,
+        "std_first_half": 0.11993014657215333,
+        "std_second_half": 0.04595185948524295
+      },
+      {
+        "pitcher_id": "55167",
+        "n_total": 29,
+        "n_first": 14,
+        "n_second": 15,
+        "std_first_half": 0.12527093165887015,
+        "std_second_half": 0.1317247152027215
+      },
+      {
+        "pitcher_id": "55455",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.13148959751397052,
+        "std_second_half": 0.19343077947257625
+      },
+      {
+        "pitcher_id": "60140",
+        "n_total": 93,
+        "n_first": 46,
+        "n_second": 47,
+        "std_first_half": 0.17515015366394177,
+        "std_second_half": 0.10938196204880683
+      },
+      {
+        "pitcher_id": "60146",
+        "n_total": 173,
+        "n_first": 86,
+        "n_second": 87,
+        "std_first_half": 0.11138705486631767,
+        "std_second_half": 0.12632005514510805
+      },
+      {
+        "pitcher_id": "60181",
+        "n_total": 76,
+        "n_first": 38,
+        "n_second": 38,
+        "std_first_half": 0.16522323899968686,
+        "std_second_half": 0.21426676467388084
+      },
+      {
+        "pitcher_id": "60336",
+        "n_total": 47,
+        "n_first": 23,
+        "n_second": 24,
+        "std_first_half": 0.12385053009312405,
+        "std_second_half": 0.10481437180192363
+      },
+      {
+        "pitcher_id": "60337",
+        "n_total": 69,
+        "n_first": 34,
+        "n_second": 35,
+        "std_first_half": 0.0825186648388802,
+        "std_second_half": 0.10563400625419318
+      },
+      {
+        "pitcher_id": "60339",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.11475581477123292,
+        "std_second_half": 0.1840376546615755
+      },
+      {
+        "pitcher_id": "60559",
+        "n_total": 95,
+        "n_first": 47,
+        "n_second": 48,
+        "std_first_half": 0.1354496379367855,
+        "std_second_half": 0.12628709857551698
+      },
+      {
+        "pitcher_id": "60634",
+        "n_total": 32,
+        "n_first": 16,
+        "n_second": 16,
+        "std_first_half": 0.1289191597070945,
+        "std_second_half": 0.12897666031592692
+      },
+      {
+        "pitcher_id": "60636",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.06949735777779785,
+        "std_second_half": 0.15771301649805783
+      },
+      {
+        "pitcher_id": "60768",
+        "n_total": 121,
+        "n_first": 60,
+        "n_second": 61,
+        "std_first_half": 0.1620043712246801,
+        "std_second_half": 0.12424627403677688
+      },
+      {
+        "pitcher_id": "60845",
+        "n_total": 37,
+        "n_first": 18,
+        "n_second": 19,
+        "std_first_half": 0.17356031518332737,
+        "std_second_half": 0.07667528317331211
+      },
+      {
+        "pitcher_id": "61145",
+        "n_total": 49,
+        "n_first": 24,
+        "n_second": 25,
+        "std_first_half": 0.08086320347741878,
+        "std_second_half": 0.1451254141538736
+      },
+      {
+        "pitcher_id": "61268",
+        "n_total": 77,
+        "n_first": 38,
+        "n_second": 39,
+        "std_first_half": 0.1524251477797403,
+        "std_second_half": 0.08513675442158512
+      },
+      {
+        "pitcher_id": "61329",
+        "n_total": 21,
+        "n_first": 10,
+        "n_second": 11,
+        "std_first_half": 0.16122263979768267,
+        "std_second_half": 0.08978977341039962
+      },
+      {
+        "pitcher_id": "61365",
+        "n_total": 61,
+        "n_first": 30,
+        "n_second": 31,
+        "std_first_half": 0.11323433894910755,
+        "std_second_half": 0.13068670264151522
+      },
+      {
+        "pitcher_id": "61411",
+        "n_total": 111,
+        "n_first": 55,
+        "n_second": 56,
+        "std_first_half": 0.18251432765122796,
+        "std_second_half": 0.1466784172828126
+      },
+      {
+        "pitcher_id": "61456",
+        "n_total": 26,
+        "n_first": 13,
+        "n_second": 13,
+        "std_first_half": 0.1319119874609485,
+        "std_second_half": 0.13904744624656834
+      },
+      {
+        "pitcher_id": "61457",
+        "n_total": 29,
+        "n_first": 14,
+        "n_second": 15,
+        "std_first_half": 0.0787229632639355,
+        "std_second_half": 0.09902190714805532
+      },
+      {
+        "pitcher_id": "61643",
+        "n_total": 137,
+        "n_first": 68,
+        "n_second": 69,
+        "std_first_half": 0.1738793032915289,
+        "std_second_half": 0.17362232931076035
+      },
+      {
+        "pitcher_id": "61666",
+        "n_total": 111,
+        "n_first": 55,
+        "n_second": 56,
+        "std_first_half": 0.1676692167506941,
+        "std_second_half": 0.1232746850362199
+      },
+      {
+        "pitcher_id": "61891",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.26998042257065336,
+        "std_second_half": 0.25944016651243496
+      },
+      {
+        "pitcher_id": "61895",
+        "n_total": 191,
+        "n_first": 95,
+        "n_second": 96,
+        "std_first_half": 0.1289988108902025,
+        "std_second_half": 0.15083333900510068
+      },
+      {
+        "pitcher_id": "62056",
+        "n_total": 68,
+        "n_first": 34,
+        "n_second": 34,
+        "std_first_half": 0.12453783545530671,
+        "std_second_half": 0.11505930231027972
+      },
+      {
+        "pitcher_id": "62146",
+        "n_total": 45,
+        "n_first": 22,
+        "n_second": 23,
+        "std_first_half": 0.07452087943564187,
+        "std_second_half": 0.04340453383360144
+      },
+      {
+        "pitcher_id": "62242",
+        "n_total": 88,
+        "n_first": 44,
+        "n_second": 44,
+        "std_first_half": 0.1252895624737033,
+        "std_second_half": 0.11207225529530823
+      },
+      {
+        "pitcher_id": "62360",
+        "n_total": 196,
+        "n_first": 98,
+        "n_second": 98,
+        "std_first_half": 0.16928389182044426,
+        "std_second_half": 0.1614553485072349
+      },
+      {
+        "pitcher_id": "62363",
+        "n_total": 72,
+        "n_first": 36,
+        "n_second": 36,
+        "std_first_half": 0.20310561360478882,
+        "std_second_half": 0.14949987192753444
+      },
+      {
+        "pitcher_id": "62528",
+        "n_total": 54,
+        "n_first": 27,
+        "n_second": 27,
+        "std_first_half": 0.25844365441450196,
+        "std_second_half": 0.2551184239846473
+      },
+      {
+        "pitcher_id": "62611",
+        "n_total": 29,
+        "n_first": 14,
+        "n_second": 15,
+        "std_first_half": 0.07633354052669541,
+        "std_second_half": 0.04149657903283801
+      },
+      {
+        "pitcher_id": "62648",
+        "n_total": 52,
+        "n_first": 26,
+        "n_second": 26,
+        "std_first_half": 0.13728200936813917,
+        "std_second_half": 0.16287344898606212
+      },
+      {
+        "pitcher_id": "62655",
+        "n_total": 60,
+        "n_first": 30,
+        "n_second": 30,
+        "std_first_half": 0.11552873361302755,
+        "std_second_half": 0.11726460892250111
+      },
+      {
+        "pitcher_id": "62754",
+        "n_total": 48,
+        "n_first": 24,
+        "n_second": 24,
+        "std_first_half": 0.14847000349702222,
+        "std_second_half": 0.1678369957224931
+      },
+      {
+        "pitcher_id": "62869",
+        "n_total": 55,
+        "n_first": 27,
+        "n_second": 28,
+        "std_first_half": 0.14577290200896034,
+        "std_second_half": 0.22788960820634
+      },
+      {
+        "pitcher_id": "62920",
+        "n_total": 21,
+        "n_first": 10,
+        "n_second": 11,
+        "std_first_half": 0.07937129693899285,
+        "std_second_half": 0.15875138152584256
+      },
+      {
+        "pitcher_id": "62929",
+        "n_total": 29,
+        "n_first": 14,
+        "n_second": 15,
+        "std_first_half": 0.15347922864796276,
+        "std_second_half": 0.08494608584272732
+      },
+      {
+        "pitcher_id": "62951",
+        "n_total": 45,
+        "n_first": 22,
+        "n_second": 23,
+        "std_first_half": 0.21515893809408634,
+        "std_second_half": 0.1662473416530904
+      },
+      {
+        "pitcher_id": "62966",
+        "n_total": 28,
+        "n_first": 14,
+        "n_second": 14,
+        "std_first_half": 0.11425010520109614,
+        "std_second_half": 0.09345810786563234
+      },
+      {
+        "pitcher_id": "63248",
+        "n_total": 110,
+        "n_first": 55,
+        "n_second": 55,
+        "std_first_half": 0.20088178121784095,
+        "std_second_half": 0.12600012910179906
+      },
+      {
+        "pitcher_id": "63342",
+        "n_total": 120,
+        "n_first": 60,
+        "n_second": 60,
+        "std_first_half": 0.1994758953833346,
+        "std_second_half": 0.1416007297532985
+      },
+      {
+        "pitcher_id": "63464",
+        "n_total": 56,
+        "n_first": 28,
+        "n_second": 28,
+        "std_first_half": 0.08996852909129863,
+        "std_second_half": 0.12017342895080277
+      },
+      {
+        "pitcher_id": "63492",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.06614832206258829,
+        "std_second_half": 0.12452762058866168
+      },
+      {
+        "pitcher_id": "63512",
+        "n_total": 90,
+        "n_first": 45,
+        "n_second": 45,
+        "std_first_half": 0.17274484837148948,
+        "std_second_half": 0.1492436507794546
+      },
+      {
+        "pitcher_id": "63543",
+        "n_total": 277,
+        "n_first": 138,
+        "n_second": 139,
+        "std_first_half": 0.15625744116418616,
+        "std_second_half": 0.15305959846206296
+      },
+      {
+        "pitcher_id": "63628",
+        "n_total": 42,
+        "n_first": 21,
+        "n_second": 21,
+        "std_first_half": 0.15604569786260872,
+        "std_second_half": 0.10291522603580092
+      },
+      {
+        "pitcher_id": "63638",
+        "n_total": 98,
+        "n_first": 49,
+        "n_second": 49,
+        "std_first_half": 0.14881865537458666,
+        "std_second_half": 0.13567722532047619
+      },
+      {
+        "pitcher_id": "63765",
+        "n_total": 88,
+        "n_first": 44,
+        "n_second": 44,
+        "std_first_half": 0.11251672121446715,
+        "std_second_half": 0.14915221871823742
+      },
+      {
+        "pitcher_id": "63894",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.080020019881723,
+        "std_second_half": 0.09862106089125072
+      },
+      {
+        "pitcher_id": "63950",
+        "n_total": 232,
+        "n_first": 116,
+        "n_second": 116,
+        "std_first_half": 0.18067822225230096,
+        "std_second_half": 0.16200233776100265
+      },
+      {
+        "pitcher_id": "63959",
+        "n_total": 146,
+        "n_first": 73,
+        "n_second": 73,
+        "std_first_half": 0.12685008143551926,
+        "std_second_half": 0.14072071450930432
+      },
+      {
+        "pitcher_id": "63960",
+        "n_total": 33,
+        "n_first": 16,
+        "n_second": 17,
+        "std_first_half": 0.08747918800110878,
+        "std_second_half": 0.11961598520031164
+      },
+      {
+        "pitcher_id": "63961",
+        "n_total": 48,
+        "n_first": 24,
+        "n_second": 24,
+        "std_first_half": 0.13411817426950035,
+        "std_second_half": 0.09033450254771691
+      },
+      {
+        "pitcher_id": "63991",
+        "n_total": 27,
+        "n_first": 13,
+        "n_second": 14,
+        "std_first_half": 0.06723393073670234,
+        "std_second_half": 0.2074842713819029
+      },
+      {
+        "pitcher_id": "64017",
+        "n_total": 103,
+        "n_first": 51,
+        "n_second": 52,
+        "std_first_half": 0.1597169159334543,
+        "std_second_half": 0.15560419480584856
+      },
+      {
+        "pitcher_id": "64047",
+        "n_total": 36,
+        "n_first": 18,
+        "n_second": 18,
+        "std_first_half": 0.12793702494954765,
+        "std_second_half": 0.09023181497125352
+      },
+      {
+        "pitcher_id": "64051",
+        "n_total": 48,
+        "n_first": 24,
+        "n_second": 24,
+        "std_first_half": 0.06408714840418246,
+        "std_second_half": 0.1423693046569888
+      },
+      {
+        "pitcher_id": "64350",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.16471775878295433,
+        "std_second_half": 0.1684365412285963
+      },
+      {
+        "pitcher_id": "64580",
+        "n_total": 72,
+        "n_first": 36,
+        "n_second": 36,
+        "std_first_half": 0.1418970876450354,
+        "std_second_half": 0.1349483249130029
+      },
+      {
+        "pitcher_id": "64596",
+        "n_total": 67,
+        "n_first": 33,
+        "n_second": 34,
+        "std_first_half": 0.12327857433148935,
+        "std_second_half": 0.11846707712398187
+      },
+      {
+        "pitcher_id": "64759",
+        "n_total": 21,
+        "n_first": 10,
+        "n_second": 11,
+        "std_first_half": 0.10340864191266716,
+        "std_second_half": 0.03366087558954081
+      },
+      {
+        "pitcher_id": "64805",
+        "n_total": 67,
+        "n_first": 33,
+        "n_second": 34,
+        "std_first_half": 0.20860128015292567,
+        "std_second_half": 0.12276136333729504
+      },
+      {
+        "pitcher_id": "64893",
+        "n_total": 88,
+        "n_first": 44,
+        "n_second": 44,
+        "std_first_half": 0.1126897253549825,
+        "std_second_half": 0.09797319309118198
+      },
+      {
+        "pitcher_id": "64995",
+        "n_total": 121,
+        "n_first": 60,
+        "n_second": 61,
+        "std_first_half": 0.17128376115720426,
+        "std_second_half": 0.15630164785743886
+      },
+      {
+        "pitcher_id": "65048",
+        "n_total": 157,
+        "n_first": 78,
+        "n_second": 79,
+        "std_first_half": 0.1540171890003702,
+        "std_second_half": 0.1128779688728702
+      },
+      {
+        "pitcher_id": "65056",
+        "n_total": 78,
+        "n_first": 39,
+        "n_second": 39,
+        "std_first_half": 0.16147037791912214,
+        "std_second_half": 0.19358275006694625
+      },
+      {
+        "pitcher_id": "65058",
+        "n_total": 38,
+        "n_first": 19,
+        "n_second": 19,
+        "std_first_half": 0.15687948870584767,
+        "std_second_half": 0.19875348023728479
+      },
+      {
+        "pitcher_id": "65060",
+        "n_total": 215,
+        "n_first": 107,
+        "n_second": 108,
+        "std_first_half": 0.15352618419899217,
+        "std_second_half": 0.14680310770428956
+      },
+      {
+        "pitcher_id": "65062",
+        "n_total": 168,
+        "n_first": 84,
+        "n_second": 84,
+        "std_first_half": 0.21263419396428881,
+        "std_second_half": 0.2264895542400627
+      },
+      {
+        "pitcher_id": "65109",
+        "n_total": 57,
+        "n_first": 28,
+        "n_second": 29,
+        "std_first_half": 0.13803083289622814,
+        "std_second_half": 0.12184103764509513
+      },
+      {
+        "pitcher_id": "65343",
+        "n_total": 108,
+        "n_first": 54,
+        "n_second": 54,
+        "std_first_half": 0.1370219758276514,
+        "std_second_half": 0.17035639955545218
+      },
+      {
+        "pitcher_id": "65496",
+        "n_total": 36,
+        "n_first": 18,
+        "n_second": 18,
+        "std_first_half": 0.16291217523019969,
+        "std_second_half": 0.1257909331564842
+      },
+      {
+        "pitcher_id": "65522",
+        "n_total": 20,
+        "n_first": 10,
+        "n_second": 10,
+        "std_first_half": 0.09002968646199118,
+        "std_second_half": 0.058448956838899654
+      },
+      {
+        "pitcher_id": "65616",
+        "n_total": 52,
+        "n_first": 26,
+        "n_second": 26,
+        "std_first_half": 0.08985438861761928,
+        "std_second_half": 0.12082420637502174
+      },
+      {
+        "pitcher_id": "65643",
+        "n_total": 43,
+        "n_first": 21,
+        "n_second": 22,
+        "std_first_half": 0.2098615303116841,
+        "std_second_half": 0.13353246966391902
+      },
+      {
+        "pitcher_id": "65665",
+        "n_total": 103,
+        "n_first": 51,
+        "n_second": 52,
+        "std_first_half": 0.11656947120771827,
+        "std_second_half": 0.09521624837970291
+      },
+      {
+        "pitcher_id": "65707",
+        "n_total": 82,
+        "n_first": 41,
+        "n_second": 41,
+        "std_first_half": 0.12286202602523039,
+        "std_second_half": 0.15482612616904223
+      },
+      {
+        "pitcher_id": "65769",
+        "n_total": 176,
+        "n_first": 88,
+        "n_second": 88,
+        "std_first_half": 0.1616008721528173,
+        "std_second_half": 0.14772469458605547
+      },
+      {
+        "pitcher_id": "65949",
+        "n_total": 112,
+        "n_first": 56,
+        "n_second": 56,
+        "std_first_half": 0.12273005357750139,
+        "std_second_half": 0.16554868727097433
+      },
+      {
+        "pitcher_id": "66018",
+        "n_total": 44,
+        "n_first": 22,
+        "n_second": 22,
+        "std_first_half": 0.09202397403142723,
+        "std_second_half": 0.1393074480074426
+      },
+      {
+        "pitcher_id": "66145",
+        "n_total": 50,
+        "n_first": 25,
+        "n_second": 25,
+        "std_first_half": 0.09983099051229864,
+        "std_second_half": 0.15376790681630112
+      },
+      {
+        "pitcher_id": "66291",
+        "n_total": 86,
+        "n_first": 43,
+        "n_second": 43,
+        "std_first_half": 0.19879199027795633,
+        "std_second_half": 0.15606794177590128
+      },
+      {
+        "pitcher_id": "66451",
+        "n_total": 56,
+        "n_first": 28,
+        "n_second": 28,
+        "std_first_half": 0.18129399917510994,
+        "std_second_half": 0.12881918698900383
+      },
+      {
+        "pitcher_id": "66492",
+        "n_total": 25,
+        "n_first": 12,
+        "n_second": 13,
+        "std_first_half": 0.15132079328717715,
+        "std_second_half": 0.09901575324677198
+      },
+      {
+        "pitcher_id": "66609",
+        "n_total": 239,
+        "n_first": 119,
+        "n_second": 120,
+        "std_first_half": 0.1476783062883586,
+        "std_second_half": 0.16940746958716363
+      },
+      {
+        "pitcher_id": "66859",
+        "n_total": 36,
+        "n_first": 18,
+        "n_second": 18,
+        "std_first_half": 0.14137860635530158,
+        "std_second_half": 0.19037681288001682
+      },
+      {
+        "pitcher_id": "67008",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.1489877811384928,
+        "std_second_half": 0.15449279918494585
+      },
+      {
+        "pitcher_id": "67066",
+        "n_total": 22,
+        "n_first": 11,
+        "n_second": 11,
+        "std_first_half": 0.12684254287035626,
+        "std_second_half": 0.12215177314234196
+      },
+      {
+        "pitcher_id": "67116",
+        "n_total": 32,
+        "n_first": 16,
+        "n_second": 16,
+        "std_first_half": 0.12377289350526903,
+        "std_second_half": 0.15754076192105537
+      },
+      {
+        "pitcher_id": "67119",
+        "n_total": 63,
+        "n_first": 31,
+        "n_second": 32,
+        "std_first_half": 0.18267347551276836,
+        "std_second_half": 0.3134630451028658
+      },
+      {
+        "pitcher_id": "67246",
+        "n_total": 106,
+        "n_first": 53,
+        "n_second": 53,
+        "std_first_half": 0.12122351411976252,
+        "std_second_half": 0.11204799860457895
+      },
+      {
+        "pitcher_id": "67263",
+        "n_total": 34,
+        "n_first": 17,
+        "n_second": 17,
+        "std_first_half": 0.07274408708535937,
+        "std_second_half": 0.15310642744509453
+      },
+      {
+        "pitcher_id": "67266",
+        "n_total": 182,
+        "n_first": 91,
+        "n_second": 91,
+        "std_first_half": 0.1264497504645695,
+        "std_second_half": 0.1399664435735145
+      },
+      {
+        "pitcher_id": "67365",
+        "n_total": 20,
+        "n_first": 10,
+        "n_second": 10,
+        "std_first_half": 0.04704407655474689,
+        "std_second_half": 0.21319829059143766
+      },
+      {
+        "pitcher_id": "67391",
+        "n_total": 134,
+        "n_first": 67,
+        "n_second": 67,
+        "std_first_half": 0.1030811702905812,
+        "std_second_half": 0.1440641890220147
+      },
+      {
+        "pitcher_id": "67419",
+        "n_total": 24,
+        "n_first": 12,
+        "n_second": 12,
+        "std_first_half": 0.10297221924192013,
+        "std_second_half": 0.05922381069964915
+      },
+      {
+        "pitcher_id": "67421",
+        "n_total": 121,
+        "n_first": 60,
+        "n_second": 61,
+        "std_first_half": 0.11833186748117314,
+        "std_second_half": 0.15648418766903308
+      },
+      {
+        "pitcher_id": "67603",
+        "n_total": 55,
+        "n_first": 27,
+        "n_second": 28,
+        "std_first_half": 0.09039345481719997,
+        "std_second_half": 0.15414162682751126
+      },
+      {
+        "pitcher_id": "67646",
+        "n_total": 41,
+        "n_first": 20,
+        "n_second": 21,
+        "std_first_half": 0.09295287430792691,
+        "std_second_half": 0.06445519623295372
+      },
+      {
+        "pitcher_id": "67703",
+        "n_total": 187,
+        "n_first": 93,
+        "n_second": 94,
+        "std_first_half": 0.10722043584061448,
+        "std_second_half": 0.16080744708868017
+      },
+      {
+        "pitcher_id": "67737",
+        "n_total": 33,
+        "n_first": 16,
+        "n_second": 17,
+        "std_first_half": 0.11945458952394138,
+        "std_second_half": 0.08891025299837636
+      },
+      {
+        "pitcher_id": "67828",
+        "n_total": 109,
+        "n_first": 54,
+        "n_second": 55,
+        "std_first_half": 0.10103270924656484,
+        "std_second_half": 0.1357545525090633
+      },
+      {
+        "pitcher_id": "67954",
+        "n_total": 65,
+        "n_first": 32,
+        "n_second": 33,
+        "std_first_half": 0.10514552127961176,
+        "std_second_half": 0.17450251833784522
+      },
+      {
+        "pitcher_id": "68043",
+        "n_total": 94,
+        "n_first": 47,
+        "n_second": 47,
+        "std_first_half": 0.1481066820545082,
+        "std_second_half": 0.1826948481782637
+      },
+      {
+        "pitcher_id": "68092",
+        "n_total": 31,
+        "n_first": 15,
+        "n_second": 16,
+        "std_first_half": 0.046974632211743486,
+        "std_second_half": 0.15280760983995528
+      },
+      {
+        "pitcher_id": "68242",
+        "n_total": 122,
+        "n_first": 61,
+        "n_second": 61,
+        "std_first_half": 0.1643814143546828,
+        "std_second_half": 0.16335672636232096
+      },
+      {
+        "pitcher_id": "68249",
+        "n_total": 30,
+        "n_first": 15,
+        "n_second": 15,
+        "std_first_half": 0.14668728277724488,
+        "std_second_half": 0.0971684288821661
+      },
+      {
+        "pitcher_id": "68341",
+        "n_total": 29,
+        "n_first": 14,
+        "n_second": 15,
+        "std_first_half": 0.19320502405134632,
+        "std_second_half": 0.15863775559430987
+      },
+      {
+        "pitcher_id": "68403",
+        "n_total": 47,
+        "n_first": 23,
+        "n_second": 24,
+        "std_first_half": 0.1983082831054249,
+        "std_second_half": 0.1565824665809672
+      },
+      {
+        "pitcher_id": "68585",
+        "n_total": 56,
+        "n_first": 28,
+        "n_second": 28,
+        "std_first_half": 0.1154944225502324,
+        "std_second_half": 0.12320670515750022
+      },
+      {
+        "pitcher_id": "68619",
+        "n_total": 32,
+        "n_first": 16,
+        "n_second": 16,
+        "std_first_half": 0.09507271340049851,
+        "std_second_half": 0.14540420314305452
+      },
+      {
+        "pitcher_id": "68639",
+        "n_total": 63,
+        "n_first": 31,
+        "n_second": 32,
+        "std_first_half": 0.15012909498591645,
+        "std_second_half": 0.12916438072465591
+      },
+      {
+        "pitcher_id": "68856",
+        "n_total": 75,
+        "n_first": 37,
+        "n_second": 38,
+        "std_first_half": 0.16236117452994958,
+        "std_second_half": 0.0816010182138799
+      },
+      {
+        "pitcher_id": "68896",
+        "n_total": 25,
+        "n_first": 12,
+        "n_second": 13,
+        "std_first_half": 0.13125510632202486,
+        "std_second_half": 0.0712101102912522
+      },
+      {
+        "pitcher_id": "68900",
+        "n_total": 142,
+        "n_first": 71,
+        "n_second": 71,
+        "std_first_half": 0.162286462623055,
+        "std_second_half": 0.15260186169953824
+      },
+      {
+        "pitcher_id": "68928",
+        "n_total": 68,
+        "n_first": 34,
+        "n_second": 34,
+        "std_first_half": 0.11174475073109098,
+        "std_second_half": 0.13391520920099997
+      },
+      {
+        "pitcher_id": "69041",
+        "n_total": 96,
+        "n_first": 48,
+        "n_second": 48,
+        "std_first_half": 0.15433176096441031,
+        "std_second_half": 0.13327269634592095
+      },
+      {
+        "pitcher_id": "69054",
+        "n_total": 38,
+        "n_first": 19,
+        "n_second": 19,
+        "std_first_half": 0.07091672851338343,
+        "std_second_half": 0.048365510311784134
+      },
+      {
+        "pitcher_id": "69108",
+        "n_total": 32,
+        "n_first": 16,
+        "n_second": 16,
+        "std_first_half": 0.12191301116643237,
+        "std_second_half": 0.12296838601174424
+      },
+      {
+        "pitcher_id": "69134",
+        "n_total": 105,
+        "n_first": 52,
+        "n_second": 53,
+        "std_first_half": 0.12996172453633037,
+        "std_second_half": 0.1590174235782085
+      },
+      {
+        "pitcher_id": "69159",
+        "n_total": 201,
+        "n_first": 100,
+        "n_second": 101,
+        "std_first_half": 0.16080939223600446,
+        "std_second_half": 0.16177308751476374
+      },
+      {
+        "pitcher_id": "69213",
+        "n_total": 23,
+        "n_first": 11,
+        "n_second": 12,
+        "std_first_half": 0.1481231098843735,
+        "std_second_half": 0.14125180844913635
+      },
+      {
+        "pitcher_id": "69360",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.08783177122638881,
+        "std_second_half": 0.17753888980668675
+      },
+      {
+        "pitcher_id": "69539",
+        "n_total": 26,
+        "n_first": 13,
+        "n_second": 13,
+        "std_first_half": 0.10479342851656492,
+        "std_second_half": 0.07885287846558102
+      },
+      {
+        "pitcher_id": "69620",
+        "n_total": 20,
+        "n_first": 10,
+        "n_second": 10,
+        "std_first_half": 0.05804031166161821,
+        "std_second_half": 0.027538722737265743
+      },
+      {
+        "pitcher_id": "69962",
+        "n_total": 21,
+        "n_first": 10,
+        "n_second": 11,
+        "std_first_half": 0.1419836551626043,
+        "std_second_half": 0.14638098252660597
+      },
+      {
+        "pitcher_id": "69969",
+        "n_total": 34,
+        "n_first": 17,
+        "n_second": 17,
+        "std_first_half": 0.19503409274934166,
+        "std_second_half": 0.13547774094086884
+      },
+      {
+        "pitcher_id": "70142",
+        "n_total": 30,
+        "n_first": 15,
+        "n_second": 15,
+        "std_first_half": 0.2012717527433518,
+        "std_second_half": 0.11078907995870006
+      },
+      {
+        "pitcher_id": "70839",
+        "n_total": 26,
+        "n_first": 13,
+        "n_second": 13,
+        "std_first_half": 0.12124874768055363,
+        "std_second_half": 0.17676442702154868
+      },
+      {
+        "pitcher_id": "71118",
+        "n_total": 50,
+        "n_first": 25,
+        "n_second": 25,
+        "std_first_half": 0.1615475691037576,
+        "std_second_half": 0.15785972940134751
+      },
+      {
+        "pitcher_id": "71845",
+        "n_total": 57,
+        "n_first": 28,
+        "n_second": 29,
+        "std_first_half": 0.16313121301188852,
+        "std_second_half": 0.16325421504980228
+      },
+      {
+        "pitcher_id": "72447",
+        "n_total": 73,
+        "n_first": 36,
+        "n_second": 37,
+        "std_first_half": 0.12753113065332042,
+        "std_second_half": 0.11573383948894486
+      },
+      {
+        "pitcher_id": "72523",
+        "n_total": 150,
+        "n_first": 75,
+        "n_second": 75,
+        "std_first_half": 0.13474948812351586,
+        "std_second_half": 0.156832307873068
+      },
+      {
+        "pitcher_id": "72535",
+        "n_total": 25,
+        "n_first": 12,
+        "n_second": 13,
+        "std_first_half": 0.07703695984278053,
+        "std_second_half": 0.11326669303021074
+      },
+      {
+        "pitcher_id": "72551",
+        "n_total": 39,
+        "n_first": 19,
+        "n_second": 20,
+        "std_first_half": 0.10180011374205203,
+        "std_second_half": 0.13397137054236624
+      },
+      {
+        "pitcher_id": "72749",
+        "n_total": 24,
+        "n_first": 12,
+        "n_second": 12,
+        "std_first_half": 0.07628664978622443,
+        "std_second_half": 0.11086049450739537
+      },
+      {
+        "pitcher_id": "72862",
+        "n_total": 74,
+        "n_first": 37,
+        "n_second": 37,
+        "std_first_half": 0.19059280250409866,
+        "std_second_half": 0.14408281716412943
+      },
+      {
+        "pitcher_id": "73117",
+        "n_total": 181,
+        "n_first": 90,
+        "n_second": 91,
+        "std_first_half": 0.15214379484118523,
+        "std_second_half": 0.13847088151475215
+      },
+      {
+        "pitcher_id": "73211",
+        "n_total": 193,
+        "n_first": 96,
+        "n_second": 97,
+        "std_first_half": 0.16550008494906257,
+        "std_second_half": 0.15755702075774294
+      },
+      {
+        "pitcher_id": "73226",
+        "n_total": 24,
+        "n_first": 12,
+        "n_second": 12,
+        "std_first_half": 0.11226659288848076,
+        "std_second_half": 0.05682344066572266
+      },
+      {
+        "pitcher_id": "73241",
+        "n_total": 26,
+        "n_first": 13,
+        "n_second": 13,
+        "std_first_half": 0.05259469481874501,
+        "std_second_half": 0.18291566643030066
+      },
+      {
+        "pitcher_id": "73248",
+        "n_total": 91,
+        "n_first": 45,
+        "n_second": 46,
+        "std_first_half": 0.13657675580885908,
+        "std_second_half": 0.13958072623565698
+      },
+      {
+        "pitcher_id": "73738",
+        "n_total": 80,
+        "n_first": 40,
+        "n_second": 40,
+        "std_first_half": 0.12394635661813642,
+        "std_second_half": 0.16661299728828063
+      },
+      {
+        "pitcher_id": "73801",
+        "n_total": 109,
+        "n_first": 54,
+        "n_second": 55,
+        "std_first_half": 0.15857565569402843,
+        "std_second_half": 0.11770788222850898
+      },
+      {
+        "pitcher_id": "74167",
+        "n_total": 29,
+        "n_first": 14,
+        "n_second": 15,
+        "std_first_half": 0.12906419839634964,
+        "std_second_half": 0.17610365927351937
+      },
+      {
+        "pitcher_id": "74359",
+        "n_total": 118,
+        "n_first": 59,
+        "n_second": 59,
+        "std_first_half": 0.12106240813221215,
+        "std_second_half": 0.13086169829612793
+      },
+      {
+        "pitcher_id": "74513",
+        "n_total": 25,
+        "n_first": 12,
+        "n_second": 13,
+        "std_first_half": 0.07964755163255555,
+        "std_second_half": 0.078363269988773
+      },
+      {
+        "pitcher_id": "74630",
+        "n_total": 24,
+        "n_first": 12,
+        "n_second": 12,
+        "std_first_half": 0.1573862443933472,
+        "std_second_half": 0.04795557050462687
+      },
+      {
+        "pitcher_id": "74731",
+        "n_total": 57,
+        "n_first": 28,
+        "n_second": 29,
+        "std_first_half": 0.11176339797233596,
+        "std_second_half": 0.2044828836164979
+      },
+      {
+        "pitcher_id": "74857",
+        "n_total": 86,
+        "n_first": 43,
+        "n_second": 43,
+        "std_first_half": 0.2631659342888051,
+        "std_second_half": 0.18141960770185026
+      },
+      {
+        "pitcher_id": "75138",
+        "n_total": 50,
+        "n_first": 25,
+        "n_second": 25,
+        "std_first_half": 0.15158361966254796,
+        "std_second_half": 0.09623136940900995
+      },
+      {
+        "pitcher_id": "75149",
+        "n_total": 44,
+        "n_first": 22,
+        "n_second": 22,
+        "std_first_half": 0.17650097647596655,
+        "std_second_half": 0.09543519947997985
+      },
+      {
+        "pitcher_id": "75250",
+        "n_total": 70,
+        "n_first": 35,
+        "n_second": 35,
+        "std_first_half": 0.1768266946390583,
+        "std_second_half": 0.19588108208637128
+      },
+      {
+        "pitcher_id": "75321",
+        "n_total": 49,
+        "n_first": 24,
+        "n_second": 25,
+        "std_first_half": 0.20387073199044253,
+        "std_second_half": 0.15815174872570964
+      },
+      {
+        "pitcher_id": "75340",
+        "n_total": 64,
+        "n_first": 32,
+        "n_second": 32,
+        "std_first_half": 0.13580115822073366,
+        "std_second_half": 0.080196196147399
+      },
+      {
+        "pitcher_id": "75342",
+        "n_total": 146,
+        "n_first": 73,
+        "n_second": 73,
+        "std_first_half": 0.18073898774849767,
+        "std_second_half": 0.1656320804178539
+      },
+      {
+        "pitcher_id": "75421",
+        "n_total": 51,
+        "n_first": 25,
+        "n_second": 26,
+        "std_first_half": 0.23289670099280782,
+        "std_second_half": 0.24454971808486023
+      },
+      {
+        "pitcher_id": "75867",
+        "n_total": 295,
+        "n_first": 147,
+        "n_second": 148,
+        "std_first_half": 0.15362729558465002,
+        "std_second_half": 0.16811747836691704
+      },
+      {
+        "pitcher_id": "76118",
+        "n_total": 214,
+        "n_first": 107,
+        "n_second": 107,
+        "std_first_half": 0.182363880757263,
+        "std_second_half": 0.18089688670790788
+      },
+      {
+        "pitcher_id": "76225",
+        "n_total": 27,
+        "n_first": 13,
+        "n_second": 14,
+        "std_first_half": 0.07309385979508526,
+        "std_second_half": 0.13175092530483917
+      },
+      {
+        "pitcher_id": "76329",
+        "n_total": 72,
+        "n_first": 36,
+        "n_second": 36,
+        "std_first_half": 0.19606587004582263,
+        "std_second_half": 0.16233791718252003
+      },
+      {
+        "pitcher_id": "76350",
+        "n_total": 59,
+        "n_first": 29,
+        "n_second": 30,
+        "std_first_half": 0.2339066537319931,
+        "std_second_half": 0.24754085985721744
+      },
+      {
+        "pitcher_id": "76355",
+        "n_total": 22,
+        "n_first": 11,
+        "n_second": 11,
+        "std_first_half": 0.1646083713214213,
+        "std_second_half": 0.2127997084328146
+      },
+      {
+        "pitcher_id": "76430",
+        "n_total": 272,
+        "n_first": 136,
+        "n_second": 136,
+        "std_first_half": 0.17051623869882465,
+        "std_second_half": 0.14210410204140295
+      },
+      {
+        "pitcher_id": "76540",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.15328012250739612,
+        "std_second_half": 0.13659677194053735
+      },
+      {
+        "pitcher_id": "76650",
+        "n_total": 152,
+        "n_first": 76,
+        "n_second": 76,
+        "std_first_half": 0.10322446431391512,
+        "std_second_half": 0.11987179495559909
+      },
+      {
+        "pitcher_id": "76757",
+        "n_total": 49,
+        "n_first": 24,
+        "n_second": 25,
+        "std_first_half": 0.12432355920415247,
+        "std_second_half": 0.15831826594974227
+      },
+      {
+        "pitcher_id": "76858",
+        "n_total": 47,
+        "n_first": 23,
+        "n_second": 24,
+        "std_first_half": 0.2232595774716201,
+        "std_second_half": 0.06695838462611778
+      },
+      {
+        "pitcher_id": "77211",
+        "n_total": 49,
+        "n_first": 24,
+        "n_second": 25,
+        "std_first_half": 0.1952946445461467,
+        "std_second_half": 0.3018422601293596
+      },
+      {
+        "pitcher_id": "77263",
+        "n_total": 137,
+        "n_first": 68,
+        "n_second": 69,
+        "std_first_half": 0.1378573427463265,
+        "std_second_half": 0.13523015935252053
+      },
+      {
+        "pitcher_id": "77318",
+        "n_total": 104,
+        "n_first": 52,
+        "n_second": 52,
+        "std_first_half": 0.1838971035077619,
+        "std_second_half": 0.13530578349825598
+      },
+      {
+        "pitcher_id": "77446",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.07373418948174185,
+        "std_second_half": 0.13346531151982888
+      },
+      {
+        "pitcher_id": "77563",
+        "n_total": 35,
+        "n_first": 17,
+        "n_second": 18,
+        "std_first_half": 0.08593296645795898,
+        "std_second_half": 0.17408025403465854
+      },
+      {
+        "pitcher_id": "77927",
+        "n_total": 131,
+        "n_first": 65,
+        "n_second": 66,
+        "std_first_half": 0.20972232185357342,
+        "std_second_half": 0.1554584533274267
+      },
+      {
+        "pitcher_id": "78148",
+        "n_total": 43,
+        "n_first": 21,
+        "n_second": 22,
+        "std_first_half": 0.20715806378912008,
+        "std_second_half": 0.34929920254766245
+      },
+      {
+        "pitcher_id": "78247",
+        "n_total": 69,
+        "n_first": 34,
+        "n_second": 35,
+        "std_first_half": 0.14926584151724154,
+        "std_second_half": 0.1340337197320513
+      },
+      {
+        "pitcher_id": "78352",
+        "n_total": 153,
+        "n_first": 76,
+        "n_second": 77,
+        "std_first_half": 0.19207302213828295,
+        "std_second_half": 0.12727620029010558
+      },
+      {
+        "pitcher_id": "78517",
+        "n_total": 25,
+        "n_first": 12,
+        "n_second": 13,
+        "std_first_half": 0.078743133418769,
+        "std_second_half": 0.16671552809409296
+      },
+      {
+        "pitcher_id": "78536",
+        "n_total": 41,
+        "n_first": 20,
+        "n_second": 21,
+        "std_first_half": 0.06617811392868411,
+        "std_second_half": 0.1371141697116468
+      },
+      {
+        "pitcher_id": "79140",
+        "n_total": 66,
+        "n_first": 33,
+        "n_second": 33,
+        "std_first_half": 0.1301634507493745,
+        "std_second_half": 0.07565540413737402
+      },
+      {
+        "pitcher_id": "79191",
+        "n_total": 21,
+        "n_first": 10,
+        "n_second": 11,
+        "std_first_half": 0.13429098794946906,
+        "std_second_half": 0.23646535158453977
+      },
+      {
+        "pitcher_id": "79293",
+        "n_total": 63,
+        "n_first": 31,
+        "n_second": 32,
+        "std_first_half": 0.12091604770003794,
+        "std_second_half": 0.1006640740103984
+      },
+      {
+        "pitcher_id": "79358",
+        "n_total": 88,
+        "n_first": 44,
+        "n_second": 44,
+        "std_first_half": 0.11236588244095096,
+        "std_second_half": 0.14262903302289653
+      },
+      {
+        "pitcher_id": "79545",
+        "n_total": 86,
+        "n_first": 43,
+        "n_second": 43,
+        "std_first_half": 0.13377398875134575,
+        "std_second_half": 0.16136466344783962
+      },
+      {
+        "pitcher_id": "79764",
+        "n_total": 27,
+        "n_first": 13,
+        "n_second": 14,
+        "std_first_half": 0.22797162652400407,
+        "std_second_half": 0.15578191204655023
+      },
+      {
+        "pitcher_id": "79847",
+        "n_total": 119,
+        "n_first": 59,
+        "n_second": 60,
+        "std_first_half": 0.13522159943633413,
+        "std_second_half": 0.16119037126152844
+      },
+      {
+        "pitcher_id": "95657",
+        "n_total": 29,
+        "n_first": 14,
+        "n_second": 15,
+        "std_first_half": 0.20493354591612922,
+        "std_second_half": 0.22778249336969308
+      },
+      {
+        "pitcher_id": "99445",
+        "n_total": 54,
+        "n_first": 27,
+        "n_second": 27,
+        "std_first_half": 0.11062245940875218,
+        "std_second_half": 0.1758213650886957
+      },
+      {
+        "pitcher_id": "99737",
+        "n_total": 42,
+        "n_first": 21,
+        "n_second": 21,
+        "std_first_half": 0.12045890427464302,
+        "std_second_half": 0.1215363089976074
+      }
+    ]
+  },
+  "gate": {
+    "pass": true,
+    "rule": "Pearson r >= 0.3 in both 1-1 and 1-2"
+  }
+}

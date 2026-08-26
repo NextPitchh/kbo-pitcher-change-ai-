@@ -1,0 +1,201 @@
+{
+  "3-1_horizon_compare": [
+    {
+      "horizon": "h5_1",
+      "horizon_pa": 5,
+      "horizon_innings": 1.0,
+      "mean_E": 0.005078900000000006,
+      "mean_Var": 0.0017597360244,
+      "mean_Std": 0.037977550318335176,
+      "mean_avg_pa_simulated": 4.318199999999999,
+      "elapsed_sec_10situations": 1.556654930114746,
+      "elapsed_sec_per_call": 0.15566549301147461,
+      "termination_reason_pooled": {
+        "horizon_pa": 6207,
+        "horizon_innings": 3793
+      }
+    },
+    {
+      "horizon": "h10_2",
+      "horizon_pa": 10,
+      "horizon_innings": 2.0,
+      "mean_E": 0.028600425000000023,
+      "mean_Var": 0.01056227204734375,
+      "mean_Std": 0.08240489337350054,
+      "mean_avg_pa_simulated": 8.9054,
+      "elapsed_sec_10situations": 2.268610715866089,
+      "elapsed_sec_per_call": 0.2268610715866089,
+      "termination_reason_pooled": {
+        "horizon_pa": 6066,
+        "horizon_innings": 3933,
+        "regulation_away_win": 1
+      }
+    },
+    {
+      "horizon": "full",
+      "horizon_pa": null,
+      "horizon_innings": null,
+      "mean_E": -0.0073685499999999755,
+      "mean_Var": 0.15908064667207503,
+      "mean_Std": 0.3571937122919275,
+      "mean_avg_pa_simulated": 95.7089,
+      "elapsed_sec_10situations": 30.27801251411438,
+      "elapsed_sec_per_call": 3.027801251411438,
+      "termination_reason_pooled": {
+        "pa_cap": 1502,
+        "regulation_away_win": 2670,
+        "walkoff_home_win": 5725,
+        "max_innings_cap": 103
+      }
+    }
+  ],
+  "3-2_pitcher_gap": [
+    {
+      "horizon": "h5_1",
+      "horizon_pa": 5,
+      "horizon_innings": 1.0,
+      "between": 0.002683923894819129,
+      "within": 0.03708323851556601,
+      "ratio": 0.07237566087148857
+    },
+    {
+      "horizon": "h10_2",
+      "horizon_pa": 10,
+      "horizon_innings": 2.0,
+      "between": 0.004325494505996094,
+      "within": 0.07744997379119561,
+      "ratio": 0.055848882759567946
+    },
+    {
+      "horizon": "full",
+      "horizon_pa": null,
+      "horizon_innings": null,
+      "between": 0.020684478223644782,
+      "within": 0.3619889938750936,
+      "ratio": 0.057141179907757314
+    }
+  ],
+  "3-3_lambda_threshold": {
+    "n_valid": 346,
+    "n_total_pairs": 840,
+    "percentiles": {
+      "5": 0.047949835312469276,
+      "25": 0.2856023794983568,
+      "50": 0.7202575419733579,
+      "75": 2.8371985735724,
+      "95": 13.411215583463182
+    },
+    "recommended_slider": [
+      0.0,
+      13.411215583463182
+    ],
+    "recommended_discrete": [
+      0.0,
+      0.2856023794983568,
+      0.7202575419733579,
+      7.26112493030775
+    ],
+    "region_bounds": [
+      0.2856023794983568,
+      2.8371985735724
+    ],
+    "lambda_max_recommendation_check": {
+      "n_changed": 7,
+      "n_total": 10,
+      "pass": true,
+      "detail": [
+        {
+          "situation_idx": 0,
+          "best_at_lambda0": "64759",
+          "best_at_lambda_max": "64759",
+          "changed": false
+        },
+        {
+          "situation_idx": 1,
+          "best_at_lambda0": "51648",
+          "best_at_lambda_max": "51713",
+          "changed": true
+        },
+        {
+          "situation_idx": 2,
+          "best_at_lambda0": "64580",
+          "best_at_lambda_max": "68703",
+          "changed": true
+        },
+        {
+          "situation_idx": 3,
+          "best_at_lambda0": "51648",
+          "best_at_lambda_max": "64580",
+          "changed": true
+        },
+        {
+          "situation_idx": 4,
+          "best_at_lambda0": "69539",
+          "best_at_lambda_max": "69539",
+          "changed": false
+        },
+        {
+          "situation_idx": 5,
+          "best_at_lambda0": "69539",
+          "best_at_lambda_max": "64759",
+          "changed": true
+        },
+        {
+          "situation_idx": 6,
+          "best_at_lambda0": "74838",
+          "best_at_lambda_max": "74838",
+          "changed": false
+        },
+        {
+          "situation_idx": 7,
+          "best_at_lambda0": "64580",
+          "best_at_lambda_max": "74838",
+          "changed": true
+        },
+        {
+          "situation_idx": 8,
+          "best_at_lambda0": "64759",
+          "best_at_lambda_max": "69539",
+          "changed": true
+        },
+        {
+          "situation_idx": 9,
+          "best_at_lambda0": "51713",
+          "best_at_lambda_max": "69539",
+          "changed": true
+        }
+      ]
+    }
+  },
+  "3-4_domain_checks": [
+    {
+      "label": "9회말 동점 1아웃 만루 → E[WPA] 양수",
+      "value": 0.11971700000000002,
+      "pass": true
+    },
+    {
+      "label": "1회초 0-0 무사 주자없음 → E[WPA]≈0 (|E|<0.05)",
+      "value": 0.02099599999999999,
+      "pass": true
+    },
+    {
+      "label": "7회말 3점리드 2아웃 → E[WPA] 작은 값 (|E|<0.05)",
+      "value": -0.042948999999999925,
+      "pass": true
+    },
+    {
+      "label": "대칭성: 7회 1아웃1루 -1점 top(-0.0407) vs bot(-0.0070) 차이<0.05",
+      "value": 0.033711000000000005,
+      "pass": true
+    }
+  ],
+  "3-5_regression": {
+    "e_wpa": -0.09842100000000002,
+    "ref_e_wpa": -0.09842100000000002,
+    "match_e": true,
+    "var_wpa": 0.16471519675899995,
+    "ref_var_wpa": 0.16471519675899995,
+    "match_var": true,
+    "pass": true
+  }
+}

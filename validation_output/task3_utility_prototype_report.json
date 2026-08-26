@@ -1,0 +1,137 @@
+{
+  "3-1": {
+    "n_pitchers": 218,
+    "var_e_pitcher_pred": 7.131552986629346e-07,
+    "var_actual": 4.125198991828189e-05,
+    "ratio_pred_over_actual": 0.017287779330782814,
+    "spearman_r": -0.08035761341635252,
+    "spearman_p": 0.23738169966211586,
+    "verdict": "상관 없음/노이즈"
+  },
+  "3-2": {
+    "n_valid": 1074,
+    "n_total_pairs": 1770,
+    "percentiles": {
+      "5": 0.0017864909138392156,
+      "25": 0.007625286086319462,
+      "50": 0.01664781283703077,
+      "75": 0.03621670190255917,
+      "95": 0.16731547339680852
+    },
+    "lambda_max": 0.16731547339680852,
+    "in_target_range_0.5_3": false
+  },
+  "3-3": {
+    "lambda_max_used": 0.16731547339680852,
+    "n_changed": 15,
+    "n_total": 15,
+    "detail": [
+      {
+        "situation_idx": 0,
+        "e_sit": -0.05386000000000004,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 1,
+        "e_sit": -0.06874333333333331,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 2,
+        "e_sit": 0.023129999999999998,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 3,
+        "e_sit": 0.014207777777777713,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 4,
+        "e_sit": -0.014522222222222214,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 5,
+        "e_sit": -0.07949777777777774,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 6,
+        "e_sit": 0.03097555555555548,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 7,
+        "e_sit": 0.010653333333333232,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 8,
+        "e_sit": -0.018372222222222262,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 9,
+        "e_sit": 0.004624444444444493,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 10,
+        "e_sit": 0.0387549999999999,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 11,
+        "e_sit": 0.027444999999999952,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 12,
+        "e_sit": -0.08649111111111107,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 13,
+        "e_sit": -0.06862777777777777,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      },
+      {
+        "situation_idx": 14,
+        "e_sit": -0.04270888888888886,
+        "best_at_lambda0": "75867",
+        "best_at_lambda_max": "68896",
+        "changed": true
+      }
+    ],
+    "note": "e_sit이 모든 후보에 동일 상수로 더해지므로 결과는 상황에 무관하게 전부 동일해야 정상"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "task1_condition_controlled": {
+    "baseline_full_thresh30": {
+      "n_pitchers": 424,
+      "n_appearances": 57971,
+      "between": 0.13862422142262656,
+      "within": 0.16713382990235542,
+      "ratio": 0.8294204800046464
+    },
+    "condition_controlled_thresh20": {
+      "n_pitchers": 218,
+      "n_appearances": 15614,
+      "between": 0.028970023876944615,
+      "within": 0.14502554188556271,
+      "ratio": 0.19975808054421468
+    }
+  },
+  "task2_stepwise_factor_contribution": [
+    {
+      "step": "조건0_전체",
+      "n_pitchers": 504,
+      "n_appearances": 59914,
+      "between": 0.15283888767082435,
+      "within": 0.17016968705005356,
+      "ratio": 0.8981557780374154,
+      "ratio_change_pct_vs_prev": null
+    },
+    {
+      "step": "조건1_+불펜만",
+      "n_pitchers": 378,
+      "n_appearances": 48177,
+      "between": 0.021961042697449466,
+      "within": 0.11845851195921892,
+      "ratio": 0.1853901617893856,
+      "ratio_change_pct_vs_prev": -79.35879651139285
+    },
+    {
+      "step": "조건2_+등판길이3~7타석",
+      "n_pitchers": 345,
+      "n_appearances": 36206,
+      "between": 0.022984165934002404,
+      "within": 0.11729823501635947,
+      "ratio": 0.19594639195378197,
+      "ratio_change_pct_vs_prev": 5.694061681864689
+    },
+    {
+      "step": "조건3_+이닝6~8시작",
+      "n_pitchers": 296,
+      "n_appearances": 24441,
+      "between": 0.023563636335024517,
+      "within": 0.11880893038114208,
+      "ratio": 0.19833219825674528,
+      "ratio_change_pct_vs_prev": 1.2175811349085996
+    },
+    {
+      "step": "조건4_+점수차|diff|<=3",
+      "n_pitchers": 218,
+      "n_appearances": 15614,
+      "between": 0.028970023876944615,
+      "within": 0.14502554188556271,
+      "ratio": 0.19975808054421468,
+      "ratio_change_pct_vs_prev": 0.7189363603097686
+    }
+  ],
+  "task2_biggest_drop_step": "조건1_+불펜만",
+  "task3_length_normalization": {
+    "raw_app_wpa": {
+      "n_pitchers": 424,
+      "n_appearances": 57971,
+      "between": 0.13862422142262656,
+      "within": 0.16713382990235542,
+      "ratio": 0.8294204800046464
+    },
+    "normalized_wpa_per_pa": {
+      "n_pitchers": 424,
+      "n_appearances": 57971,
+      "between": 0.006005145451052964,
+      "within": 0.029114223937448842,
+      "ratio": 0.20626156699058384
+    },
+    "length_effect_pct": -75.13184543147182
+  },
+  "task4_role_groups": {
+    "role_counts": {
+      "셋업형": 228,
+      "기타": 131,
+      "마무리형": 14,
+      "롱릴리프형": 5
+    },
+    "role_rows": [
+      {
+        "role": "마무리형",
+        "n_pitchers": 14,
+        "n_appearances": 3325,
+        "between": 0.018425118400408523,
+        "within": 0.20295000562647345,
+        "ratio": 0.09078648873910201
+      },
+      {
+        "role": "셋업형",
+        "n_pitchers": 228,
+        "n_appearances": 32580,
+        "between": 0.02001812658572828,
+        "within": 0.11562950366433905,
+        "ratio": 0.1731230001975872
+      },
+      {
+        "role": "롱릴리프형",
+        "n_pitchers": 5,
+        "n_appearances": 142,
+        "between": 0.03036352622349982,
+        "within": 0.10795053662516978,
+        "ratio": 0.2812725825433299
+      },
+      {
+        "role": "기타",
+        "n_pitchers": 131,
+        "n_appearances": 12130,
+        "between": 0.021724552280680997,
+        "within": 0.11475372460472495,
+        "ratio": 0.1893145721893762
+      }
+    ],
+    "overall_relief_mixed": {
+      "n_pitchers": 378,
+      "n_appearances": 48177,
+      "between": 0.021961042697449466,
+      "within": 0.11845851195921892,
+      "ratio": 0.1853901617893856
+    },
+    "role_ratios_all_lower": false
+  },
+  "task5_fair_comparison": {
+    "n_pitchers_pool": 218,
+    "n_situations": 15,
+    "sim_between": 0.004159608548294993,
+    "sim_within": 0.08517827143114401,
+    "sim_ratio": 0.04883415075706857,
+    "actual_condition_controlled": {
+      "n_pitchers": 218,
+      "n_appearances": 15614,
+      "between": 0.028970023876944615,
+      "within": 0.14502554188556271,
+      "ratio": 0.19975808054421468
+    },
+    "fair_gap_pct": 24.446645974984506,
+    "elapsed_sec": 311.2001414299011
+  },
+  "conclusion": {
+    "lines": [
+      "Task1: 조건 통제 후 실제 ratio 0.8294 → 0.1998 (조건만으로도 크게 떨어짐 — 확실히 교란 요인이 baseline을 부풀리고 있었음)",
+      "Task2: 가장 큰 하락 단계 = 조건1_+불펜만 (-79.4%)",
+      "Task3: 길이 정규화(wpa_per_pa) 효과 = -75.1% (길이가 주요 교란 요인)",
+      "Task4: 보직 그룹 내부 ratio가 전체보다 낮지 않음(보직만으론 설명 부족) — 그룹별: 마무리형=0.0908, 셋업형=0.1731, 롱릴리프형=0.2813, 기타=0.1893",
+      "Task5: 조건·투수 풀을 시뮬레이션과 실제 모두 동일하게 맞춘 공정 비교 — 시뮬레이션 ratio=0.0488 vs 실제(조건통제) ratio=0.1998 (시뮬레이션이 실제의 24.4%)"
+    ],
+    "final_verdict": "교란 요인(보직/길이/선택편향)이 baseline 0.79를 상당 부분 부풀렸던 것은 맞지만, 조건을 공정하게 맞춘 뒤에도 시뮬레이션은 여전히 실제 신호에 크게 못 미친다 — 즉 비교 기준 문제와 모델의 실제 한계가 둘 다 존재하며, 격차의 상당 부분은 교란 요인 제거만으로는 사라지지 않는다.",
+    "condition_control_closes_gap": true,
+    "length_dominant": true,
+    "role_dominant": false,
+    "sim_still_far_after_control": true
+  }
+}

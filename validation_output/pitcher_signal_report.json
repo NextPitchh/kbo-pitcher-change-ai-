@@ -1,0 +1,205 @@
+{
+  "task1_probability_divergence": {
+    "n_pitchers": 30,
+    "fixed_situation": {
+      "inning": 7,
+      "half": "bot",
+      "out_count": 1,
+      "base_state": "1",
+      "score_diff_attacker": -1,
+      "batter_id": "62415",
+      "batter_hit_type": "R",
+      "pitcher_vs_batter_avg": 0.25,
+      "batter_recent_avg": 0.317
+    },
+    "class_std": {
+      "BB": 0.0404196529337667,
+      "GDP": 0.027508392114908294,
+      "SO": 0.023402157826372044,
+      "OUT": 0.018782138280607024,
+      "1B": 0.002308015220481809,
+      "2B": 0.0017965284868253276,
+      "HR": 0.001114579836186498,
+      "3B": 0.0010520443157844435,
+      "SF": 0.0009731370438159768
+    },
+    "class_mean": {
+      "1B": 0.05425325418846596,
+      "2B": 0.019935395467740806,
+      "3B": 0.004641290761569286,
+      "BB": 0.13776448701711816,
+      "GDP": 0.3284136223303463,
+      "HR": 0.008520161284519132,
+      "OUT": 0.2878477397411508,
+      "SF": 0.005755898971303098,
+      "SO": 0.15286815023778658
+    },
+    "mean_pairwise_l1": 0.12919175846019496,
+    "mean_pairwise_kl_symmetric": 0.01880259813352355,
+    "max_std_class": "BB",
+    "max_std_value": 0.0404196529337667,
+    "min_std_class": "SF",
+    "min_std_value": 0.0009731370438159768,
+    "all_classes_std_below_0.01": false
+  },
+  "task2_original_8_profile": {
+    "pitcher_ids": [
+      "51648",
+      "68703",
+      "74838",
+      "68036",
+      "64580",
+      "64759",
+      "51713",
+      "69539"
+    ],
+    "detail": [
+      {
+        "pitcher_id": "51648",
+        "prior_wpa_std": 0.21047159371562074,
+        "prior_bb_rate": 0.1372552051434462,
+        "prior_so_rate": 0.2024745749246354,
+        "prior_hr_rate": 0.019688350733097788,
+        "prior_wpa_std_pctile": 65.54054054054053,
+        "prior_bb_rate_pctile": 77.7027027027027,
+        "prior_so_rate_pctile": 83.1081081081081,
+        "prior_hr_rate_pctile": 39.414414414414416
+      },
+      {
+        "pitcher_id": "68703",
+        "prior_wpa_std": 0.12250901775605517,
+        "prior_bb_rate": 0.1628643776971348,
+        "prior_so_rate": 0.1465173853858205,
+        "prior_hr_rate": 0.03629205110213329,
+        "prior_wpa_std_pctile": 29.72972972972973,
+        "prior_bb_rate_pctile": 91.21621621621621,
+        "prior_so_rate_pctile": 36.486486486486484,
+        "prior_hr_rate_pctile": 90.990990990991
+      },
+      {
+        "pitcher_id": "74838",
+        "prior_wpa_std": 0.25590250957426064,
+        "prior_bb_rate": 0.08815827359065749,
+        "prior_so_rate": 0.1193392905817031,
+        "prior_hr_rate": 0.038330244378722934,
+        "prior_wpa_std_pctile": 89.1891891891892,
+        "prior_bb_rate_pctile": 25.675675675675674,
+        "prior_so_rate_pctile": 14.414414414414415,
+        "prior_hr_rate_pctile": 93.01801801801803
+      },
+      {
+        "pitcher_id": "68036",
+        "prior_wpa_std": 0.053698852271230633,
+        "prior_bb_rate": 0.18134616663511943,
+        "prior_so_rate": 0.1296805791846974,
+        "prior_hr_rate": 0.003219891662855801,
+        "prior_wpa_std_pctile": 4.504504504504505,
+        "prior_bb_rate_pctile": 96.17117117117117,
+        "prior_so_rate_pctile": 20.045045045045047,
+        "prior_hr_rate_pctile": 1.1261261261261262
+      },
+      {
+        "pitcher_id": "64580",
+        "prior_wpa_std": 0.10023211016951696,
+        "prior_bb_rate": 0.14160701710313225,
+        "prior_so_rate": 0.14047546959273902,
+        "prior_hr_rate": 0.03078319206783518,
+        "prior_wpa_std_pctile": 19.81981981981982,
+        "prior_bb_rate_pctile": 80.18018018018019,
+        "prior_so_rate_pctile": 29.27927927927928,
+        "prior_hr_rate_pctile": 82.88288288288288
+      },
+      {
+        "pitcher_id": "64759",
+        "prior_wpa_std": 0.08712497606653534,
+        "prior_bb_rate": 0.11062089126393038,
+        "prior_so_rate": 0.15430016745495237,
+        "prior_hr_rate": 0.028207136582478736,
+        "prior_wpa_std_pctile": 13.73873873873874,
+        "prior_bb_rate_pctile": 47.97297297297297,
+        "prior_so_rate_pctile": 45.04504504504504,
+        "prior_hr_rate_pctile": 72.52252252252252
+      },
+      {
+        "pitcher_id": "51713",
+        "prior_wpa_std": 0.0578195888996199,
+        "prior_bb_rate": 0.14189282112388632,
+        "prior_so_rate": 0.14572951769304227,
+        "prior_hr_rate": 0.017874901911760083,
+        "prior_wpa_std_pctile": 5.63063063063063,
+        "prior_bb_rate_pctile": 80.85585585585585,
+        "prior_so_rate_pctile": 35.13513513513514,
+        "prior_hr_rate_pctile": 32.432432432432435
+      },
+      {
+        "pitcher_id": "69539",
+        "prior_wpa_std": 0.2415725375619224,
+        "prior_bb_rate": 0.1034028934965439,
+        "prior_so_rate": 0.1466254907254798,
+        "prior_hr_rate": 0.02711568219635998,
+        "prior_wpa_std_pctile": 81.75675675675676,
+        "prior_bb_rate_pctile": 39.414414414414416,
+        "prior_so_rate_pctile": 36.711711711711715,
+        "prior_hr_rate_pctile": 69.36936936936937
+      }
+    ],
+    "pctile_spread": {
+      "prior_wpa_std": 84.68468468468468,
+      "prior_bb_rate": 70.4954954954955,
+      "prior_so_rate": 68.69369369369369,
+      "prior_hr_rate": 91.8918918918919
+    },
+    "narrow_types": false
+  },
+  "task2_extreme_selection": {
+    "extreme_groups": {
+      "bb_rate_top3 (제구 불안형)": [
+        "50036",
+        "67956",
+        "51359"
+      ],
+      "so_rate_top3 (파워형)": [
+        "55743",
+        "54833",
+        "54561"
+      ],
+      "wpa_std_bottom3 (안정형)": [
+        "63914",
+        "67467",
+        "69974"
+      ]
+    },
+    "original_8": {
+      "between": 0.002683923894819129,
+      "within": 0.03708323851556601,
+      "ratio": 0.07237566087148857
+    },
+    "extreme_9": {
+      "between": 0.003457116811527746,
+      "within": 0.041981371042067256,
+      "ratio": 0.08234883058163005
+    },
+    "ratio_improvement_factor": 1.1377972869615658
+  },
+  "task3_actual_baseline": {
+    "n_pitchers": 444,
+    "between_actual": 0.140047654218076,
+    "within_actual": 0.1765056987359604,
+    "ratio_actual": 0.793445510377413,
+    "sim_ratio_comparison": {
+      "h5_1 (시뮬레이션, 원본 8명)": 0.07237566087148857,
+      "h5_1 (시뮬레이션, 극단 9명)": 0.08234883058163005
+    }
+  },
+  "conclusion": {
+    "lines": [
+      "Task1: 클래스별 확률 표준편차 최대=0.04042(BB), 최소=0.00097(SF). 모델이 투수 간 차이를 어느 정도 반영함.",
+      "Task2: 원본 8명 ratio=0.0724 → 극단 9명 ratio=0.0823 (1.14배). 극단 투수를 뽑아도 ratio가 크게 개선되지 않음 — 표본 편향이 주된 원인은 아님.",
+      "Task3: 실제 데이터 ratio=0.7934 vs 시뮬레이션(원본8) ratio=0.0724. 시뮬레이션 ratio가 실제 데이터보다 뚜렷이 낮음 — 모델이 실제 존재하는 투수 신호 중 일부를 놓치고 있을 가능성."
+    ],
+    "final_verdict": "모델이 실제 신호 대비 투수 구별력을 상당 부분 놓치고 있을 가능성",
+    "model_cannot_discriminate": false,
+    "selection_bias_explains_it": false,
+    "sim_close_to_actual": false
+  }
+}

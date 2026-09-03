@@ -230,6 +230,119 @@ def get_we_with_boundary(
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+#  Step 3b: 아웃 차원 보정 (Option B) — RE 차이 기반
+#
+#  배경: Table 3.2는 1사만 제공 → get_we / get_we_with_boundary(Option A)는
+#        0사·2사를 1사 값으로 처리한다. 주자 있는 아웃에서 WE 변화가 약하게
+#        평가되는 한계가 있다 (네이버 WPA 부호 일치율 78.5% 정체).
+#
+#  보정식:
+#      WE(out, s, ...) = WE(1사, s, ...)
+#                        + κ · α(inning, half, score_diff) · [RE(out, s) − RE(1사, s)]
+#
+#  α  : "득점 1점의 승리확률 가치". 논문 Table 3.2에서 같은 (이닝·초말·주자·아웃)
+#       상태의 인접 점수차 WE 차분을 주자상태 평균한 값 (아래에서 자동 계산).
+#  κ  : 0.44. RE 차이는 *실현된 득점*이 아니라 *기대 득점*(불확실)이므로 승리확률
+#       기여가 더 작다. 순수 삼진(주자 불변·득점 0) 자연실험 5,700여 표본에서
+#       네이버 WPA 대비 가중 최소제곱으로 추정. 인접 (주자×아웃) 15셀 잔차
+#       RMSE 0.0055 (κ=1일 때 0.0378). plan2.md Phase 5, task_requirements.md 참조.
+#
+#  기존 get_we / get_we_with_boundary 는 절대 변경하지 않는다 (하위 호환).
+# ─────────────────────────────────────────────────────────────────────────────
+
+#: potential-run 할인계수 (실증 보정). 근거는 위 주석 참조.
+ALPHA_KAPPA: float = 0.44
+
+
+def _build_alpha_row(table: dict[str, list[float]]) -> list[float]:
+    """
+    WE 테이블(1사, {주자상태: [점수차 -4..+4 WE]}) → 점수차별 α (주자상태 평균).
+
+    α[j] = 인접 점수차 WE 차분의 평균.
+      내부 점수차 : (WE[j+1]−WE[j] 와 WE[j]−WE[j−1]) 평균
+      경계 점수차 : 존재하는 한쪽 차분만 사용
+    """
+    mat = np.array([table[b] for b in BASE_STATES])   # (주자 8, 점수차 9)
+    gaps = np.diff(mat, axis=1).mean(axis=0)          # (8,)  gap[k] = 평균(WE[k+1]−WE[k])
+    alpha: list[float] = []
+    for i in range(9):
+        left = gaps[i - 1] if i - 1 >= 0 else None    # (j−1 → j)
+        right = gaps[i] if i < 8 else None            # (j → j+1)
+        vals = [v for v in (left, right) if v is not None]
+        alpha.append(float(np.mean(vals)))
+    return alpha
+
+
+_ALPHA_INN3: dict[str, list[float]] = {
+    "top": _build_alpha_row(_WE_INN3_TOP),
+    "bot": _build_alpha_row(_WE_INN3_BOT),
+}
+_ALPHA_INN7: dict[str, list[float]] = {
+    "top": _build_alpha_row(_WE_INN7_TOP),
+    "bot": _build_alpha_row(_WE_INN7_BOT),
+}
+
+
+def get_alpha(inning: int, half: Half, score_diff: int) -> float:
+    """
+    (이닝, 초말, 점수차) → α = "득점 1점의 승리확률 가치".
+
+    점수차는 ±4 clip, 이닝은 get_we 와 동일하게 3회·7회 α를 선형 보간.
+    항상 ≥ 0 (WE 는 점수차에 대해 단조 증가 — 논문 조건 W1).
+    """
+    j_idx = _clip_score_diff(score_diff) - SCORE_DIFF_MIN
+    w3, w7 = _interpolate_inning(inning, half)
+    a = w3 * _ALPHA_INN3[half][j_idx] + w7 * _ALPHA_INN7[half][j_idx]
+    return max(0.0, float(a))
+
+
+def get_we_with_out_correction(
+    inning: int,
+    half: Half,
+    score_diff: int,
+    out_count: int,
+    base_state: str,
+) -> float:
+    """
+    RE 차이 기반 아웃 차원 보정(Option B)을 적용한 WE 조회.
+
+    get_we_with_boundary(Option A)와 병존한다. out_count == 1 이면 보정항이
+    정확히 0이므로 get_we_with_boundary 와 완전히 동일한 값을 반환한다.
+
+    경계 조건(9회말 끝내기 WE=1.0, 연장 종료 1.0/0.0/0.5)은 보정 전에 먼저
+    적용되며, 이때는 보정하지 않는다 (승패가 확정된 상태).
+
+    Parameters
+    ----------
+    inning     : 현재 이닝 (1~12)
+    half       : "top" / "bot"
+    score_diff : 공격팀 기준 점수차
+    out_count  : 아웃카운트 0/1/2 (경계 처리 시 3 가능)
+    base_state : 주자상태 문자열 ("0" | ... | "123")
+
+    Returns
+    -------
+    float : WE in [0, 1]
+    """
+    # ── 경계 조건 (get_we_with_boundary 와 동일 분기, 보정 없음) ──────────────
+    if inning == 9 and half == "bot" and score_diff > 0:
+        return 1.0
+    if inning >= 12 and out_count >= 3:
+        if score_diff > 0:
+            return 1.0
+        if score_diff < 0:
+            return 0.0
+        return 0.5
+
+    # ── 1사 기준값 + RE 차이 보정 ───────────────────────────────────────────
+    we_base = get_we(inning, half, score_diff, 1, base_state)   # 1사 앵커
+    re_delta = get_re(out_count, base_state) - get_re(1, base_state)
+    alpha = get_alpha(inning, half, score_diff)
+    we = we_base + ALPHA_KAPPA * alpha * re_delta
+    return float(np.clip(we, 0.0, 1.0))
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 #  Step 4: 단위 테스트 (sanity check)
 # ─────────────────────────────────────────────────────────────────────────────
 

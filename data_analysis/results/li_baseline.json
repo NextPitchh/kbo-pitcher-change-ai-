@@ -1,0 +1,24 @@
+{
+  "source": "data_analysis/results/all_pa_enriched_v3.parquet",
+  "n_pa_used": 554146,
+  "li_league_avg": 0.041942931491590854,
+  "normalization": "li = li_raw / li_league_avg  (평균 상황 = 1.0)",
+  "li_raw_distribution": {
+    "p0": 0.0,
+    "p25": 0.021339432012730995,
+    "p50": 0.03538276419192677,
+    "p75": 0.05455243105759419,
+    "p95": 0.0966305250382007,
+    "p100": 0.4107722131584065
+  },
+  "li_normalized_distribution": {
+    "p0": 0.0,
+    "p25": 0.5087730221481859,
+    "p50": 0.8435930187431144,
+    "p75": 1.3006346747253805,
+    "p95": 2.3038572079201036,
+    "p100": 9.793598076013412
+  },
+  "lookup_table_combinations": 3888,
+  "note": "score_diff_attacker는 get_we 내부 clip 규칙과 동일하게 ±4로 clip 후 룩업. clip은 부호를 바꾸지 않으므로(0을 가로지르지 않으므로) 9회말 경계조건(끝내기/원정승/연장동점) 판정에는 영향 없음."
+}

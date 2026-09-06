@@ -1,0 +1,106 @@
+{
+  "min_apps_threshold": 10,
+  "candidates": {
+    "prior_so_rate": {
+      "starter": {
+        "n_pitchers": 297,
+        "spearman_r": 0.7047263967592418,
+        "p_value": 6.988258256173593e-46
+      },
+      "reliever": {
+        "n_pitchers": 463,
+        "spearman_r": 0.46262639080064366,
+        "p_value": 6.211398135578116e-26
+      }
+    },
+    "prior_bb_rate": {
+      "starter": {
+        "n_pitchers": 297,
+        "spearman_r": 0.6561873036085811,
+        "p_value": 5.940816357774247e-38
+      },
+      "reliever": {
+        "n_pitchers": 463,
+        "spearman_r": 0.4560827448555932,
+        "p_value": 3.6476563014436793e-25
+      }
+    },
+    "prior_hr_rate": {
+      "starter": {
+        "n_pitchers": 297,
+        "spearman_r": 0.1983677522743674,
+        "p_value": 0.0005851118840133071
+      },
+      "reliever": {
+        "n_pitchers": 463,
+        "spearman_r": 0.13763070226368576,
+        "p_value": 0.0030014579005960317
+      }
+    },
+    "so_rate_minus_bb_rate": {
+      "starter": {
+        "n_pitchers": 297,
+        "spearman_r": 0.7341348838602065,
+        "p_value": 1.5919057129685772e-51
+      },
+      "reliever": {
+        "n_pitchers": 463,
+        "spearman_r": 0.4081470096976636,
+        "p_value": 5.165584861394171e-20
+      }
+    },
+    "wpa_mean_raw(=구 prior_wpa_mean 정의)": {
+      "starter": {
+        "n_pitchers": 297,
+        "spearman_r": 0.11157741023512838,
+        "p_value": 0.054759028803697006
+      },
+      "reliever": {
+        "n_pitchers": 463,
+        "spearman_r": 0.2627412153646606,
+        "p_value": 9.502598245628507e-09
+      }
+    },
+    "wpa_per_pa(ERA 대용)": {
+      "starter": {
+        "n_pitchers": 297,
+        "spearman_r": 0.31661847937015725,
+        "p_value": 2.4379925732209422e-08
+      },
+      "reliever": {
+        "n_pitchers": 463,
+        "spearman_r": 0.3085760733538474,
+        "p_value": 1.1356453376483547e-11
+      }
+    },
+    "composite(so-bb-2*hr)": {
+      "starter": {
+        "n_pitchers": 297,
+        "spearman_r": 0.7404051903983734,
+        "p_value": 7.953986755537518e-53
+      },
+      "reliever": {
+        "n_pitchers": 463,
+        "spearman_r": 0.37122050177121085,
+        "p_value": 1.4179007249717087e-16
+      }
+    },
+    "n_apps_단독": {
+      "starter": {
+        "n_pitchers": 297,
+        "spearman_r": 0.9966342255199515,
+        "p_value": 0.0
+      },
+      "reliever": {
+        "n_pitchers": 463,
+        "spearman_r": 0.9995092106902542,
+        "p_value": 0.0
+      }
+    }
+  },
+  "pooled_wpa_mean_raw_no_role_control": {
+    "n_pitchers": 640,
+    "spearman_r": 0.7263731112624788,
+    "p_value": 5.460095789966265e-106
+  }
+}

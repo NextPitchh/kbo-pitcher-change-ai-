@@ -1,5 +1,5 @@
 """
-투수 품질(quality_p) 프로덕션 기준값 산출 — Task 5 사전 작업.
+투수 품질(quality_p) 프로덕션 기준값 산출 — train-frozen (Task 5, Task 14).
 
 pitcher_quality.py가 실시간으로 "이 투수 지금 quality_p 얼마?"를 계산하려면,
 매번 전체 데이터를 다시 훑어서 백분위를 계산할 수는 없다. 그래서 기준
@@ -13,9 +13,13 @@ pitcher_quality.py가 실시간으로 "이 투수 지금 quality_p 얼마?"를 �
   2. shrunk = shrink(raw, n_apps, k=5, league_mean)            (Task 4)
   3. quality_p = 2 * percentile_rank(shrunk, 기준분포)          (Task 3)
 
-기준분포는 선발투수(is_starter=True, prior_n_apps>=1) 모집단의 shrunk 값을
-0.1%포인트 간격(1001개 지점)으로 뽑아 저장한다 — 원본 14,137개를 다
-저장할 필요 없이 이 정도 해상도면 보간 오차가 무시할 만하다.
+**Task 14 변경**: 이전 버전은 전체 기간(2016~2025)으로 기준분포를 만든
+잠정본이었다. Bandit v2가 `bandit_game_split.csv`(game_id 단위 70/15/15
+분할)로 train/validation/test를 나누므로, 리그 평균/백분위 분포도
+**train 게임만으로** 다시 만든다 — validation/test 기간 정보가 feature
+정규화에 새어 들어가는 걸 막기 위함(LI의 train-frozen 재계산과 동일한
+이유). validation/test 게임의 quality_p도 이 train-frozen 기준분포를
+그대로 적용해서 계산한다(기준분포 자체는 train만, 적용은 전체).
 """
 
 from __future__ import annotations
@@ -27,15 +31,28 @@ import numpy as np
 import pandas as pd
 
 HIST_PATH = Path("data_analysis/all_pitcher_history.parquet")
+SPLIT_PATH = Path("bandit_game_split.csv")
 OUT_PATH = Path("data_analysis/results/quality_baseline.json")
 
 SHRINKAGE_K = 5  # Task 4에서 확정
 N_GRID_POINTS = 1001  # 0.0%, 0.1%, ..., 100.0%
 
 
+def load_train_game_ids() -> set[str]:
+    split = pd.read_csv(SPLIT_PATH)
+    return set(split.loc[split["split"] == "train", "game_id"])
+
+
 def main() -> None:
+    train_game_ids = load_train_game_ids()
+    print(f"train 게임 수: {len(train_game_ids)} (bandit_game_split.csv 기준)")
+
     hist = pd.read_parquet(HIST_PATH)
     df = hist[(hist["is_starter"]) & (hist["prior_n_apps"] >= 1)].copy()
+    n_before_split_filter = len(df)
+    df = df[df["game_id"].isin(train_game_ids)]
+    print(f"선발 등판 {n_before_split_filter}건 중 train 게임 소속: {len(df)}건")
+
     df["prior_composite"] = (
         df["prior_so_rate"] - df["prior_bb_rate"] - 2 * df["prior_hr_rate"]
     )
@@ -51,15 +68,14 @@ def main() -> None:
     output = {
         "role": "starter",
         "n_fit": int(len(df)),
+        "fit_split": "train",
+        "fit_split_source": "bandit_game_split.csv",
         "league_mean_composite": league_mean,
         "shrinkage_k": SHRINKAGE_K,
         "scaling": "2 * percentile_rank(shrunk_composite)",
         "percentile_grid_pct": grid_pct.tolist(),
         "percentile_grid_values": grid_values.tolist(),
-        "note": (
-            "불펜(reliever)용 기준분포는 아직 없음 — Task 2에서 예측력 검증을 "
-            "통과한 지표가 없어 팀 논의 후 별도 확정 예정."
-        ),
+        "note": "불펜(reliever)용 기준분포는 build_quality_baseline_bullpen.py 참고.",
     }
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)

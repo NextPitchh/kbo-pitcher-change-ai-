@@ -12,15 +12,14 @@ apply_li_to_data.py가 leverage_index를 PA 레벨에 직접 계산해 붙인 �
      — 같은 등판 안의 모든 PA는 동일한 quality_p 값을 공유한다(등판 시작
      시점 기준 값이라 등판 도중에는 바뀌지 않으므로).
 
-**중요 — 이 컬럼은 잠정본(임시)이다.** quality_baseline.json /
-quality_baseline_bullpen.json은 둘 다 전체 기간(2016-04-01~2025-10-04)
-데이터로 만들어진 기준분포다. Bandit v2 학습이 시간순 train/test 분할을
-쓴다면(HANDOFF_FULL.md 필수 규칙), test 기간 데이터까지 포함해 만든
-리그 평균/백분위 분포가 train 시점 feature에 새어 들어가는 leakage가
-된다. 팀에서 LI를 "train-frozen"으로 재계산 중인 것(Step 13-1)과 동일한
-이유로, quality_p의 두 기준분포도 나중에 train 기간만으로 재계산해
-교체해야 한다. 지금은 일정상 전체 기간 기준 버전을 먼저 넘기고, 이후
-교체 예정.
+**Task 14 (2026-09-16)**: quality_baseline.json / quality_baseline_bullpen.json은
+이제 `bandit_game_split.csv`의 train 게임(5,030경기, 70%)만으로 만든
+train-frozen 기준분포다 — validation/test 게임 정보가 feature 정규화에
+새어 들어가지 않도록(LI의 train-frozen 재계산과 동일한 이유). 이 스크립트는
+그 기준분포를 **전체 게임**(train+validation+test)에 적용해 quality_p를
+계산한다 — 기준분포는 train만, 적용은 전체가 맞다(정규화 기준은 고정,
+평가 대상은 전체 분할이어야 validation/test 성능이 진짜 out-of-sample
+평가가 됨).
 
 prior_n_apps < 1인 행(그 투수의 첫 등판, 이전 기록 없음)은 quality_p를
 정의할 수 없으므로 NaN으로 남긴다.
@@ -141,10 +140,8 @@ def main() -> None:
     print(hist_quality.groupby("is_starter")["quality_p"].describe()[["count", "mean", "std", "min", "max"]])
 
     print(
-        "\n[경고] 이 quality_p는 전체 기간(2016-2025) 기준 baseline으로 계산된 잠정본입니다. "
-        "Bandit train/test 분할이 확정되면 train 기간만으로 quality_baseline.json / "
-        "quality_baseline_bullpen.json을 재계산해 이 컬럼을 교체해야 합니다 (LI의 "
-        "train-frozen 재계산과 동일한 이유)."
+        "\n[OK] 이 quality_p는 bandit_game_split.csv의 train 게임(5,030건)만으로 만든 "
+        "train-frozen baseline을 전체 게임에 적용한 버전입니다 (Task 14, 2026-09-16)."
     )
 
 

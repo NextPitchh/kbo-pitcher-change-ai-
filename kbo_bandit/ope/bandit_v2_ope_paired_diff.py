@@ -9,14 +9,15 @@ import pandas as pd
 # ============================================================
 
 INPUT_DIR = Path(
-    "bandit_output_v2_ope"
+    "outputs/bandit/ope/v2_ope"
 )
 
 OUTPUT_DIR = Path(
-    "bandit_output_v2_ope_paired_diff"
+    "outputs/bandit/ope/v2_ope_paired_diff"
 )
 
 OUTPUT_DIR.mkdir(
+    parents=True,
     exist_ok=True
 )
 

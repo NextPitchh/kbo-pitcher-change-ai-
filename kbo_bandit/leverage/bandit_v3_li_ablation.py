@@ -3,9 +3,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-import bandit_v2_actual_bullpen as base
-import bandit_v2_profile_fixed as profile_fix
-import bandit_v2_interactions as interactions
+from kbo_bandit.core import bandit_v2_actual_bullpen as base
+from kbo_bandit.core import bandit_v2_profile_fixed as profile_fix
+from kbo_bandit.core import bandit_v2_interactions as interactions
 
 
 # ============================================================
@@ -18,10 +18,11 @@ LI_PA_PATH = Path(
 )
 
 OUTPUT_DIR = Path(
-    "bandit_output_v3_li_ablation"
+    "outputs/bandit/leverage/v3_li_ablation"
 )
 
 OUTPUT_DIR.mkdir(
+    parents=True,
     exist_ok=True
 )
 

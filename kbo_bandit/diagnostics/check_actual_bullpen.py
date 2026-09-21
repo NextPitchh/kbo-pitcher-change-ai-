@@ -17,8 +17,8 @@ BULLPEN_PATH = (
     "all_game_bullpen.parquet"
 )
 
-OUTPUT_DIR = Path("bandit_output_v2")
-OUTPUT_DIR.mkdir(exist_ok=True)
+OUTPUT_DIR = Path("outputs/bandit/core/v2")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # ============================================================

@@ -15,7 +15,7 @@ PA_PATH = "data_analysis/results/all_pa_enriched_v3.parquet"
 BULLPEN_PATH = "data_analysis/results/all_pa_bullpen_state.parquet"
 HISTORY_PATH = "data_analysis/results/all_pitcher_history.parquet"
 
-OUTPUT_DIR = Path("bandit_output")
+OUTPUT_DIR = Path("outputs/bandit/core/v1")
 
 ALPHA = 0.5
 RIDGE = 1.0
@@ -1144,6 +1144,7 @@ def main():
     print("=" * 70)
 
     OUTPUT_DIR.mkdir(
+        parents=True,
         exist_ok=True
     )
 
@@ -1234,15 +1235,15 @@ def main():
 
     print("Saved:")
     print(
-        "  bandit_output/"
+        "  outputs/bandit/core/v1/"
         "validation_decisions.csv"
     )
     print(
-        "  bandit_output/"
+        "  outputs/bandit/core/v1/"
         "test_decisions.csv"
     )
     print(
-        "  bandit_output/"
+        "  outputs/bandit/core/v1/"
         "summary.json"
     )
 

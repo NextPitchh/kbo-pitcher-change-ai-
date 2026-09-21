@@ -4,9 +4,9 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import minimize
 
-import bandit_v2_actual_bullpen as base
-import bandit_v2_profile_fixed as profile_fix
-import bandit_v2_interactions as interactions
+from kbo_bandit.core import bandit_v2_actual_bullpen as base
+from kbo_bandit.core import bandit_v2_profile_fixed as profile_fix
+from kbo_bandit.core import bandit_v2_interactions as interactions
 
 
 # ============================================================
@@ -14,10 +14,11 @@ import bandit_v2_interactions as interactions
 # ============================================================
 
 OUTPUT_DIR = Path(
-    "bandit_output_v2_behavior_policy"
+    "outputs/bandit/ope/v2_behavior_policy"
 )
 
 OUTPUT_DIR.mkdir(
+    parents=True,
     exist_ok=True
 )
 

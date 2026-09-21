@@ -27,7 +27,7 @@ BULLPEN_PATH = (
 )
 
 OUTPUT_DIR = Path(
-    "bandit_output_v2_actual_bullpen"
+    "outputs/bandit/core/v2_actual_bullpen"
 )
 
 ALPHA = 0.5
@@ -1992,6 +1992,7 @@ def main():
     )
 
     OUTPUT_DIR.mkdir(
+        parents=True,
         exist_ok=True
     )
 

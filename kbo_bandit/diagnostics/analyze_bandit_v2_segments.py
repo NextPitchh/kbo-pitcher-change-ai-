@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-import bandit_v2_actual_bullpen as base
+from kbo_bandit.core import bandit_v2_actual_bullpen as base
 
 
 # ============================================================
@@ -11,16 +11,17 @@ import bandit_v2_actual_bullpen as base
 # ============================================================
 
 RESULT_PATH = (
-    "bandit_output_v2_reward_recheck/"
+    "outputs/bandit/diagnostics/v2_reward_recheck/"
     "wpa_per_pa/"
     "test_decisions.csv"
 )
 
 OUTPUT_DIR = Path(
-    "bandit_output_v2_segment_analysis"
+    "outputs/bandit/diagnostics/v2_segment_analysis"
 )
 
 OUTPUT_DIR.mkdir(
+    parents=True,
     exist_ok=True
 )
 

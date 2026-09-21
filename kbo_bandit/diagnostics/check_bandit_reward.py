@@ -8,8 +8,8 @@ import pandas as pd
 PA_PATH = "data_analysis/results/all_pa_enriched_v3.parquet"
 APP_PATH = "data_analysis/results/all_pitcher_appearances.parquet"
 
-OUT_DIR = Path("bandit_output_v2")
-OUT_DIR.mkdir(exist_ok=True)
+OUT_DIR = Path("outputs/bandit/core/v2")
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 KEYS = [
     "game_id",
@@ -346,10 +346,10 @@ relief[
 print()
 print("Saved:")
 print(
-    " bandit_output_v2/"
+    " outputs/bandit/core/v2/"
     "app_wpa_optionB_check.json"
 )
 print(
-    " bandit_output_v2/"
+    " outputs/bandit/core/v2/"
     "reward_diagnostics.json"
 )

@@ -10,14 +10,15 @@ import pandas as pd
 # ============================================================
 
 INPUT_DIR = Path(
-    "bandit_output_v2_interactions"
+    "outputs/bandit/core/v2_interactions"
 )
 
 OUTPUT_DIR = Path(
-    "bandit_output_v2_alpha_sweep"
+    "outputs/bandit/diagnostics/v2_alpha_sweep"
 )
 
 OUTPUT_DIR.mkdir(
+    parents=True,
     exist_ok=True
 )
 

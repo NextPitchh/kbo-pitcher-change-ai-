@@ -3,8 +3,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-import bandit_v2_actual_bullpen as base
-import bandit_v2_interactions as interactions
+from kbo_bandit.core import bandit_v2_actual_bullpen as base
+from kbo_bandit.core import bandit_v2_interactions as interactions
 
 
 # ============================================================
@@ -12,10 +12,11 @@ import bandit_v2_interactions as interactions
 # ============================================================
 
 OUTPUT_DIR = Path(
-    "bandit_output_v2_reward_model_diagnostics"
+    "outputs/bandit/diagnostics/v2_reward_model_diagnostics"
 )
 
 OUTPUT_DIR.mkdir(
+    parents=True,
     exist_ok=True
 )
 

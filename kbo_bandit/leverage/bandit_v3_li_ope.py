@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-import bandit_v2_actual_bullpen as base
+from kbo_bandit.core import bandit_v2_actual_bullpen as base
 
 
 # ============================================================
@@ -11,18 +11,19 @@ import bandit_v2_actual_bullpen as base
 # ============================================================
 
 LI_ABLATION_DIR = Path(
-    "bandit_output_v3_li_ablation"
+    "outputs/bandit/leverage/v3_li_ablation"
 )
 
 BEHAVIOR_DIR = Path(
-    "bandit_output_v2_behavior_policy"
+    "outputs/bandit/ope/v2_behavior_policy"
 )
 
 OUTPUT_DIR = Path(
-    "bandit_output_v3_li_ope"
+    "outputs/bandit/leverage/v3_li_ope"
 )
 
 OUTPUT_DIR.mkdir(
+    parents=True,
     exist_ok=True
 )
 

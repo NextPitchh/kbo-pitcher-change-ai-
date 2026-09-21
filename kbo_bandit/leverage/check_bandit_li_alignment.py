@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-import bandit_v2_actual_bullpen as base
+from kbo_bandit.core import bandit_v2_actual_bullpen as base
 
 
 # ============================================================

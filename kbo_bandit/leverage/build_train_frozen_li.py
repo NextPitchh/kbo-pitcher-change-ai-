@@ -4,7 +4,7 @@ import json
 import numpy as np
 import pandas as pd
 
-import bandit_v2_actual_bullpen as bandit_base
+from kbo_bandit.core import bandit_v2_actual_bullpen as bandit_base
 
 from data_analysis.methods.leverage_index import (
     compute_li_raw,

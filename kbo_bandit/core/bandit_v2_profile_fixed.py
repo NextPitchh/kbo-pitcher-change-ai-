@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 # Step 4의 코드 재사용
-import bandit_v2_actual_bullpen as base
+from kbo_bandit.core import bandit_v2_actual_bullpen as base
 
 
 # ============================================================
@@ -14,10 +14,11 @@ import bandit_v2_actual_bullpen as base
 # ============================================================
 
 OUTPUT_DIR = Path(
-    "bandit_output_v2_profile_fixed"
+    "outputs/bandit/core/v2_profile_fixed"
 )
 
 OUTPUT_DIR.mkdir(
+    parents=True,
     exist_ok=True
 )
 

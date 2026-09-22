@@ -21,6 +21,11 @@ train-frozen 기준분포다 — validation/test 게임 정보가 feature 정규
 평가 대상은 전체 분할이어야 validation/test 성능이 진짜 out-of-sample
 평가가 됨).
 
+**Task 15 (2026-09-22)**: 불펜 quality_p의 원재료였던 `prior_wpa_mean`이
+Option A(낡은 WE 계산)로 만들어진 값임이 확인되어, `prior_wpa_optionb.parquet`
+(Option B로 재계산된 `prior_wpa_mean_optionb`)로 교체. 선발 공식(so/bb/hr
+비율 기반)은 WPA를 안 써서 이 문제와 무관 — 그대로 유지.
+
 prior_n_apps < 1인 행(그 투수의 첫 등판, 이전 기록 없음)은 quality_p를
 정의할 수 없으므로 NaN으로 남긴다.
 """
@@ -41,6 +46,7 @@ from data_analysis.methods.pitcher_quality import (
 )
 
 HIST_PATH = Path("data_analysis/all_pitcher_history.parquet")
+OPTIONB_PATH = Path("data_analysis/results/prior_wpa_optionb.parquet")
 PA_PATH = Path("data_analysis/results/all_pa_with_li.parquet")
 OUT_PATH = Path("data_analysis/results/all_pa_with_li.parquet")  # 같은 파일에 컬럼 추가
 
@@ -71,11 +77,11 @@ def compute_outing_quality_p(hist: pd.DataFrame) -> pd.DataFrame:
         df.loc[starter_mask, "quality_p"] = 2.0 * pct
 
     # ── 불펜 ──
-    bullpen_mask = has_prior & (~df["is_starter"]) & (df["prior_n_pa"] >= 1)
+    bullpen_mask = has_prior & (~df["is_starter"]) & (df["prior_n_pa"] >= 1) & df["prior_wpa_mean_optionb"].notna()
     if bullpen_mask.any():
         baseline = load_quality_baseline(BASELINE_PATH_BULLPEN)
         sub = df.loc[bullpen_mask]
-        prior_wpa_sum = sub["prior_wpa_mean"] * sub["prior_n_apps"]
+        prior_wpa_sum = sub["prior_wpa_mean_optionb"] * sub["prior_n_apps"]
         prior_wpa_per_pa = -prior_wpa_sum / sub["prior_n_pa"]
         shrunk = apply_shrinkage(
             prior_wpa_per_pa, sub["prior_n_pa"], baseline["league_mean_wpa_per_pa"], baseline["shrinkage_k"]
@@ -91,6 +97,14 @@ def compute_outing_quality_p(hist: pd.DataFrame) -> pd.DataFrame:
 def main() -> None:
     print("[1/3] all_pitcher_history.parquet 로드 및 등판별 quality_p 계산...")
     hist = pd.read_parquet(HIST_PATH)
+
+    opb = pd.read_parquet(OPTIONB_PATH)
+    hist = hist.merge(
+        opb[["pitcher_id", "game_id", "half", "appearance_order", "prior_wpa_mean_optionb"]],
+        on=["pitcher_id", "game_id", "half", "appearance_order"],
+        how="left",
+    )
+
     outing_quality = compute_outing_quality_p(hist)
 
     hist_quality = outing_quality
@@ -141,7 +155,8 @@ def main() -> None:
 
     print(
         "\n[OK] 이 quality_p는 bandit_game_split.csv의 train 게임(5,030건)만으로 만든 "
-        "train-frozen baseline을 전체 게임에 적용한 버전입니다 (Task 14, 2026-09-16)."
+        "train-frozen baseline(Task 14)을 전체 게임에 적용하고, 불펜 WPA 재료를 "
+        "Option B로 교체(Task 15)한 최종 버전입니다."
     )
 
 

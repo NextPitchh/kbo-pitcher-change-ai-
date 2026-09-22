@@ -17,19 +17,33 @@
        w = prior_n_apps/(prior_n_apps+k), k=5
     3. quality_p = 2 * percentile_rank(shrunk, 선발 기준분포)        [Task 3]
 
-**불펜** (Task 6~9): Task 2에서 composite가 예측력 기준(r>0.1, p<0.05)을
-통과 못했다(불펜 등판은 평균 4.56타자로 선발 22.9타자보다 훨씬 짧아,
-"다음 등판 1번"이라는 목표 자체가 표본이 너무 작았음이 원인으로 진단됨).
-목표를 "전방 5등판 평균 실제 성과"로 재정의해 재검증한 결과 prior_wpa_per_pa가
-r=0.1487로 통과(Task 7). 이 상관관계가 LI(상황 긴장도)에 따른 기용 착시가
-아님을 편상관으로 확인(Task 8, 0.1471→0.1458, 0.9%만 감소). shrinkage
-표본 단위도 등판 수 대신 누적 타석 수(prior_n_pa)를 쓴다 — 불펜은 등판당
-상대 타자 수 편차가 크기 때문(Task 6에서 이 단위 교체만으로는 부족함을
-확인했지만, Task 7의 목표 재정의와 결합하면 유효함).
+**불펜** (Task 6~9, Option B 교정: Task 15): Task 2에서 composite가 예측력
+기준(r>0.1, p<0.05)을 통과 못했다(불펜 등판은 평균 4.56타자로 선발
+22.9타자보다 훨씬 짧아, "다음 등판 1번"이라는 목표 자체가 표본이 너무
+작았음이 원인으로 진단됨). 목표를 "전방 5등판 평균 실제 성과"로 재정의해
+재검증한 결과 prior_wpa_per_pa가 r=0.1487로 통과(Task 7). 이 상관관계가
+LI(상황 긴장도)에 따른 기용 착시가 아님을 편상관으로 확인(Task 8,
+0.1471→0.1458, 0.9%만 감소). shrinkage 표본 단위도 등판 수 대신 누적
+타석 수(prior_n_pa)를 쓴다 — 불펜은 등판당 상대 타자 수 편차가 크기
+때문(Task 6에서 이 단위 교체만으로는 부족함을 확인했지만, Task 7의
+목표 재정의와 결합하면 유효함).
     1. raw = prior_wpa_per_pa (= -prior_wpa_sum/prior_n_pa)         [Task 7]
     2. shrunk = w*raw + (1-w)*league_mean_wpa_per_pa,               [Task 9]
        w = prior_n_pa/(prior_n_pa+k), k=25
     3. quality_p = 2 * percentile_rank(shrunk, 불펜 기준분포)
+
+**Task 15 (2026-09-22) — Option A→B 교정**: 위 Task 6~9의 prior_wpa_per_pa는
+`all_pitcher_history.prior_wpa_mean`(Option A, 아웃카운트 보정 없는 낡은
+WE 계산)으로 만들어졌음이 뒤늦게 확인됨(Bandit 팀이 독립적으로 같은
+문제를 발견해 자기네 reward 계산에서 우회한 것을 계기로 재검토).
+`build_prior_wpa_optionb.py`로 Option B(`all_pa_with_li.reward_wpa_computed`
+기반) 재료로 교체 후 Task 7~9를 동일 방법론으로 재검증:
+    - Task 7 재검증: r = 0.1487 -> 0.1284 (여전히 PASS)
+    - Task 8 재검증(LI 착시): 0.9% -> 0.1% 감소 (여전히 착시 아님, 더 견고)
+    - Task 9 재검증(k): k=25 여전히 근접 최적
+결론 자체는 안 바뀌었지만 수치가 달라졌으므로 재검증 없이 그냥 재료만
+바꿔치기 하지 않고 매번 다시 확인함 — 선발 공식은 WPA를 안 써서 이
+문제와 무관, 그대로 유지.
 
 두 역할 모두 quality_p는 평균 1.0, 범위 대략 0~2 — leverage_index(평균 1.0)와
 자릿수를 맞추기 위함. 한계: 백분위 기반이라 실력 격차의 '크기' 정보가
@@ -246,11 +260,11 @@ if __name__ == "__main__":
 
     bullpen_baseline = load_quality_baseline(BASELINE_PATH_BULLPEN)
     print("\n[quality_p 대표값] (불펜, 누적 타석 500 기준)")
-    # 리그 평균 wpa_per_pa ≈ -0.0097 (all_pitcher_history 실측)
+    # Task 15(Option B 교체) 이후 실측: league_mean ≈ -0.0046, 1st ≈ -0.0152, 99th ≈ 0.0124
     bullpen_samples = [
-        (0.008, "필승조급 (99th 백분위 근처)"),
-        (-0.0097, "리그 평균급"),
-        (-0.020, "부진한 불펜 (1st 백분위 근처)"),
+        (0.012, "필승조급 (99th 백분위 근처)"),
+        (bullpen_baseline["league_mean_wpa_per_pa"], "리그 평균급"),
+        (-0.015, "부진한 불펜 (1st 백분위 근처)"),
     ]
     for wpa_pp, label in bullpen_samples:
         q = compute_quality_p(

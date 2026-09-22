@@ -315,6 +315,63 @@ quality_p = 2 * percentile_rank(shrunk, 불펜 기준분포)   # 평균 1.0, 범
   보다 quality_p가 낮게 나옴(shrinkage 정상 작동)
 - 더 이상 `NotImplementedError` 발생하지 않음(2026-09-15부로 해제)
 
+---
+
+# Task 15 — 불펜 WPA 재료 Option A → B 교정 (2026-09-22)
+
+## 배경
+
+Bandit 팀(`kbo_bandit/`)이 독립적으로 자신들의 reward 계산을 검증하던 중
+`all_pitcher_history.app_wpa`가 Option A(아웃카운트 보정 없는 낡은 WE
+계산)로 만들어졌음을 확인하고, 자체 reward 계산에서는 이를 우회해
+PA 레벨 `reward_wpa_computed`(Option B)로 직접 재계산했다는 사실이
+확인됨. 불펜 quality_p의 `prior_wpa_per_pa`가 바로 이 `app_wpa`를 누적한
+`prior_wpa_mean`에서 유도된 값이라, 같은 문제가 우리 쪽에도 있는지 점검함.
+
+**직접 검증**: 같은 투수·같은 경기에 대해 `all_pitcher_history.app_wpa`와
+`all_pa_with_li.reward_wpa_computed`를 독립적으로 합산한 값을 비교 — 다수
+사례에서 유의미하게 다름을 확인(부호가 반대로 나온 사례 포함). Option A
+오염이 실재함을 확인.
+
+**영향 범위**: 불펜 공식(`prior_wpa_per_pa`)만 영향 있음. 선발 공식
+(`so_rate - bb_rate - 2*hr_rate`)은 WPA를 전혀 안 써서 무관.
+
+## 재료 재생성
+
+`build_prior_wpa_optionb.py`: `all_pa_with_li.reward_wpa_computed`를
+(game_id, half, pitcher_id, appearance_order) 단위로 합산해 등판별 Option B
+WPA를 만들고, 투수별 시간순으로 leakage-free 누적평균(`prior_wpa_mean_optionb`)
+계산. 기존 `all_pitcher_history.prior_n_apps`와 완전히 동일하게 세어지는지
+검증(불일치 0건, 64,571건 전부 일치) — **표준 품질필터(data_quality_flag/
+pa_result)를 적용하면 오히려 불일치 3,763건 발생** → 원본 파일 자체가
+필터 없이 집계됐던 것으로 확인, 필터 미적용으로 확정.
+
+기존(Option A) vs 신규(Option B) `prior_wpa_mean` 상관계수: 0.9866
+(전체적으로는 비슷하지만 개별 사례 차이는 실재).
+
+## 재검증 — Task 7~9를 동일 방법론으로 재확인
+
+재료만 교체하고 방법론(목표 정의, 편상관 통제, shrinkage 튜닝)은
+동일하게 유지해 다시 검증:
+
+| 항목 | Option A (기존) | Option B (교정) | 판정 |
+| --- | --- | --- | --- |
+| Task 7 (예측력, r) | 0.1487 | 0.1284 | 여전히 PASS (기준 0.1) |
+| Task 8 (LI 통제 후 감소율) | 0.9% | 0.1% | 여전히 착시 아님 (더 견고) |
+| Task 9 (최적 k) | k=25 | k=25 | 동일 (재확인) |
+| league_mean_wpa_per_pa (train-frozen) | -0.009477 | -0.004568 | 값 자체는 이동 |
+
+**결론**: 공식·k·방법론은 그대로 유지, 재료(원본 WPA 값)만 Option B로
+교체. 결론(PASS, 착시 아님)은 안 바뀌었지만 수치는 유의미하게 달라졌으므로
+"재료 바꿔도 결론 같으니 재검증 생략" 하지 않고 매번 실제로 다시 돌려
+확인함.
+
+## 반영
+
+`build_quality_baseline_bullpen.py`, `apply_quality_to_data.py`를
+`prior_wpa_optionb.parquet` 사용하도록 수정, `quality_baseline_bullpen.json`
+재생성, `all_pa_with_li.parquet`의 `quality_p` 컬럼 재계산 완료.
+
 ## 다음 단계 (이 리포트 범위 밖)
 
 - `leverage_index`와 결합한 `U = quality_p × LI − λ·cost·(...)` 통합 검증
@@ -325,3 +382,7 @@ quality_p = 2 * percentile_rank(shrunk, 불펜 기준분포)   # 평균 1.0, 범
 - k<5(선발) 추가 탐색 여부 검토
 - Task 8에서 발견한 `prior_li_mean` ↔ `wpa_per_pa` 음의 상관의 원인 규명
   (결론에 영향은 없으나 설명되지 않은 채로 남아있음)
+- **(팀 공유 필요) Bandit B0 자체의 `prior_pitcher_reward_mean`/
+  `prior_wpa_std` feature도 동일한 Option A 오염이 있음이 확인됨
+  (`kbo_bandit/core/bandit_v2_actual_bullpen.py`) — 이건 우리 쪽에서
+  임의로 고칠 수 없고 팀/팀원과 논의 필요**

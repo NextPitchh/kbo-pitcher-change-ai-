@@ -1,5 +1,5 @@
 """
-투수 품질(quality_p) 불펜 프로덕션 기준값 산출 — train-frozen (Task 14).
+투수 품질(quality_p) 불펜 프로덕션 기준값 산출 — Option B + train-frozen (Task 15).
 
 build_quality_baseline.py(선발용)와 동일한 방식이지만, 공식과 shrinkage
 단위가 다르다 (Task 6-9에서 확정):
@@ -12,13 +12,21 @@ build_quality_baseline.py(선발용)와 동일한 방식이지만, 공식과 shr
 기준분포는 불펜(is_starter=False, prior_n_apps>=1) 모집단의 shrunk 값을
 0.1%포인트 간격(1001개 지점)으로 뽑아 저장한다.
 
-**Task 14 변경**: 이전 버전은 전체 기간(2016~2025)으로 기준분포를 만든
-잠정본이었다. Bandit v2가 `bandit_game_split.csv`(game_id 단위 70/15/15
-분할)로 train/validation/test를 나누므로, 리그 평균/백분위 분포도
-**train 게임만으로** 다시 만든다 — validation/test 기간 정보가 feature
-정규화에 새어 들어가는 걸 막기 위함(LI의 train-frozen 재계산과 동일한
-이유). validation/test 게임의 quality_p도 이 train-frozen 기준분포를
-그대로 적용해서 계산한다(기준분포 자체는 train만, 적용은 전체).
+**Task 15 변경 (2026-09-22)**: `prior_wpa_per_pa`의 원재료였던
+`all_pitcher_history.prior_wpa_mean`이 Option A(아웃카운트 보정 없는 낡은
+WE 계산)로 만들어진 값임이 확인됨 — 같은 파일의 `app_wpa`를 Option B
+기준(`all_pa_with_li.reward_wpa_computed`)과 직접 비교했을 때 값이 유의미하게
+다름을 검증(부호가 뒤집히는 사례도 존재). `build_prior_wpa_optionb.py`로
+재계산한 Option B 버전(`prior_wpa_mean_optionb`)을 사용하도록 교체.
+
+재검증 결과(재료만 교체, 방법론은 동일):
+  - Task 7 재검증: r = 0.1487 -> 0.1284 (여전히 PASS, 기준 0.1 초과)
+  - Task 8 재검증(LI 착시): 0.9% -> 0.1% 감소 (여전히 착시 아님, 더 견고해짐)
+  - Task 9 재검증(k): k=25 여전히 근접 최적 (패턴 동일)
+  - league_mean_wpa_per_pa: -0.009747(Option A) -> 재계산 필요(Option B, train-frozen)
+
+**Task 14의 train-frozen 로직은 그대로 유지** — `bandit_game_split.csv`의
+train 게임만으로 기준분포를 만든다.
 """
 
 from __future__ import annotations
@@ -30,10 +38,11 @@ import numpy as np
 import pandas as pd
 
 HIST_PATH = Path("data_analysis/all_pitcher_history.parquet")
+OPTIONB_PATH = Path("data_analysis/results/prior_wpa_optionb.parquet")
 SPLIT_PATH = Path("bandit_game_split.csv")
 OUT_PATH = Path("data_analysis/results/quality_baseline_bullpen.json")
 
-SHRINKAGE_K = 25  # Task 9에서 확정
+SHRINKAGE_K = 25  # Task 9에서 확정 (Task 15 재검증에서도 근접 최적 재확인)
 N_GRID_POINTS = 1001  # 0.0%, 0.1%, ..., 100.0%
 
 
@@ -47,12 +56,27 @@ def main() -> None:
     print(f"train 게임 수: {len(train_game_ids)} (bandit_game_split.csv 기준)")
 
     hist = pd.read_parquet(HIST_PATH)
-    df = hist[(~hist["is_starter"]) & (hist["prior_n_apps"] >= 1)].copy()
+    opb = pd.read_parquet(OPTIONB_PATH)
+
+    df = hist[["pitcher_id", "game_id", "half", "appearance_order", "is_starter", "prior_n_pa"]].merge(
+        opb[["pitcher_id", "game_id", "half", "appearance_order", "prior_wpa_mean_optionb"]],
+        on=["pitcher_id", "game_id", "half", "appearance_order"],
+        how="inner",
+    )
+    df = df[(~df["is_starter"]) & df["prior_wpa_mean_optionb"].notna()].copy()
+
     n_before_split_filter = len(df)
     df = df[df["game_id"].isin(train_game_ids)]
     print(f"불펜 등판 {n_before_split_filter}건 중 train 게임 소속: {len(df)}건")
 
-    df["prior_wpa_sum"] = df["prior_wpa_mean"] * df["prior_n_apps"]
+    # prior_n_apps: hist와 동일한 방식(등판 순번, Option A/B 무관 — 그냥 개수)
+    df = df.sort_values(["pitcher_id", "game_id"]).reset_index(drop=True)
+    hist_prior_n_apps = hist.set_index(["pitcher_id", "game_id", "half", "appearance_order"])["prior_n_apps"]
+    df = df.set_index(["pitcher_id", "game_id", "half", "appearance_order"])
+    df["prior_n_apps"] = hist_prior_n_apps
+    df = df.reset_index()
+
+    df["prior_wpa_sum"] = df["prior_wpa_mean_optionb"] * df["prior_n_apps"]
     df["prior_wpa_per_pa"] = -df["prior_wpa_sum"] / df["prior_n_pa"]
     df = df.dropna(subset=["prior_wpa_per_pa"])
 
@@ -69,6 +93,7 @@ def main() -> None:
         "n_fit": int(len(df)),
         "fit_split": "train",
         "fit_split_source": "bandit_game_split.csv",
+        "wpa_convention": "Option B (reward_wpa_computed 기반, Task 15 수정)",
         "league_mean_wpa_per_pa": league_mean,
         "shrinkage_k": SHRINKAGE_K,
         "shrinkage_unit": "prior_n_pa",

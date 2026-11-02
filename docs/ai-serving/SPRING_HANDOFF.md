@@ -4,7 +4,7 @@
 
 요청·응답, 입력 의미, 2025 및 1~9회 제한은 [API 계약](API_CONTRACT.md)을 확인하세요. 로컬·Docker 실행과 아티팩트는 [배포 메모](DEPLOYMENT.md)에 있습니다. 실제 AWS 배포는 수행하지 않았습니다.
 
-현재 BE `develop`에는 B1 추천·v6 HTTP 연동과 AI ETL이 아직 구현되지 않았습니다. 원격 `feat/#25-simulate-pa` 브랜치가 존재하며 해당 팀원 코드는 변경하지 않았습니다. 현재 `SimState`의 `PitcherDay`는 전체 구수만 보유하고 분기 이후 타석당 평균을 더하도록 설계되어 있어, v6의 완료된 이닝별·전체 구수 의미를 충족하려면 팀원 코드 변경이 필요합니다. 실제 엔진에 CatBoost가 연결된 상태가 아닙니다.
+BE `develop`에는 B1 추천과 AI ETL이 아직 구현되지 않았습니다. 별도 로컬 브랜치 `codex/catboost-v6-client`에는 `CatBoostV6State`와 `CatBoostV6Client`가 있으며 실제 로컬 FastAPI 호출을 테스트했습니다. 이 브랜치는 아직 PR이나 엔진 연결이 아닙니다. 원격 `feat/#25-simulate-pa` 브랜치가 존재하며 해당 팀원 코드는 변경하지 않았습니다. 현재 `SimState`의 `PitcherDay`는 전체 구수만 보유하고 분기 이후 타석당 평균을 더하도록 설계되어 있어, v6의 완료된 이닝별·전체 구수 의미를 충족하려면 팀원 코드 변경이 필요합니다. 실제 엔진에 CatBoost가 연결된 상태가 아닙니다.
 
 필요한 후속 작업:
 
